@@ -1,17 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { PageKey } from "./site";
-import { sitePages } from "./site";
-
-type LegacyPageContent = {
-  css: string;
-  html: string;
-};
 
 const htmlRoutes: Record<string, string> = {
   "index.html": "/",
   "about.html": "/about",
   "how-it-works.html": "/how-it-works",
+  "contact.html": "/contact",
+  "blog.html": "/blog",
   "privacy-policy.html": "/privacy-policy",
   "terms-of-service.html": "/terms-of-service",
   "data-deletion.html": "/data-deletion",
@@ -21,156 +16,73 @@ const htmlRoutes: Record<string, string> = {
   "article3.html": "/blog/driver-earnings-tips-cameroon"
 };
 
-const externalSocials = {
-  facebook: "https://www.facebook.com/profile.php?id=61591416844183",
-  instagram: "https://www.instagram.com/therain6026?igsh=MTBuMHU1MHBkZ240eg==",
-  youtube: "https://youtube.com/@therain-tech?si=xyXaabvEzabOnu5b",
-  whatsapp: "https://wa.me/237676011861"
-};
-
 function sourcePath(fileName: string): string {
   return path.join(process.cwd(), "content", "legacy", fileName);
 }
 
-function extractFirst(source: string, pattern: RegExp): string {
-  return source.match(pattern)?.[1] ?? "";
-}
-
-function normalizeAssetPath(assetPath: string): string {
-  const cleanPath = assetPath.replace(/&amp;/g, "&").split("?")[0];
-  return cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
-}
-
-function rewriteCss(css: string): string {
-  return css.replace(/url\((['"]?)images\//gi, "url($1/images/");
-}
-
-function fallbackHref(innerHtml: string): string {
-  const text = innerHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
-  const raw = innerHtml.toLowerCase();
-
-  if (text.includes("app store") || text.includes("google play") || text.includes("download")) {
-    return "/#download";
-  }
-
-  if (text.includes("register as driver") || text.includes("careers")) {
-    return "/#driver";
-  }
-
-  if (text.includes("learn more")) {
-    return "/#services";
-  }
-
-  if (raw.includes("fa-facebook")) return externalSocials.facebook;
-  if (raw.includes("fa-instagram")) return externalSocials.instagram;
-  if (raw.includes("fa-youtube")) return externalSocials.youtube;
-  if (raw.includes("fa-whatsapp")) return externalSocials.whatsapp;
-
-  return "/#contact";
-}
-
-function rewriteHref(href: string, innerHtml: string): string {
-  const cleanHref = href.replace(/&amp;/g, "&").trim();
-
-  if (cleanHref === "#") {
-    return fallbackHref(innerHtml);
-  }
-
+function rewriteHref(href: string): string {
+  const clean = href.replace(/&amp;/g, "&").trim();
   if (
-    cleanHref.startsWith("http://") ||
-    cleanHref.startsWith("https://") ||
-    cleanHref.startsWith("mailto:") ||
-    cleanHref.startsWith("tel:")
+    clean.startsWith("http") ||
+    clean.startsWith("//") ||
+    clean.startsWith("#") ||
+    clean.startsWith("mailto:") ||
+    clean.startsWith("tel:") ||
+    clean.startsWith("/")
   ) {
-    return cleanHref;
+    return clean;
   }
-
-  if (cleanHref.startsWith("#")) {
-    return cleanHref;
-  }
-
-  const [fileName, hash = ""] = cleanHref.split("#");
-  const mappedRoute = htmlRoutes[fileName];
-
-  if (mappedRoute) {
-    return hash ? `${mappedRoute}#${hash}` : mappedRoute;
-  }
-
-  if (cleanHref.startsWith("images/")) {
-    return normalizeAssetPath(cleanHref);
-  }
-
-  return cleanHref;
-}
-
-function withSafeExternalAttrs(openingAttrs: string, href: string): string {
-  if (!href.startsWith("http://") && !href.startsWith("https://")) {
-    return openingAttrs;
-  }
-
-  let attrs = openingAttrs;
-  if (!/\starget=/i.test(attrs)) {
-    attrs += ' target="_blank"';
-  }
-  if (!/\srel=/i.test(attrs)) {
-    attrs += ' rel="noopener noreferrer"';
-  }
-  return attrs;
-}
-
-function socialLabel(innerHtml: string): string | null {
-  const raw = innerHtml.toLowerCase();
-  if (raw.includes("fa-facebook")) return "Facebook";
-  if (raw.includes("fa-instagram")) return "Instagram";
-  if (raw.includes("fa-youtube")) return "YouTube";
-  if (raw.includes("fa-whatsapp")) return "WhatsApp";
-  if (raw.includes("fa-linkedin")) return "LinkedIn";
-  if (raw.includes("fa-tiktok")) return "TikTok";
-  if (raw.includes("viewbox=\"0 0 24 24\"")) return "X";
-  return null;
-}
-
-function withAccessibleLabel(openingAttrs: string, innerHtml: string): string {
-  if (/\saria-label=/i.test(openingAttrs)) {
-    return openingAttrs;
-  }
-
-  const label = socialLabel(innerHtml);
-  return label ? `${openingAttrs} aria-label="${label}"` : openingAttrs;
+  const [file, hash] = clean.split("#");
+  const route = htmlRoutes[file];
+  if (route) return hash ? `${route}#${hash}` : route;
+  if (clean.startsWith("images/")) return `/${clean}`;
+  return clean;
 }
 
 function rewriteAnchors(html: string): string {
-  return html.replace(/<a\b([^>]*)href="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/gi, (match, before, href, after, inner) => {
-    const nextHref = rewriteHref(href, inner);
-    let attrs = `${before}href="${nextHref}"${after}`;
-    attrs = withSafeExternalAttrs(attrs, nextHref);
-    attrs = withAccessibleLabel(attrs, inner);
-    return `<a${attrs}>${inner}</a>`;
+  return html.replace(/<a(\s[^>]*)href="([^"]*)"([^>]*)>/gi, (_m, before, href, after) => {
+    return `<a${before}href="${rewriteHref(href)}"${after}>`;
   });
 }
 
-function rewriteImages(html: string): string {
-  return html.replace(/\b(src|href)="images\/([^"]*)"/gi, (_match, attr, assetPath) => {
-    return `${attr}="${normalizeAssetPath(`images/${assetPath}`)}"`;
-  });
+function rewriteAssetPaths(html: string): string {
+  // Rewrite src="images/..." and href="images/..." in HTML attributes
+  return html.replace(/\b(src|href)="images\/([^"]*)"/gi, (_m, attr, rest) => `${attr}="/images/${rest}"`);
 }
 
-function stripScripts(html: string): string {
-  return html.replace(/<script\b[\s\S]*?<\/script>/gi, "");
+function rewriteScriptPaths(script: string): string {
+  // Rewrite "images/..." string literals inside scripts
+  return script.replace(/"images\//g, '"/images/');
 }
 
-function rewriteLegacyHtml(html: string): string {
-  return rewriteAnchors(rewriteImages(stripScripts(html))).trim();
-}
+export type LegacyPageData = {
+  css: string;
+  bodyHtml: string;
+  inlineScripts: string[];
+};
 
-export function getLegacyPage(key: PageKey): LegacyPageContent {
-  const sourceFile = sitePages[key].sourceFile;
+export function getLegacyPage(sourceFile: string): LegacyPageData {
   const source = fs.readFileSync(sourcePath(sourceFile), "utf8");
-  const css = [...source.matchAll(/<style>([\s\S]*?)<\/style>/gi)].map((match) => match[1]).join("\n\n");
-  const body = extractFirst(source, /<body[^>]*>([\s\S]*?)<\/body>/i);
 
-  return {
-    css: rewriteCss(css),
-    html: rewriteLegacyHtml(body)
-  };
+  // Extract all CSS from <style> blocks
+  const cssBlocks = [...source.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)];
+  const css = cssBlocks.map((m) => m[1]).join("\n");
+
+  // Extract body content
+  const bodyMatch = source.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const rawBody = bodyMatch ? bodyMatch[1] : "";
+
+  // Extract inline scripts (those without a src attribute)
+  const scriptMatches = [...rawBody.matchAll(/<script(?![^>]*\bsrc\s*=)[^>]*>([\s\S]*?)<\/script>/gi)];
+  const inlineScripts = scriptMatches
+    .map((m) => rewriteScriptPaths(m[1]))
+    .filter((s) => s.trim().length > 0);
+
+  // Strip all script tags from body HTML
+  const noScripts = rawBody.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
+
+  // Rewrite asset paths and anchor hrefs
+  const rewritten = rewriteAnchors(rewriteAssetPaths(noScripts));
+
+  return { css, bodyHtml: rewritten, inlineScripts };
 }

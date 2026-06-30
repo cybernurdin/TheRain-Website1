@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "TheRain",
     short_name: "TheRain",
-    description: "Ride, delivery, and transport services in Cameroon.",
+    description: "Ride-hailing, delivery, school transport, and fleet services in Cameroon.",
     start_url: "/",
     display: "standalone",
     background_color: "#060E1F",
