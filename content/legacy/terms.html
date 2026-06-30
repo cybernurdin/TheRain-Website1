@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html data-lang="en" data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TheRain — Terms &amp; Policies</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+:root {
+  --primary: #0A84FF;
+  --cyan: #00C6FF;
+  --navy: #0A1A33;
+  --green: #22C55E;
+  --yellow: #FACC15;
+  --red: #EF4444;
+}
+[data-theme="dark"] {
+  --bg: #060E1F; --bg2: #0A1A33; --bg3: #0D2244;
+  --card: #0D2244; --card2: #112855;
+  --text: #FFFFFF; --text2: rgba(255,255,255,0.7); --text3: rgba(255,255,255,0.4);
+  --border: rgba(255,255,255,0.08); --nav-bg: rgba(6,14,31,0.95);
+  --input-bg: rgba(255,255,255,0.05);
+}
+[data-theme="light"] {
+  --bg: #F0F4F8; --bg2: #FFFFFF; --bg3: #E8F0FE;
+  --card: #FFFFFF; --card2: #F8FAFC;
+  --text: #0A1A33; --text2: #4A5568; --text3: #94A3B8;
+  --border: rgba(10,26,51,0.08); --nav-bg: rgba(255,255,255,0.95);
+  --input-bg: rgba(10,26,51,0.04);
+}
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); transition:background 0.4s,color 0.4s; overflow-x:hidden; }
+::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:var(--bg)} ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:44px;width:auto;object-fit:contain}
+.nav-brand-text{display:flex;align-items:center;line-height:1}
+.nav-brand-the{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--text);transition:color 0.3s}
+.nav-brand-rain{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--primary);transition:color 0.3s}
+.nav-controls{display:flex;align-items:center;gap:10px}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none}
+.btn-lang,.btn-theme{background:var(--input-bg);color:var(--text2);border:1px solid var(--border)!important}
+.btn-lang:hover,.btn-theme:hover{border-color:var(--primary)!important;color:var(--primary)}
+.btn-theme{width:40px;height:40px;padding:0;justify-content:center}
+.btn-back{background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;box-shadow:0 4px 16px rgba(10,132,255,0.35);text-decoration:none}
+.btn-back:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,132,255,0.45)}
+
+/* HERO */
+.terms-hero{padding:120px 5% 60px;background:linear-gradient(135deg,#0A1A33,#0A2A4A);position:relative;overflow:hidden}
+.terms-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(10,132,255,0.12),transparent);border-radius:50%}
+.terms-hero::after{content:'';position:absolute;bottom:-30%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(0,198,255,0.08),transparent);border-radius:50%}
+.terms-hero-content{position:relative;z-index:1;max-width:800px}
+.terms-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.15);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px;letter-spacing:0.5px}
+.terms-title{font-size:clamp(32px,4vw,52px);font-weight:900;color:white;line-height:1.1;margin-bottom:16px}
+.terms-title span{background:linear-gradient(135deg,#00C6FF,#0A84FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.terms-subtitle{font-family:'Inter',sans-serif;font-size:17px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:32px;max-width:600px}
+.terms-meta{display:flex;gap:24px;flex-wrap:wrap}
+.terms-meta-item{display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.5)}
+.terms-meta-item i{color:#00C6FF}
+
+/* TAB NAVIGATION */
+.tab-nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:100;padding:0 5%}
+.tab-nav-inner{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.tab-nav-inner::-webkit-scrollbar{display:none}
+.tab-btn{display:flex;align-items:center;gap:10px;padding:18px 28px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:var(--text3);cursor:pointer;border:none;background:transparent;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;text-decoration:none}
+.tab-btn:hover{color:var(--primary)}
+.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary)}
+.tab-btn i{font-size:16px}
+
+/* CONTENT */
+.terms-content{padding:60px 5%;max-width:1200px;margin:0 auto}
+.role-section{display:none}
+.role-section.active{display:block}
+
+/* SECTION CARDS */
+.policy-section{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;margin-bottom:24px;transition:all 0.3s}
+.policy-section:hover{border-color:rgba(10,132,255,0.2);box-shadow:0 8px 32px rgba(10,132,255,0.08)}
+.policy-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;cursor:pointer}
+.policy-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.policy-title{font-size:20px;font-weight:700;color:var(--text);flex:1}
+.policy-toggle{color:var(--text3);font-size:18px;transition:transform 0.3s}
+.policy-toggle.open{transform:rotate(180deg)}
+.policy-body{display:block}
+.policy-body.collapsed{display:none}
+
+/* CONTENT STYLES */
+.policy-intro{font-family:'Inter',sans-serif;font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:24px;padding:16px;background:var(--input-bg);border-radius:12px;border-left:4px solid var(--primary)}
+.policy-section-title{font-size:16px;font-weight:700;color:var(--text);margin:24px 0 12px;display:flex;align-items:center;gap:8px}
+.policy-section-title i{color:var(--primary);font-size:14px}
+.policy-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:16px}
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.policy-list li{display:flex;align-items:flex-start;gap:10px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.6}
+.policy-list li i{color:var(--primary);font-size:12px;margin-top:4px;flex-shrink:0}
+.policy-list.warning li i{color:var(--red)}
+.policy-list.success li i{color:var(--green)}
+.policy-highlight{background:rgba(10,132,255,0.08);border:1px solid rgba(10,132,255,0.15);border-radius:12px;padding:16px 20px;margin:16px 0}
+.policy-highlight-title{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
+.policy-highlight-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.7}
+.policy-warning{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);border-radius:12px;padding:16px 20px;margin:16px 0}
+.policy-warning-title{font-size:13px;font-weight:700;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
+.policy-warning-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.7}
+.policy-success{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.15);border-radius:12px;padding:16px 20px;margin:16px 0}
+.policy-success-title{font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
+.policy-success-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.7}
+
+/* TABLE */
+.policy-table{width:100%;border-collapse:collapse;margin:16px 0;border-radius:12px;overflow:hidden}
+.policy-table th{background:rgba(10,132,255,0.1);color:var(--primary);font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+.policy-table td{font-family:'Inter',sans-serif;font-size:13px;color:var(--text2);padding:12px 16px;border-bottom:1px solid var(--border)}
+.policy-table tr:last-child td{border-bottom:none}
+.policy-table tr:hover td{background:var(--input-bg)}
+
+/* ACCEPTANCE */
+.acceptance-box{background:linear-gradient(135deg,rgba(10,132,255,0.1),rgba(0,198,255,0.05));border:1px solid rgba(10,132,255,0.2);border-radius:16px;padding:24px;margin-top:32px;text-align:center}
+.acceptance-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.acceptance-text{font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
+.acceptance-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer}
+.acceptance-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,132,255,0.4)}
+
+/* SIDEBAR */
+.terms-layout{display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:start}
+.terms-sidebar{position:sticky;top:140px}
+.sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px}
+.sidebar-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sidebar-title i{color:var(--primary)}
+.sidebar-links{list-style:none;display:flex;flex-direction:column;gap:4px}
+.sidebar-links a{font-family:'Inter',sans-serif;font-size:13px;color:var(--text2);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all 0.2s;display:flex;align-items:center;gap:8px}
+.sidebar-links a:hover{background:rgba(10,132,255,0.1);color:var(--primary)}
+.sidebar-links a i{font-size:11px;color:var(--primary)}
+.contact-card{background:linear-gradient(135deg,#0A1A33,#0A2A4A);border-radius:16px;padding:20px;text-align:center}
+.contact-card-title{font-size:15px;font-weight:700;color:white;margin-bottom:8px}
+.contact-card-text{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:16px;line-height:1.6}
+.contact-card-btn{display:block;background:rgba(10,132,255,0.2);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;padding:10px;border-radius:10px;text-decoration:none;transition:all 0.2s;margin-bottom:8px}
+.contact-card-btn:hover{background:rgba(10,132,255,0.3)}
+
+/* FOOTER */
+.terms-footer{background:#060E1F;padding:40px 5%;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+.terms-footer-text{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.3)}
+.terms-footer-text span{color:#00C6FF}
+.terms-footer-links{display:flex;justify-content:center;gap:24px;margin-top:12px;flex-wrap:wrap}
+.terms-footer-links a{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s}
+.terms-footer-links a:hover{color:var(--primary)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.aos{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s}
+.aos.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.terms-layout{grid-template-columns:1fr}.terms-sidebar{position:static}}
+@media(max-width:768px){.tab-btn{padding:14px 16px;font-size:13px}.policy-section{padding:24px}.terms-hero{padding:100px 5% 40px}}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+<a class="nav-logo" href="index.html">
+<span class="nav-brand-text">
+<span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span>
+</span>
+</a>
+<div class="nav-controls">
+<button class="nav-btn btn-lang" onclick="toggleLang()">
+<i class="fas fa-globe"></i><span id="langLabel">FR</span>
+</button>
+<button class="nav-btn btn-theme" onclick="toggleTheme()">
+<i class="fas fa-sun" id="themeIcon"></i>
+</button>
+<a class="nav-btn btn-back" href="index.html">
+<i class="fas fa-arrow-left"></i>
+<span data-en="Back to Home" data-fr="Retour Accueil">Back to Home</span>
+</a>
+</div>
+</nav>
+<!-- HERO -->
+<div class="terms-hero">
+<div class="terms-hero-content">
+<div class="terms-badge">
+<i class="fas fa-shield-alt"></i>
+<span data-en="Legal &amp; Compliance" data-fr="Légal et Conformité">Legal &amp; Compliance</span>
+</div>
+<h1 class="terms-title">
+<span data-en="Terms" data-fr="Conditions">Terms</span> &amp;
+      <span data-en="Policies" data-fr="Politiques">Policies</span>
+</h1>
+<p class="terms-subtitle" data-en="Our commitment to transparency, safety, and trust. Please read these terms carefully before using TheRain platform." data-fr="Notre engagement envers la transparence, la sécurité et la confiance. Veuillez lire attentivement ces conditions avant d'utiliser la plateforme TheRain.">
+      Our commitment to transparency, safety, and trust. Please read these terms carefully before using TheRain platform.
+    </p>
+<div class="terms-meta">
+<div class="terms-meta-item"><i class="fas fa-calendar-alt"></i><span data-en="Last Updated: June 2026" data-fr="Dernière mise à jour: Juin 2026">Last Updated: June 2026</span></div>
+<div class="terms-meta-item"><i class="fas fa-map-marker-alt"></i><span data-en="Applicable in Cameroon" data-fr="Applicable au Cameroun">Applicable in Cameroon</span></div>
+<div class="terms-meta-item"><i class="fas fa-language"></i><span data-en="English &amp; French" data-fr="Anglais et Français">English &amp; French</span></div>
+</div>
+</div>
+</div>
+<!-- TAB NAVIGATION -->
+<div class="tab-nav">
+<div class="tab-nav-inner">
+<button class="tab-btn active" id="tab-rider" onclick="switchTab('rider')">
+<i class="fas fa-user"></i>
+<span data-en="Rider Policies" data-fr="Politiques Passager">Rider Policies</span>
+</button>
+<button class="tab-btn" id="tab-driver" onclick="switchTab('driver')">
+<i class="fas fa-car"></i>
+<span data-en="Driver Policies" data-fr="Politiques Chauffeur">Driver Policies</span>
+</button>
+<button class="tab-btn" id="tab-fleet" onclick="switchTab('fleet')">
+<i class="fas fa-truck"></i>
+<span data-en="Fleet Manager Policies" data-fr="Politiques Gestionnaire de Flotte">Fleet Manager Policies</span>
+</button>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<div class="terms-content">
+<div class="terms-layout">
+<!-- SIDEBAR -->
+<div class="terms-sidebar">
+<div class="sidebar-card" id="sidebarNav">
+<div class="sidebar-title"><i class="fas fa-list"></i> <span data-en="Quick Navigation" data-fr="Navigation Rapide">Quick Navigation</span></div>
+<ul class="sidebar-links" id="sidebarLinks">
+<li><a href="#privacy"><i class="fas fa-chevron-right"></i> <span data-en="Privacy Policy" data-fr="Politique de Confidentialité">Privacy Policy</span></a></li>
+<li><a href="#terms-of-service"><i class="fas fa-chevron-right"></i> <span data-en="Terms of Service" data-fr="Conditions d'Utilisation">Terms of Service</span></a></li>
+<li><a href="#cctv"><i class="fas fa-chevron-right"></i> <span data-en="CCTV Policy" data-fr="Politique CCTV">CCTV Policy</span></a></li>
+<li><a href="#safety"><i class="fas fa-chevron-right"></i> <span data-en="Safety Policies" data-fr="Politiques de Sécurité">Safety Policies</span></a></li>
+<li><a href="#fraud"><i class="fas fa-chevron-right"></i> <span data-en="Fraud Prevention" data-fr="Prévention de la Fraude">Fraud Prevention</span></a></li>
+<li><a href="#data"><i class="fas fa-chevron-right"></i> <span data-en="Data Usage" data-fr="Utilisation des Données">Data Usage</span></a></li>
+</ul>
+</div>
+<div class="contact-card">
+<div class="contact-card-title" data-en="Need Help?" data-fr="Besoin d'Aide?">Need Help?</div>
+<div class="contact-card-text" data-en="Have questions about our policies? Our support team is available 24/7." data-fr="Des questions sur nos politiques? Notre équipe de support est disponible 24h/7j.">Have questions about our policies? Our support team is available 24/7.</div>
+<a class="contact-card-btn" href="index.html#contact"><i class="fas fa-envelope"></i> <span data-en="Contact Support" data-fr="Contacter le Support">Contact Support</span></a>
+<a class="contact-card-btn" href="index.html#contact"><i class="fas fa-phone"></i> <span data-en="Call Us" data-fr="Appelez-Nous">Call Us</span></a>
+</div>
+</div>
+<!-- MAIN POLICIES -->
+<div>
+<!-- ==================== RIDER SECTION ==================== -->
+<div class="role-section active" id="rider">
+<!-- Privacy Policy -->
+<div class="policy-section aos" id="privacy">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(10,132,255,0.1)"><i class="fas fa-lock" style="color:#0A84FF"></i></div>
+<div class="policy-title" data-en="Privacy Policy — Rider" data-fr="Politique de Confidentialité — Passager">Privacy Policy — Rider</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="TheRain is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our rider services in Cameroon." data-fr="TheRain s'engage à protéger vos informations personnelles. Cette politique explique comment nous collectons, utilisons et protégeons vos données.">
+              TheRain is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our rider services in Cameroon.
+            </div>
+<div class="policy-section-title"><i class="fas fa-database"></i> <span data-en="Information We Collect" data-fr="Informations que Nous Collectons">Information We Collect</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Full name, phone number, and email address during registration" data-fr="Nom complet, numéro de téléphone et adresse email lors de l'inscription">Full name, phone number, and email address during registration</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Real-time GPS location during active rides and bookings" data-fr="Localisation GPS en temps réel pendant les trajets actifs et les réservations">Real-time GPS location during active rides and bookings</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Payment information (MTN MOMO, Orange Money, Visa card details)" data-fr="Informations de paiement (MTN MOMO, Orange Money, détails de carte Visa)">Payment information (MTN MOMO, Orange Money, Visa card details)</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Ride history, ratings, and feedback submitted" data-fr="Historique des trajets, notes et commentaires soumis">Ride history, ratings, and feedback submitted</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Device information, IP address, and app usage data" data-fr="Informations sur l'appareil, adresse IP et données d'utilisation de l'application">Device information, IP address, and app usage data</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Emergency contact information provided by the rider" data-fr="Informations de contact d'urgence fournies par le passager">Emergency contact information provided by the rider</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-cogs"></i> <span data-en="How We Use Your Information" data-fr="Comment Nous Utilisons Vos Informations">How We Use Your Information</span></div>
+<ul class="policy-list success">
+<li><i class="fas fa-check-circle"></i><span data-en="To match you with the nearest available verified driver" data-fr="Pour vous mettre en relation avec le chauffeur vérifié le plus proche">To match you with the nearest available verified driver</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="To process payments and send receipts via SMS or email" data-fr="Pour traiter les paiements et envoyer des reçus par SMS ou email">To process payments and send receipts via SMS or email</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="To provide real-time ride tracking and safety features" data-fr="Pour fournir le suivi en temps réel et les fonctionnalités de sécurité">To provide real-time ride tracking and safety features</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="To improve our services through analytics and feedback" data-fr="Pour améliorer nos services grâce aux analyses et aux commentaires">To improve our services through analytics and feedback</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="To detect and prevent fraud, abuse, and safety violations" data-fr="Pour détecter et prévenir la fraude, les abus et les violations de sécurité">To detect and prevent fraud, abuse, and safety violations</span></li>
+</ul>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-info-circle"></i> <span data-en="Guest Rider Privacy" data-fr="Confidentialité des Passagers Invités">Guest Rider Privacy</span></div>
+<div class="policy-highlight-text" data-en="Guest riders who book without an account are assigned a temporary GUEST_ID. Their ride data is stored temporarily and can be recovered if they create an account later. Guest data is automatically deleted after 90 days of inactivity." data-fr="Les passagers invités qui réservent sans compte se voient attribuer un GUEST_ID temporaire. Leurs données de trajet sont stockées temporairement et peuvent être récupérées s'ils créent un compte ultérieurement.">Guest riders who book without an account are assigned a temporary GUEST_ID. Their ride data is stored temporarily and can be recovered if they create an account later. Guest data is automatically deleted after 90 days of inactivity.</div>
+</div>
+<div class="policy-section-title"><i class="fas fa-share-alt"></i> <span data-en="Data Sharing" data-fr="Partage des Données">Data Sharing</span></div>
+<div class="policy-text" data-en="TheRain does not sell your personal data to third parties. We may share limited data with:" data-fr="TheRain ne vend pas vos données personnelles à des tiers. Nous pouvons partager des données limitées avec:">TheRain does not sell your personal data to third parties. We may share limited data with:</div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Assigned drivers (name, pickup location, and contact number only)" data-fr="Chauffeurs assignés (nom, lieu de prise en charge et numéro de contact uniquement)">Assigned drivers (name, pickup location, and contact number only)</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Payment processors for transaction verification" data-fr="Processeurs de paiement pour la vérification des transactions">Payment processors for transaction verification</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Law enforcement authorities when legally required" data-fr="Autorités chargées de l'application de la loi lorsque la loi l'exige">Law enforcement authorities when legally required</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Emergency services during SOS activations" data-fr="Services d'urgence lors des activations SOS">Emergency services during SOS activations</span></li>
+</ul>
+</div>
+</div>
+<!-- Terms of Service -->
+<div class="policy-section aos" id="terms-of-service">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(34,197,94,0.1)"><i class="fas fa-file-contract" style="color:#22C55E"></i></div>
+<div class="policy-title" data-en="Terms of Service — Rider" data-fr="Conditions d'Utilisation — Passager">Terms of Service — Rider</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="By using TheRain rider application, you agree to these Terms of Service. These terms govern your use of our ride-hailing, delivery, and school transport services in Cameroon." data-fr="En utilisant l'application passager TheRain, vous acceptez ces Conditions d'Utilisation. Ces conditions régissent votre utilisation de nos services.">
+              By using TheRain rider application, you agree to these Terms of Service. These terms govern your use of our ride-hailing, delivery, and school transport services in Cameroon.
+            </div>
+<div class="policy-section-title"><i class="fas fa-user-check"></i> <span data-en="Eligibility" data-fr="Éligibilité">Eligibility</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="You must be at least 16 years old to use TheRain services" data-fr="Vous devez avoir au moins 16 ans pour utiliser les services TheRain">You must be at least 16 years old to use TheRain services</span></li>
+<li><i class="fas fa-circle"></i><span data-en="You must provide accurate and truthful registration information" data-fr="Vous devez fournir des informations d'inscription exactes et véridiques">You must provide accurate and truthful registration information</span></li>
+<li><i class="fas fa-circle"></i><span data-en="One account per person — duplicate accounts are prohibited" data-fr="Un compte par personne — les comptes en double sont interdits">One account per person — duplicate accounts are prohibited</span></li>
+<li><i class="fas fa-circle"></i><span data-en="You are responsible for maintaining the security of your account" data-fr="Vous êtes responsable du maintien de la sécurité de votre compte">You are responsible for maintaining the security of your account</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-ban"></i> <span data-en="Prohibited Conduct" data-fr="Conduite Interdite">Prohibited Conduct</span></div>
+<ul class="policy-list warning">
+<li><i class="fas fa-times-circle"></i><span data-en="Providing false information during booking or registration" data-fr="Fournir de fausses informations lors de la réservation ou de l'inscription">Providing false information during booking or registration</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Harassing, threatening, or abusing drivers or other users" data-fr="Harceler, menacer ou abuser des chauffeurs ou d'autres utilisateurs">Harassing, threatening, or abusing drivers or other users</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Attempting to manipulate GPS, fares, or payment systems" data-fr="Tenter de manipuler le GPS, les tarifs ou les systèmes de paiement">Attempting to manipulate GPS, fares, or payment systems</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Using TheRain for illegal activities or transporting prohibited items" data-fr="Utiliser TheRain pour des activités illégales ou transporter des articles interdits">Using TheRain for illegal activities or transporting prohibited items</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Creating multiple accounts to bypass suspensions or restrictions" data-fr="Créer plusieurs comptes pour contourner les suspensions ou restrictions">Creating multiple accounts to bypass suspensions or restrictions</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Damaging TheRain vehicles or property" data-fr="Endommager les véhicules ou la propriété de TheRain">Damaging TheRain vehicles or property</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-money-bill-wave"></i> <span data-en="Payments &amp; Cancellations" data-fr="Paiements et Annulations">Payments &amp; Cancellations</span></div>
+<table class="policy-table">
+<tr><th data-en="Scenario" data-fr="Scénario">Scenario</th><th data-en="Policy" data-fr="Politique">Policy</th></tr>
+<tr><td data-en="Cancellation before driver arrives" data-fr="Annulation avant l'arrivée du chauffeur">Cancellation before driver arrives</td><td data-en="Free if within 3 minutes of booking" data-fr="Gratuit si dans les 3 minutes suivant la réservation">Free if within 3 minutes of booking</td></tr>
+<tr><td data-en="Late cancellation" data-fr="Annulation tardive">Late cancellation</td><td data-en="Cancellation fee may apply" data-fr="Des frais d'annulation peuvent s'appliquer">Cancellation fee may apply</td></tr>
+<tr><td data-en="No-show by rider" data-fr="Absence du passager">No-show by rider</td><td data-en="Full fare charged" data-fr="Tarif complet facturé">Full fare charged</td></tr>
+<tr><td data-en="Payment failure" data-fr="Échec de paiement">Payment failure</td><td data-en="Ride suspended until resolved" data-fr="Trajet suspendu jusqu'à résolution">Ride suspended until resolved</td></tr>
+<tr><td data-en="Refund requests" data-fr="Demandes de remboursement">Refund requests</td><td data-en="Reviewed within 48 hours" data-fr="Examinées dans les 48 heures">Reviewed within 48 hours</td></tr>
+</table>
+<div class="policy-section-title"><i class="fas fa-gavel"></i> <span data-en="Account Suspension" data-fr="Suspension de Compte">Account Suspension</span></div>
+<div class="policy-warning">
+<div class="policy-warning-title"><i class="fas fa-exclamation-triangle"></i> <span data-en="Suspension Notice" data-fr="Avis de Suspension">Suspension Notice</span></div>
+<div class="policy-warning-text" data-en="TheRain reserves the right to suspend or permanently deactivate accounts that violate these terms. Suspended users will see a notification with the reason and an option to submit an appeal through the Trust &amp; Safety Center." data-fr="TheRain se réserve le droit de suspendre ou de désactiver définitivement les comptes qui violent ces conditions. Les utilisateurs suspendus verront une notification avec la raison et une option pour soumettre un appel.">TheRain reserves the right to suspend or permanently deactivate accounts that violate these terms. Suspended users will see a notification with the reason and an option to submit an appeal through the Trust &amp; Safety Center.</div>
+</div>
+</div>
+</div>
+<!-- CCTV Policy -->
+<div class="policy-section aos" id="cctv">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(250,204,21,0.1)"><i class="fas fa-video" style="color:#FACC15"></i></div>
+<div class="policy-title" data-en="CCTV Policy — Rider" data-fr="Politique CCTV — Passager">CCTV Policy — Rider</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="All TheRain vehicles are equipped with interior and exterior CCTV cameras for the safety of both riders and drivers. By using TheRain services, you consent to being recorded during your ride." data-fr="Tous les véhicules TheRain sont équipés de caméras CCTV intérieures et extérieures pour la sécurité des passagers et des chauffeurs. En utilisant les services TheRain, vous consentez à être enregistré pendant votre trajet.">
+              All TheRain vehicles are equipped with interior and exterior CCTV cameras for the safety of both riders and drivers. By using TheRain services, you consent to being recorded during your ride.
+            </div>
+<div class="policy-section-title"><i class="fas fa-camera"></i> <span data-en="What is Recorded" data-fr="Ce qui est Enregistré">What is Recorded</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Interior video footage of the vehicle cabin during rides" data-fr="Séquences vidéo intérieures de l'habitacle du véhicule pendant les trajets">Interior video footage of the vehicle cabin during rides</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Exterior footage of the vehicle surroundings and road" data-fr="Séquences extérieures des environs du véhicule et de la route">Exterior footage of the vehicle surroundings and road</span></li>
+<li><i class="fas fa-circle"></i><span data-en="GPS location data synchronized with video timestamps" data-fr="Données de localisation GPS synchronisées avec les horodatages vidéo">GPS location data synchronized with video timestamps</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Audio may be recorded in compliance with Cameroonian law" data-fr="L'audio peut être enregistré conformément à la loi camerounaise">Audio may be recorded in compliance with Cameroonian law</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-server"></i> <span data-en="Storage &amp; Access" data-fr="Stockage et Accès">Storage &amp; Access</span></div>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-shield-alt"></i> <span data-en="Private Storage" data-fr="Stockage Privé">Private Storage</span></div>
+<div class="policy-highlight-text" data-en="All CCTV footage is stored on TheRain's private secure servers — never on public cloud storage. Footage is encrypted and access is strictly controlled. Only authorized TheRain security personnel and law enforcement (with proper legal authority) can access recordings." data-fr="Toutes les séquences CCTV sont stockées sur les serveurs sécurisés privés de TheRain — jamais sur un stockage cloud public. Les séquences sont cryptées et l'accès est strictement contrôlé.">All CCTV footage is stored on TheRain's private secure servers — never on public cloud storage. Footage is encrypted and access is strictly controlled. Only authorized TheRain security personnel and law enforcement (with proper legal authority) can access recordings.</div>
+</div>
+<div class="policy-section-title"><i class="fas fa-clock"></i> <span data-en="Retention Period" data-fr="Période de Conservation">Retention Period</span></div>
+<table class="policy-table">
+<tr><th data-en="Footage Type" data-fr="Type de Séquence">Footage Type</th><th data-en="Retention Period" data-fr="Période de Conservation">Retention Period</th></tr>
+<tr><td data-en="Standard ride footage" data-fr="Séquences de trajet standard">Standard ride footage</td><td data-en="30 days" data-fr="30 jours">30 days</td></tr>
+<tr><td data-en="Incident footage" data-fr="Séquences d'incident">Incident footage</td><td data-en="1 year or until case resolved" data-fr="1 an ou jusqu'à résolution du cas">1 year or until case resolved</td></tr>
+<tr><td data-en="Emergency SOS footage" data-fr="Séquences SOS d'urgence">Emergency SOS footage</td><td data-en="Indefinitely (legal hold)" data-fr="Indéfiniment (conservation légale)">Indefinitely (legal hold)</td></tr>
+</table>
+</div>
+</div>
+<!-- Safety Policies -->
+<div class="policy-section aos" id="safety">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(239,68,68,0.1)"><i class="fas fa-shield-alt" style="color:#EF4444"></i></div>
+<div class="policy-title" data-en="Safety Policies — Rider" data-fr="Politiques de Sécurité — Passager">Safety Policies — Rider</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="TheRain prioritizes the safety of every rider on our platform. These safety policies outline your rights, responsibilities, and the protections we provide." data-fr="TheRain donne la priorité à la sécurité de chaque passager sur notre plateforme. Ces politiques de sécurité décrivent vos droits, responsabilités et les protections que nous fournissons.">
+              TheRain prioritizes the safety of every rider on our platform. These safety policies outline your rights, responsibilities, and the protections we provide.
+            </div>
+<div class="policy-section-title"><i class="fas fa-user-shield"></i> <span data-en="Your Safety Rights" data-fr="Vos Droits en Matière de Sécurité">Your Safety Rights</span></div>
+<ul class="policy-list success">
+<li><i class="fas fa-check-circle"></i><span data-en="Right to verify your driver's identity and vehicle before boarding" data-fr="Droit de vérifier l'identité de votre chauffeur et le véhicule avant de monter">Right to verify your driver's identity and vehicle before boarding</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to share your live trip status with trusted contacts" data-fr="Droit de partager votre statut de trajet en direct avec des contacts de confiance">Right to share your live trip status with trusted contacts</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to activate SOS emergency assistance at any time" data-fr="Droit d'activer l'assistance d'urgence SOS à tout moment">Right to activate SOS emergency assistance at any time</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to report unsafe driver behavior without retaliation" data-fr="Droit de signaler un comportement dangereux du chauffeur sans représailles">Right to report unsafe driver behavior without retaliation</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to cancel a ride if you feel unsafe" data-fr="Droit d'annuler un trajet si vous vous sentez en danger">Right to cancel a ride if you feel unsafe</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-bell"></i> <span data-en="SOS Emergency System" data-fr="Système SOS d'Urgence">SOS Emergency System</span></div>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-exclamation-circle"></i> <span data-en="How SOS Works" data-fr="Comment Fonctionne le SOS">How SOS Works</span></div>
+<div class="policy-highlight-text" data-en="Press and hold the SOS button for 3 seconds to activate emergency assistance. Your live GPS location is immediately sent to TheRain's Emergency Command Center. Admins can contact police, send voice messages, and monitor your location in real-time. A silent SOS mode is also available for discreet activation." data-fr="Appuyez et maintenez le bouton SOS pendant 3 secondes pour activer l'assistance d'urgence. Votre localisation GPS en direct est immédiatement envoyée au Centre de Commandement d'Urgence de TheRain.">Press and hold the SOS button for 3 seconds to activate emergency assistance. Your live GPS location is immediately sent to TheRain's Emergency Command Center. Admins can contact police, send voice messages, and monitor your location in real-time. A silent SOS mode is also available for discreet activation.</div>
+</div>
+<div class="policy-section-title"><i class="fas fa-star"></i> <span data-en="Trust Score System" data-fr="Système de Score de Confiance">Trust Score System</span></div>
+<div class="policy-text" data-en="Every rider has a Trust Score that reflects their behavior on the platform. A low trust score may result in service restrictions." data-fr="Chaque passager a un Score de Confiance qui reflète son comportement sur la plateforme. Un score de confiance faible peut entraîner des restrictions de service.">Every rider has a Trust Score that reflects their behavior on the platform. A low trust score may result in service restrictions.</div>
+<table class="policy-table">
+<tr><th data-en="Behavior" data-fr="Comportement">Behavior</th><th data-en="Impact on Trust Score" data-fr="Impact sur le Score de Confiance">Impact on Trust Score</th></tr>
+<tr><td data-en="Completing rides without issues" data-fr="Effectuer des trajets sans problèmes">Completing rides without issues</td><td style="color:#22C55E">+</td></tr>
+<tr><td data-en="Rating drivers fairly" data-fr="Évaluer les chauffeurs équitablement">Rating drivers fairly</td><td style="color:#22C55E">+</td></tr>
+<tr><td data-en="Frequent cancellations" data-fr="Annulations fréquentes">Frequent cancellations</td><td style="color:#EF4444">−</td></tr>
+<tr><td data-en="Complaints from drivers" data-fr="Plaintes des chauffeurs">Complaints from drivers</td><td style="color:#EF4444">−</td></tr>
+<tr><td data-en="Fraud attempts" data-fr="Tentatives de fraude">Fraud attempts</td><td style="color:#EF4444">−−</td></tr>
+</table>
+</div>
+</div>
+<!-- Fraud Prevention -->
+<div class="policy-section aos" id="fraud">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(168,85,247,0.1)"><i class="fas fa-robot" style="color:#A855F7"></i></div>
+<div class="policy-title" data-en="Fraud Prevention Policy — Rider" data-fr="Politique de Prévention de la Fraude — Passager">Fraud Prevention Policy — Rider</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="TheRain uses advanced AI systems to detect and prevent fraudulent activities. Our fraud detection system operates 24/7 to protect riders, drivers, and the platform." data-fr="TheRain utilise des systèmes d'IA avancés pour détecter et prévenir les activités frauduleuses. Notre système de détection de fraude fonctionne 24h/7j.">
+              TheRain uses advanced AI systems to detect and prevent fraudulent activities. Our fraud detection system operates 24/7 to protect riders, drivers, and the platform.
+            </div>
+<div class="policy-section-title"><i class="fas fa-search"></i> <span data-en="What Our AI Detects" data-fr="Ce que Notre IA Détecte">What Our AI Detects</span></div>
+<ul class="policy-list warning">
+<li><i class="fas fa-times-circle"></i><span data-en="Fake screenshots of payment confirmations" data-fr="Fausses captures d'écran de confirmations de paiement">Fake screenshots of payment confirmations</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="GPS manipulation or location spoofing" data-fr="Manipulation GPS ou usurpation de localisation">GPS manipulation or location spoofing</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Duplicate account creation to bypass restrictions" data-fr="Création de comptes en double pour contourner les restrictions">Duplicate account creation to bypass restrictions</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Suspicious payment patterns or chargebacks" data-fr="Modèles de paiement suspects ou rétrofacturations">Suspicious payment patterns or chargebacks</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Ride manipulation (fake trips, route tampering)" data-fr="Manipulation de trajet (faux trajets, altération d'itinéraire)">Ride manipulation (fake trips, route tampering)</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-exclamation-triangle"></i> <span data-en="Risk Levels &amp; Consequences" data-fr="Niveaux de Risque et Conséquences">Risk Levels &amp; Consequences</span></div>
+<table class="policy-table">
+<tr><th data-en="Risk Level" data-fr="Niveau de Risque">Risk Level</th><th data-en="Action Taken" data-fr="Action Prise">Action Taken</th></tr>
+<tr><td><span style="color:#22C55E;font-weight:600">LOW</span></td><td data-en="Warning notification sent" data-fr="Notification d'avertissement envoyée">Warning notification sent</td></tr>
+<tr><td><span style="color:#FACC15;font-weight:600">MEDIUM</span></td><td data-en="Account flagged for review" data-fr="Compte signalé pour examen">Account flagged for review</td></tr>
+<tr><td><span style="color:#F97316;font-weight:600">HIGH</span></td><td data-en="Temporary account suspension" data-fr="Suspension temporaire du compte">Temporary account suspension</td></tr>
+<tr><td><span style="color:#EF4444;font-weight:600">CRITICAL</span></td><td data-en="Permanent ban &amp; legal action" data-fr="Interdiction permanente et action en justice">Permanent ban &amp; legal action</td></tr>
+</table>
+</div>
+</div>
+<!-- Data Usage -->
+<div class="policy-section aos" id="data">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(0,198,255,0.1)"><i class="fas fa-database" style="color:#00C6FF"></i></div>
+<div class="policy-title" data-en="Data Usage Policy — Rider" data-fr="Politique d'Utilisation des Données — Passager">Data Usage Policy — Rider</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="TheRain collects and processes data to provide, improve, and secure our services. This policy explains how your data is used, stored, and protected in compliance with applicable Cameroonian data protection laws." data-fr="TheRain collecte et traite des données pour fournir, améliorer et sécuriser nos services. Cette politique explique comment vos données sont utilisées, stockées et protégées.">
+              TheRain collects and processes data to provide, improve, and secure our services. This policy explains how your data is used, stored, and protected in compliance with applicable Cameroonian data protection laws.
+            </div>
+<div class="policy-section-title"><i class="fas fa-user-cog"></i> <span data-en="Your Data Rights" data-fr="Vos Droits sur les Données">Your Data Rights</span></div>
+<ul class="policy-list success">
+<li><i class="fas fa-check-circle"></i><span data-en="Right to access your personal data stored by TheRain" data-fr="Droit d'accéder à vos données personnelles stockées par TheRain">Right to access your personal data stored by TheRain</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to request correction of inaccurate data" data-fr="Droit de demander la correction de données inexactes">Right to request correction of inaccurate data</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to request deletion of your account and data" data-fr="Droit de demander la suppression de votre compte et de vos données">Right to request deletion of your account and data</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to opt out of marketing communications" data-fr="Droit de vous désabonner des communications marketing">Right to opt out of marketing communications</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Right to data portability upon request" data-fr="Droit à la portabilité des données sur demande">Right to data portability upon request</span></li>
+</ul>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-lock"></i> <span data-en="Data Security" data-fr="Sécurité des Données">Data Security</span></div>
+<div class="policy-highlight-text" data-en="All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We use JWT authentication, device fingerprinting, and session monitoring to protect your account. Our systems are regularly audited for security vulnerabilities." data-fr="Toutes les données sont cryptées en transit (TLS 1.3) et au repos (AES-256). Nous utilisons l'authentification JWT, la prise d'empreintes digitales des appareils et la surveillance des sessions pour protéger votre compte.">All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We use JWT authentication, device fingerprinting, and session monitoring to protect your account. Our systems are regularly audited for security vulnerabilities.</div>
+</div>
+<div class="acceptance-box">
+<div class="acceptance-title" data-en="Agreement to Rider Policies" data-fr="Accord aux Politiques Passager">Agreement to Rider Policies</div>
+<div class="acceptance-text" data-en="By creating a TheRain account or using our services as a guest, you confirm that you have read, understood, and agree to all rider policies outlined above. These policies are effective as of June 2026." data-fr="En créant un compte TheRain ou en utilisant nos services en tant qu'invité, vous confirmez avoir lu, compris et accepté toutes les politiques passager décrites ci-dessus.">By creating a TheRain account or using our services as a guest, you confirm that you have read, understood, and agree to all rider policies outlined above. These policies are effective as of June 2026.</div>
+<a class="acceptance-btn" href="index.html#download"><i class="fas fa-download"></i> <span data-en="Download TheRain App" data-fr="Télécharger l'App TheRain">Download TheRain App</span></a>
+</div>
+</div>
+</div>
+</div><!-- end rider -->
+<!-- ==================== DRIVER SECTION ==================== -->
+<div class="role-section" id="driver">
+<!-- Privacy Policy Driver -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(10,132,255,0.1)"><i class="fas fa-lock" style="color:#0A84FF"></i></div>
+<div class="policy-title" data-en="Privacy Policy — Driver" data-fr="Politique de Confidentialité — Chauffeur">Privacy Policy — Driver</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="As a TheRain driver, you share sensitive personal and vehicle information with us. This policy explains how we collect, use, and protect your data throughout your partnership with TheRain." data-fr="En tant que chauffeur TheRain, vous partagez des informations personnelles et de véhicule sensibles avec nous. Cette politique explique comment nous collectons, utilisons et protégeons vos données.">
+              As a TheRain driver, you share sensitive personal and vehicle information with us. This policy explains how we collect, use, and protect your data throughout your partnership with TheRain.
+            </div>
+<div class="policy-section-title"><i class="fas fa-database"></i> <span data-en="Driver Data We Collect" data-fr="Données Chauffeur que Nous Collectons">Driver Data We Collect</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Full name, phone number, email, home address, and region" data-fr="Nom complet, numéro de téléphone, email, adresse domicile et région">Full name, phone number, email, home address, and region</span></li>
+<li><i class="fas fa-circle"></i><span data-en="National ID images and facial verification data" data-fr="Images de la carte nationale d'identité et données de vérification faciale">National ID images and facial verification data</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Driver's license information (OCR scanned)" data-fr="Informations du permis de conduire (scanné par OCR)">Driver's license information (OCR scanned)</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Vehicle information: model, plate number, VIN, insurance documents" data-fr="Informations sur le véhicule: modèle, numéro de plaque, VIN, documents d'assurance">Vehicle information: model, plate number, VIN, insurance documents</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Vehicle photos (front, rear, left, right, interior)" data-fr="Photos du véhicule (avant, arrière, gauche, droite, intérieur)">Vehicle photos (front, rear, left, right, interior)</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Real-time GPS location during active duty" data-fr="Localisation GPS en temps réel pendant le service actif">Real-time GPS location during active duty</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Earnings, ride history, and performance metrics" data-fr="Revenus, historique des trajets et métriques de performance">Earnings, ride history, and performance metrics</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Emergency contact information" data-fr="Informations de contact d'urgence">Emergency contact information</span></li>
+</ul>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-id-card"></i> <span data-en="Identity Verification Data" data-fr="Données de Vérification d'Identité">Identity Verification Data</span></div>
+<div class="policy-highlight-text" data-en="Your National ID, selfie, and facial matching data are used exclusively for identity verification purposes. This data is processed by our AI verification system and stored securely. It is never shared with third parties except when required by law enforcement." data-fr="Votre carte nationale d'identité, selfie et données de correspondance faciale sont utilisés exclusivement à des fins de vérification d'identité. Ces données sont traitées par notre système de vérification IA et stockées en toute sécurité.">Your National ID, selfie, and facial matching data are used exclusively for identity verification purposes. This data is processed by our AI verification system and stored securely. It is never shared with third parties except when required by law enforcement.</div>
+</div>
+</div>
+</div>
+<!-- Driver Terms of Service -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(34,197,94,0.1)"><i class="fas fa-file-contract" style="color:#22C55E"></i></div>
+<div class="policy-title" data-en="Terms of Service — Driver" data-fr="Conditions d'Utilisation — Chauffeur">Terms of Service — Driver</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="These terms govern your relationship with TheRain as an independent driver partner. By registering and operating as a TheRain driver, you agree to these terms in full." data-fr="Ces conditions régissent votre relation avec TheRain en tant que partenaire chauffeur indépendant. En vous inscrivant et en opérant en tant que chauffeur TheRain, vous acceptez ces conditions dans leur intégralité.">
+              These terms govern your relationship with TheRain as an independent driver partner. By registering and operating as a TheRain driver, you agree to these terms in full.
+            </div>
+<div class="policy-section-title"><i class="fas fa-clipboard-list"></i> <span data-en="Driver Registration Requirements" data-fr="Exigences d'Inscription du Chauffeur">Driver Registration Requirements</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Valid National ID (not expired)" data-fr="Carte nationale d'identité valide (non expirée)">Valid National ID (not expired)</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Valid driver's license for the vehicle category" data-fr="Permis de conduire valide pour la catégorie de véhicule">Valid driver's license for the vehicle category</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Vehicle insurance document (current and valid)" data-fr="Document d'assurance du véhicule (actuel et valide)">Vehicle insurance document (current and valid)</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Vehicle must pass TheRain quality inspection" data-fr="Le véhicule doit passer l'inspection qualité TheRain">Vehicle must pass TheRain quality inspection</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Successful AI verification and manual admin review" data-fr="Vérification IA réussie et examen manuel de l'administrateur">Successful AI verification and manual admin review</span></li>
+<li><i class="fas fa-circle"></i><span data-en="OTP activation after approval" data-fr="Activation OTP après approbation">OTP activation after approval</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-tasks"></i> <span data-en="Driver Operational Obligations" data-fr="Obligations Opérationnelles du Chauffeur">Driver Operational Obligations</span></div>
+<ul class="policy-list success">
+<li><i class="fas fa-check-circle"></i><span data-en="Maintain a clean, roadworthy, and properly branded vehicle" data-fr="Maintenir un véhicule propre, en bon état de marche et correctement marqué">Maintain a clean, roadworthy, and properly branded vehicle</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Follow all traffic laws and TheRain operational guidelines" data-fr="Respecter toutes les lois de la circulation et les directives opérationnelles de TheRain">Follow all traffic laws and TheRain operational guidelines</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Treat all riders with respect and professionalism" data-fr="Traiter tous les passagers avec respect et professionnalisme">Treat all riders with respect and professionalism</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Maintain CCTV equipment in working condition" data-fr="Maintenir l'équipement CCTV en bon état de fonctionnement">Maintain CCTV equipment in working condition</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Report any accidents, incidents, or safety concerns immediately" data-fr="Signaler immédiatement tout accident, incident ou préoccupation de sécurité">Report any accidents, incidents, or safety concerns immediately</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Keep license, insurance, and vehicle documents up to date" data-fr="Maintenir le permis, l'assurance et les documents du véhicule à jour">Keep license, insurance, and vehicle documents up to date</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-ban"></i> <span data-en="Prohibited Driver Conduct" data-fr="Conduite Interdite du Chauffeur">Prohibited Driver Conduct</span></div>
+<ul class="policy-list warning">
+<li><i class="fas fa-times-circle"></i><span data-en="Driving under the influence of alcohol or drugs" data-fr="Conduire sous l'influence de l'alcool ou de drogues">Driving under the influence of alcohol or drugs</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Sharing account credentials with other drivers" data-fr="Partager les identifiants de compte avec d'autres chauffeurs">Sharing account credentials with other drivers</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Tampering with or disabling CCTV equipment" data-fr="Altérer ou désactiver l'équipement CCTV">Tampering with or disabling CCTV equipment</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Soliciting cash payments outside the app" data-fr="Solliciter des paiements en espèces en dehors de l'application">Soliciting cash payments outside the app</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="GPS manipulation or route fraud" data-fr="Manipulation GPS ou fraude d'itinéraire">GPS manipulation or route fraud</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Harassment or inappropriate behavior towards riders" data-fr="Harcèlement ou comportement inapproprié envers les passagers">Harassment or inappropriate behavior towards riders</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-wallet"></i> <span data-en="Earnings &amp; Payments" data-fr="Revenus et Paiements">Earnings &amp; Payments</span></div>
+<table class="policy-table">
+<tr><th data-en="Item" data-fr="Élément">Item</th><th data-en="Details" data-fr="Détails">Details</th></tr>
+<tr><td data-en="Payment method" data-fr="Mode de paiement">Payment method</td><td data-en="MTN MOMO, Orange Money, or bank transfer" data-fr="MTN MOMO, Orange Money ou virement bancaire">MTN MOMO, Orange Money, or bank transfer</td></tr>
+<tr><td data-en="Payment frequency" data-fr="Fréquence de paiement">Payment frequency</td><td data-en="Daily withdrawals available" data-fr="Retraits quotidiens disponibles">Daily withdrawals available</td></tr>
+<tr><td data-en="TheRain commission" data-fr="Commission TheRain">TheRain commission</td><td data-en="As per regional pricing agreement" data-fr="Selon l'accord de tarification régionale">As per regional pricing agreement</td></tr>
+<tr><td data-en="Dispute resolution" data-fr="Résolution des litiges">Dispute resolution</td><td data-en="Within 72 hours via support" data-fr="Dans les 72 heures via le support">Within 72 hours via support</td></tr>
+</table>
+</div>
+</div>
+<!-- Driver CCTV Policy -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(250,204,21,0.1)"><i class="fas fa-video" style="color:#FACC15"></i></div>
+<div class="policy-title" data-en="CCTV Monitoring Terms — Driver" data-fr="Conditions de Surveillance CCTV — Chauffeur">CCTV Monitoring Terms — Driver</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="As a TheRain driver, your vehicle must be equipped with approved CCTV devices. By accepting these terms, you consent to continuous monitoring of your vehicle during active duty." data-fr="En tant que chauffeur TheRain, votre véhicule doit être équipé d'appareils CCTV approuvés. En acceptant ces conditions, vous consentez à la surveillance continue de votre véhicule pendant le service actif.">
+              As a TheRain driver, your vehicle must be equipped with approved CCTV devices. By accepting these terms, you consent to continuous monitoring of your vehicle during active duty.
+            </div>
+<div class="policy-section-title"><i class="fas fa-camera"></i> <span data-en="Approved CCTV Devices" data-fr="Appareils CCTV Approuvés">Approved CCTV Devices</span></div>
+<ul class="policy-list success">
+<li><i class="fas fa-check-circle"></i><span>Jimi IoT JC400 (Recommended)</span></li>
+<li><i class="fas fa-check-circle"></i><span>Jimi IoT JC261</span></li>
+<li><i class="fas fa-check-circle"></i><span>Jimi IoT JC450</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-wifi"></i> <span data-en="CCTV Requirements" data-fr="Exigences CCTV">CCTV Requirements</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Device must support LTE/4G connectivity" data-fr="L'appareil doit prendre en charge la connectivité LTE/4G">Device must support LTE/4G connectivity</span></li>
+<li><i class="fas fa-circle"></i><span data-en="GPS tracking must be active during all rides" data-fr="Le suivi GPS doit être actif pendant tous les trajets">GPS tracking must be active during all rides</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Both interior and exterior cameras must be functional" data-fr="Les caméras intérieures et extérieures doivent être fonctionnelles">Both interior and exterior cameras must be functional</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Emergency upload capability must be enabled" data-fr="La capacité de téléchargement d'urgence doit être activée">Emergency upload capability must be enabled</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Device must be connected to TheRain secure gateway" data-fr="L'appareil doit être connecté à la passerelle sécurisée TheRain">Device must be connected to TheRain secure gateway</span></li>
+</ul>
+<div class="policy-warning">
+<div class="policy-warning-title"><i class="fas fa-exclamation-triangle"></i> <span data-en="CCTV Tampering Warning" data-fr="Avertissement de Falsification CCTV">CCTV Tampering Warning</span></div>
+<div class="policy-warning-text" data-en="Tampering with, disabling, or obstructing CCTV equipment is a serious violation that will result in immediate account suspension and potential legal action. TheRain monitors CCTV connection status in real-time." data-fr="La falsification, la désactivation ou l'obstruction de l'équipement CCTV est une violation grave qui entraînera une suspension immédiate du compte et des poursuites judiciaires potentielles.">Tampering with, disabling, or obstructing CCTV equipment is a serious violation that will result in immediate account suspension and potential legal action. TheRain monitors CCTV connection status in real-time.</div>
+</div>
+</div>
+</div>
+<!-- Driver Safety -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(239,68,68,0.1)"><i class="fas fa-shield-alt" style="color:#EF4444"></i></div>
+<div class="policy-title" data-en="Safety Policies — Driver" data-fr="Politiques de Sécurité — Chauffeur">Safety Policies — Driver</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="TheRain is committed to the safety of our driver partners. These policies outline the safety standards, emergency procedures, and support systems available to all TheRain drivers." data-fr="TheRain s'engage pour la sécurité de nos partenaires chauffeurs. Ces politiques décrivent les normes de sécurité, les procédures d'urgence et les systèmes de soutien disponibles pour tous les chauffeurs TheRain.">
+              TheRain is committed to the safety of our driver partners. These policies outline the safety standards, emergency procedures, and support systems available to all TheRain drivers.
+            </div>
+<div class="policy-section-title"><i class="fas fa-bell"></i> <span data-en="Driver SOS System" data-fr="Système SOS Chauffeur">Driver SOS System</span></div>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-exclamation-circle"></i> <span data-en="SOS Activation" data-fr="Activation SOS">SOS Activation</span></div>
+<div class="policy-highlight-text" data-en="Press the SOS button in the driver app to immediately alert TheRain's Emergency Command Center. Your live GPS location is displayed on the admin dashboard. Admins can send messages, voice recordings, contact police, and monitor your route in real-time. A silent SOS mode is available for discreet activation when a passenger should not detect the emergency." data-fr="Appuyez sur le bouton SOS dans l'application chauffeur pour alerter immédiatement le Centre de Commandement d'Urgence de TheRain. Votre localisation GPS en direct est affichée sur le tableau de bord administrateur.">Press the SOS button in the driver app to immediately alert TheRain's Emergency Command Center. Your live GPS location is displayed on the admin dashboard. Admins can send messages, voice recordings, contact police, and monitor your route in real-time. A silent SOS mode is available for discreet activation when a passenger should not detect the emergency.</div>
+</div>
+<div class="policy-section-title"><i class="fas fa-star"></i> <span data-en="Driver Trust Score" data-fr="Score de Confiance Chauffeur">Driver Trust Score</span></div>
+<table class="policy-table">
+<tr><th data-en="Factor" data-fr="Facteur">Factor</th><th data-en="Impact" data-fr="Impact">Impact</th></tr>
+<tr><td data-en="High rider ratings (4.5+)" data-fr="Notes élevées des passagers (4.5+)">High rider ratings (4.5+)</td><td style="color:#22C55E">Positive</td></tr>
+<tr><td data-en="Completing scheduled rides" data-fr="Effectuer les trajets programmés">Completing scheduled rides</td><td style="color:#22C55E">Positive</td></tr>
+<tr><td data-en="Zero safety incidents" data-fr="Zéro incident de sécurité">Zero safety incidents</td><td style="color:#22C55E">Positive</td></tr>
+<tr><td data-en="Rider complaints" data-fr="Plaintes des passagers">Rider complaints</td><td style="color:#EF4444">Negative</td></tr>
+<tr><td data-en="Policy violations" data-fr="Violations de politique">Policy violations</td><td style="color:#EF4444">Negative</td></tr>
+<tr><td data-en="CCTV disconnection" data-fr="Déconnexion CCTV">CCTV disconnection</td><td style="color:#EF4444">Negative</td></tr>
+</table>
+<div class="policy-section-title"><i class="fas fa-tools"></i> <span data-en="Vehicle Maintenance Requirements" data-fr="Exigences de Maintenance du Véhicule">Vehicle Maintenance Requirements</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Vehicle must be clean and presentable at all times" data-fr="Le véhicule doit être propre et présentable en tout temps">Vehicle must be clean and presentable at all times</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Regular maintenance checks as per manufacturer schedule" data-fr="Contrôles de maintenance réguliers selon le calendrier du fabricant">Regular maintenance checks as per manufacturer schedule</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Respond to AI maintenance alerts within 48 hours" data-fr="Répondre aux alertes de maintenance IA dans les 48 heures">Respond to AI maintenance alerts within 48 hours</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Insurance must remain valid and up to date" data-fr="L'assurance doit rester valide et à jour">Insurance must remain valid and up to date</span></li>
+</ul>
+</div>
+</div>
+<!-- Driver Fraud Prevention -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(168,85,247,0.1)"><i class="fas fa-robot" style="color:#A855F7"></i></div>
+<div class="policy-title" data-en="Fraud Prevention Policy — Driver" data-fr="Politique de Prévention de la Fraude — Chauffeur">Fraud Prevention Policy — Driver</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="TheRain's AI fraud detection system continuously monitors driver activity to ensure platform integrity. Drivers found engaging in fraudulent activities face immediate consequences." data-fr="Le système de détection de fraude IA de TheRain surveille en permanence l'activité des chauffeurs pour assurer l'intégrité de la plateforme.">
+              TheRain's AI fraud detection system continuously monitors driver activity to ensure platform integrity. Drivers found engaging in fraudulent activities face immediate consequences.
+            </div>
+<div class="policy-section-title"><i class="fas fa-search"></i> <span data-en="Monitored Activities" data-fr="Activités Surveillées">Monitored Activities</span></div>
+<ul class="policy-list warning">
+<li><i class="fas fa-times-circle"></i><span data-en="GPS spoofing or fake location reporting" data-fr="Usurpation GPS ou signalement de fausse localisation">GPS spoofing or fake location reporting</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Fake trip completion without actual rides" data-fr="Fausse complétion de trajet sans trajets réels">Fake trip completion without actual rides</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Account sharing with unauthorized drivers" data-fr="Partage de compte avec des chauffeurs non autorisés">Account sharing with unauthorized drivers</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Submitting false documents during registration" data-fr="Soumettre de faux documents lors de l'inscription">Submitting false documents during registration</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Manipulating ride routes to inflate fares" data-fr="Manipuler les itinéraires de trajet pour gonfler les tarifs">Manipulating ride routes to inflate fares</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-user-lock"></i> <span data-en="Registration Security" data-fr="Sécurité d'Inscription">Registration Security</span></div>
+<div class="policy-warning">
+<div class="policy-warning-title"><i class="fas fa-exclamation-triangle"></i> <span data-en="Failed Verification Policy" data-fr="Politique d'Échec de Vérification">Failed Verification Policy</span></div>
+<div class="policy-warning-text" data-en="5 failed verification attempts will result in a temporary 24-hour registration suspension. TheRain tracks IP addresses, device fingerprints, and registration logs to prevent fraudulent registrations. Drivers attempting to register with fake IDs or duplicate accounts will be permanently banned." data-fr="5 tentatives de vérification échouées entraîneront une suspension temporaire de l'inscription de 24 heures. TheRain suit les adresses IP, les empreintes digitales des appareils et les journaux d'inscription.">5 failed verification attempts will result in a temporary 24-hour registration suspension. TheRain tracks IP addresses, device fingerprints, and registration logs to prevent fraudulent registrations. Drivers attempting to register with fake IDs or duplicate accounts will be permanently banned.</div>
+</div>
+<div class="acceptance-box">
+<div class="acceptance-title" data-en="Agreement to Driver Policies" data-fr="Accord aux Politiques Chauffeur">Agreement to Driver Policies</div>
+<div class="acceptance-text" data-en="By registering as a TheRain driver, you confirm that you have read, understood, and agree to all driver policies. Violation of these policies may result in account suspension, earnings withholding, or legal action." data-fr="En vous inscrivant en tant que chauffeur TheRain, vous confirmez avoir lu, compris et accepté toutes les politiques chauffeur.">By registering as a TheRain driver, you confirm that you have read, understood, and agree to all driver policies. Violation of these policies may result in account suspension, earnings withholding, or legal action.</div>
+<a class="acceptance-btn" href="index.html#download"><i class="fas fa-car"></i> <span data-en="Register as Driver" data-fr="S'inscrire comme Chauffeur">Register as Driver</span></a>
+</div>
+</div>
+</div>
+</div><!-- end driver -->
+<!-- ==================== FLEET MANAGER SECTION ==================== -->
+<div class="role-section" id="fleet">
+<!-- Fleet Privacy -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(10,132,255,0.1)"><i class="fas fa-lock" style="color:#0A84FF"></i></div>
+<div class="policy-title" data-en="Privacy Policy — Fleet Manager" data-fr="Politique de Confidentialité — Gestionnaire de Flotte">Privacy Policy — Fleet Manager</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="As a Fleet Manager on TheRain, you have access to sensitive operational data for your fleet. This policy outlines how your data and your fleet's data is collected, used, and protected." data-fr="En tant que Gestionnaire de Flotte sur TheRain, vous avez accès à des données opérationnelles sensibles pour votre flotte. Cette politique décrit comment vos données et celles de votre flotte sont collectées, utilisées et protégées.">
+              As a Fleet Manager on TheRain, you have access to sensitive operational data for your fleet. This policy outlines how your data and your fleet's data is collected, used, and protected.
+            </div>
+<div class="policy-section-title"><i class="fas fa-database"></i> <span data-en="Fleet Data We Collect" data-fr="Données de Flotte que Nous Collectons">Fleet Data We Collect</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Fleet owner and manager personal information" data-fr="Informations personnelles du propriétaire et gestionnaire de flotte">Fleet owner and manager personal information</span></li>
+<li><i class="fas fa-circle"></i><span data-en="All vehicle information: VIN, plate numbers, insurance, categories" data-fr="Toutes les informations sur les véhicules: VIN, numéros de plaque, assurance, catégories">All vehicle information: VIN, plate numbers, insurance, categories</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Driver assignments and performance data" data-fr="Affectations des chauffeurs et données de performance">Driver assignments and performance data</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Fleet earnings, trip history, and analytics" data-fr="Revenus de la flotte, historique des trajets et analyses">Fleet earnings, trip history, and analytics</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Vehicle maintenance records and repair logs" data-fr="Registres de maintenance des véhicules et journaux de réparation">Vehicle maintenance records and repair logs</span></li>
+<li><i class="fas fa-circle"></i><span data-en="CCTV device information and connection logs" data-fr="Informations sur les appareils CCTV et journaux de connexion">CCTV device information and connection logs</span></li>
+</ul>
+</div>
+</div>
+<!-- Fleet Terms of Service -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(34,197,94,0.1)"><i class="fas fa-file-contract" style="color:#22C55E"></i></div>
+<div class="policy-title" data-en="Terms of Service — Fleet Manager" data-fr="Conditions d'Utilisation — Gestionnaire de Flotte">Terms of Service — Fleet Manager</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="These terms govern the relationship between TheRain and Fleet Managers operating on our platform. Fleet Managers are responsible for their vehicles, assigned drivers, and overall fleet compliance." data-fr="Ces conditions régissent la relation entre TheRain et les Gestionnaires de Flotte opérant sur notre plateforme. Les Gestionnaires de Flotte sont responsables de leurs véhicules, des chauffeurs assignés et de la conformité globale de la flotte.">
+              These terms govern the relationship between TheRain and Fleet Managers operating on our platform. Fleet Managers are responsible for their vehicles, assigned drivers, and overall fleet compliance.
+            </div>
+<div class="policy-section-title"><i class="fas fa-tasks"></i> <span data-en="Fleet Manager Responsibilities" data-fr="Responsabilités du Gestionnaire de Flotte">Fleet Manager Responsibilities</span></div>
+<ul class="policy-list success">
+<li><i class="fas fa-check-circle"></i><span data-en="Ensure all fleet vehicles meet TheRain quality and safety standards" data-fr="S'assurer que tous les véhicules de la flotte respectent les normes de qualité et de sécurité de TheRain">Ensure all fleet vehicles meet TheRain quality and safety standards</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Verify that all assigned drivers are properly registered and approved" data-fr="Vérifier que tous les chauffeurs assignés sont correctement inscrits et approuvés">Verify that all assigned drivers are properly registered and approved</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Maintain valid insurance for all fleet vehicles" data-fr="Maintenir une assurance valide pour tous les véhicules de la flotte">Maintain valid insurance for all fleet vehicles</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Ensure CCTV equipment is installed and operational in all vehicles" data-fr="S'assurer que l'équipement CCTV est installé et opérationnel dans tous les véhicules">Ensure CCTV equipment is installed and operational in all vehicles</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Monitor driver performance and address complaints promptly" data-fr="Surveiller les performances des chauffeurs et traiter les plaintes rapidement">Monitor driver performance and address complaints promptly</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Maintain accurate vehicle and driver records at all times" data-fr="Maintenir des registres précis des véhicules et des chauffeurs en tout temps">Maintain accurate vehicle and driver records at all times</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-chart-bar"></i> <span data-en="Fleet Analytics &amp; Reporting" data-fr="Analyses et Rapports de Flotte">Fleet Analytics &amp; Reporting</span></div>
+<div class="policy-text" data-en="Fleet Managers have access to comprehensive analytics through the TheRain Fleet Dashboard including:" data-fr="Les Gestionnaires de Flotte ont accès à des analyses complètes via le Tableau de Bord de Flotte TheRain, notamment:">Fleet Managers have access to comprehensive analytics through the TheRain Fleet Dashboard including:</div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Real-time vehicle locations and status" data-fr="Localisations et statuts des véhicules en temps réel">Real-time vehicle locations and status</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Driver performance metrics and trust scores" data-fr="Métriques de performance des chauffeurs et scores de confiance">Driver performance metrics and trust scores</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Fleet earnings breakdown and financial reports" data-fr="Répartition des revenus de la flotte et rapports financiers">Fleet earnings breakdown and financial reports</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Maintenance alerts and vehicle health reports" data-fr="Alertes de maintenance et rapports de santé des véhicules">Maintenance alerts and vehicle health reports</span></li>
+<li><i class="fas fa-circle"></i><span data-en="CCTV connection status for all fleet vehicles" data-fr="Statut de connexion CCTV pour tous les véhicules de la flotte">CCTV connection status for all fleet vehicles</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-ban"></i> <span data-en="Prohibited Fleet Activities" data-fr="Activités de Flotte Interdites">Prohibited Fleet Activities</span></div>
+<ul class="policy-list warning">
+<li><i class="fas fa-times-circle"></i><span data-en="Operating unregistered or uninsured vehicles on TheRain" data-fr="Exploiter des véhicules non enregistrés ou non assurés sur TheRain">Operating unregistered or uninsured vehicles on TheRain</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Assigning rides to unapproved or suspended drivers" data-fr="Attribuer des trajets à des chauffeurs non approuvés ou suspendus">Assigning rides to unapproved or suspended drivers</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Manipulating fleet earnings or payment records" data-fr="Manipuler les revenus de la flotte ou les registres de paiement">Manipulating fleet earnings or payment records</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Disabling or tampering with CCTV systems" data-fr="Désactiver ou altérer les systèmes CCTV">Disabling or tampering with CCTV systems</span></li>
+<li><i class="fas fa-times-circle"></i><span data-en="Sharing fleet dashboard access with unauthorized persons" data-fr="Partager l'accès au tableau de bord de la flotte avec des personnes non autorisées">Sharing fleet dashboard access with unauthorized persons</span></li>
+</ul>
+</div>
+</div>
+<!-- Fleet CCTV -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(250,204,21,0.1)"><i class="fas fa-video" style="color:#FACC15"></i></div>
+<div class="policy-title" data-en="CCTV Policy — Fleet Manager" data-fr="Politique CCTV — Gestionnaire de Flotte">CCTV Policy — Fleet Manager</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="Fleet Managers are responsible for ensuring all fleet vehicles are equipped with TheRain-approved CCTV systems. This policy outlines your obligations and access rights regarding fleet surveillance." data-fr="Les Gestionnaires de Flotte sont responsables de s'assurer que tous les véhicules de la flotte sont équipés de systèmes CCTV approuvés par TheRain.">
+              Fleet Managers are responsible for ensuring all fleet vehicles are equipped with TheRain-approved CCTV systems. This policy outlines your obligations and access rights regarding fleet surveillance.
+            </div>
+<div class="policy-section-title"><i class="fas fa-eye"></i> <span data-en="Fleet Manager CCTV Access" data-fr="Accès CCTV du Gestionnaire de Flotte">Fleet Manager CCTV Access</span></div>
+<table class="policy-table">
+<tr><th data-en="Access Type" data-fr="Type d'Accès">Access Type</th><th data-en="Fleet Manager" data-fr="Gestionnaire de Flotte">Fleet Manager</th></tr>
+<tr><td data-en="Live streams of own fleet vehicles" data-fr="Flux en direct des véhicules de sa propre flotte">Live streams of own fleet vehicles</td><td style="color:#22C55E">✓ Allowed</td></tr>
+<tr><td data-en="Incident playback for own fleet" data-fr="Lecture d'incidents pour sa propre flotte">Incident playback for own fleet</td><td style="color:#22C55E">✓ Allowed</td></tr>
+<tr><td data-en="Emergency footage access" data-fr="Accès aux séquences d'urgence">Emergency footage access</td><td style="color:#22C55E">✓ Allowed</td></tr>
+<tr><td data-en="Access to other fleets' footage" data-fr="Accès aux séquences d'autres flottes">Access to other fleets' footage</td><td style="color:#EF4444">✗ Not Allowed</td></tr>
+<tr><td data-en="Delete or modify footage" data-fr="Supprimer ou modifier les séquences">Delete or modify footage</td><td style="color:#EF4444">✗ Not Allowed</td></tr>
+</table>
+<div class="policy-section-title"><i class="fas fa-tools"></i> <span data-en="CCTV Installation Requirements" data-fr="Exigences d'Installation CCTV">CCTV Installation Requirements</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="All fleet vehicles must have CCTV installed before first ride" data-fr="Tous les véhicules de la flotte doivent avoir le CCTV installé avant le premier trajet">All fleet vehicles must have CCTV installed before first ride</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Installation must be done by TheRain-certified technicians" data-fr="L'installation doit être effectuée par des techniciens certifiés TheRain">Installation must be done by TheRain-certified technicians</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Regular maintenance checks every 3 months" data-fr="Contrôles de maintenance réguliers tous les 3 mois">Regular maintenance checks every 3 months</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Immediate reporting of any CCTV malfunction" data-fr="Signalement immédiat de tout dysfonctionnement CCTV">Immediate reporting of any CCTV malfunction</span></li>
+</ul>
+</div>
+</div>
+<!-- Fleet Safety -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(239,68,68,0.1)"><i class="fas fa-shield-alt" style="color:#EF4444"></i></div>
+<div class="policy-title" data-en="Safety Policies — Fleet Manager" data-fr="Politiques de Sécurité — Gestionnaire de Flotte">Safety Policies — Fleet Manager</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="Fleet Managers play a critical role in maintaining safety standards across their fleet. These policies outline the safety requirements and emergency procedures for fleet operations." data-fr="Les Gestionnaires de Flotte jouent un rôle essentiel dans le maintien des normes de sécurité au sein de leur flotte. Ces politiques décrivent les exigences de sécurité et les procédures d'urgence pour les opérations de flotte.">
+              Fleet Managers play a critical role in maintaining safety standards across their fleet. These policies outline the safety requirements and emergency procedures for fleet operations.
+            </div>
+<div class="policy-section-title"><i class="fas fa-car-crash"></i> <span data-en="Incident Response Protocol" data-fr="Protocole de Réponse aux Incidents">Incident Response Protocol</span></div>
+<ul class="policy-list">
+<li><i class="fas fa-circle"></i><span data-en="Immediately notify TheRain support of any accident or incident" data-fr="Notifier immédiatement le support TheRain de tout accident ou incident">Immediately notify TheRain support of any accident or incident</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Ensure driver activates SOS if emergency assistance is needed" data-fr="S'assurer que le chauffeur active le SOS si une assistance d'urgence est nécessaire">Ensure driver activates SOS if emergency assistance is needed</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Preserve all CCTV footage related to the incident" data-fr="Préserver toutes les séquences CCTV liées à l'incident">Preserve all CCTV footage related to the incident</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Cooperate fully with TheRain's investigation team" data-fr="Coopérer pleinement avec l'équipe d'enquête de TheRain">Cooperate fully with TheRain's investigation team</span></li>
+<li><i class="fas fa-circle"></i><span data-en="Submit incident report within 24 hours" data-fr="Soumettre un rapport d'incident dans les 24 heures">Submit incident report within 24 hours</span></li>
+</ul>
+<div class="policy-section-title"><i class="fas fa-user-check"></i> <span data-en="Driver Safety Monitoring" data-fr="Surveillance de la Sécurité des Chauffeurs">Driver Safety Monitoring</span></div>
+<div class="policy-highlight">
+<div class="policy-highlight-title"><i class="fas fa-chart-line"></i> <span data-en="Fleet Manager Obligations" data-fr="Obligations du Gestionnaire de Flotte">Fleet Manager Obligations</span></div>
+<div class="policy-highlight-text" data-en="Fleet Managers must actively monitor driver trust scores and performance metrics. Drivers with trust scores below 60 must be reviewed and retrained. Drivers with scores below 40 must be temporarily suspended from the fleet pending investigation." data-fr="Les Gestionnaires de Flotte doivent surveiller activement les scores de confiance et les métriques de performance des chauffeurs. Les chauffeurs avec des scores de confiance inférieurs à 60 doivent être examinés et recyclés.">Fleet Managers must actively monitor driver trust scores and performance metrics. Drivers with trust scores below 60 must be reviewed and retrained. Drivers with scores below 40 must be temporarily suspended from the fleet pending investigation.</div>
+</div>
+</div>
+</div>
+<!-- Fleet Fraud Prevention -->
+<div class="policy-section aos">
+<div class="policy-header" onclick="togglePolicy(this)">
+<div class="policy-icon" style="background:rgba(168,85,247,0.1)"><i class="fas fa-robot" style="color:#A855F7"></i></div>
+<div class="policy-title" data-en="Fraud Prevention Policy — Fleet Manager" data-fr="Politique de Prévention de la Fraude — Gestionnaire de Flotte">Fraud Prevention Policy — Fleet Manager</div>
+<i class="fas fa-chevron-down policy-toggle open"></i>
+</div>
+<div class="policy-body">
+<div class="policy-intro" data-en="Fleet Managers are held to the highest standards of integrity on the TheRain platform. Any fraudulent activity within a fleet is the responsibility of the Fleet Manager." data-fr="Les Gestionnaires de Flotte sont tenus aux normes d'intégrité les plus élevées sur la plateforme TheRain. Toute activité frauduleuse au sein d'une flotte est de la responsabilité du Gestionnaire de Flotte.">
+              Fleet Managers are held to the highest standards of integrity on the TheRain platform. Any fraudulent activity within a fleet is the responsibility of the Fleet Manager.
+            </div>
+<div class="policy-section-title"><i class="fas fa-exclamation-triangle"></i> <span data-en="Fleet Fraud Consequences" data-fr="Conséquences de la Fraude de Flotte">Fleet Fraud Consequences</span></div>
+<table class="policy-table">
+<tr><th data-en="Violation" data-fr="Violation">Violation</th><th data-en="Consequence" data-fr="Conséquence">Consequence</th></tr>
+<tr><td data-en="First offense (minor)" data-fr="Première infraction (mineure)">First offense (minor)</td><td data-en="Warning + mandatory review" data-fr="Avertissement + examen obligatoire">Warning + mandatory review</td></tr>
+<tr><td data-en="Second offense" data-fr="Deuxième infraction">Second offense</td><td data-en="Fleet suspension (7 days)" data-fr="Suspension de la flotte (7 jours)">Fleet suspension (7 days)</td></tr>
+<tr><td data-en="Third offense" data-fr="Troisième infraction">Third offense</td><td data-en="Fleet suspension (30 days) + fine" data-fr="Suspension de la flotte (30 jours) + amende">Fleet suspension (30 days) + fine</td></tr>
+<tr><td data-en="Critical fraud" data-fr="Fraude critique">Critical fraud</td><td data-en="Permanent ban + legal action" data-fr="Interdiction permanente + action en justice">Permanent ban + legal action</td></tr>
+</table>
+<div class="acceptance-box">
+<div class="acceptance-title" data-en="Agreement to Fleet Manager Policies" data-fr="Accord aux Politiques du Gestionnaire de Flotte">Agreement to Fleet Manager Policies</div>
+<div class="acceptance-text" data-en="By registering as a TheRain Fleet Manager, you confirm that you have read, understood, and agree to all fleet management policies. You accept full responsibility for your fleet's compliance with TheRain standards." data-fr="En vous inscrivant en tant que Gestionnaire de Flotte TheRain, vous confirmez avoir lu, compris et accepté toutes les politiques de gestion de flotte.">By registering as a TheRain Fleet Manager, you confirm that you have read, understood, and agree to all fleet management policies. You accept full responsibility for your fleet's compliance with TheRain standards.</div>
+<a class="acceptance-btn" href="index.html#contact"><i class="fas fa-truck"></i> <span data-en="Register Your Fleet" data-fr="Enregistrer Votre Flotte">Register Your Fleet</span></a>
+</div>
+</div>
+</div>
+</div><!-- end fleet -->
+</div><!-- end main -->
+</div><!-- end layout -->
+</div><!-- end content -->
+<!-- FOOTER -->
+<footer class="terms-footer">
+<div class="terms-footer-text">© 2026 <span>TheRain</span>. <span data-en="All rights reserved. Made with love in Cameroon" data-fr="Tous droits réservés. Fait avec amour au Cameroun">All rights reserved. Made with love in Cameroon</span> 🇨🇲</div>
+<div class="terms-footer-links">
+<a data-en="Home" data-fr="Accueil" href="index.html">Home</a>
+<a data-en="Contact" data-fr="Contact" href="index.html#contact">Contact</a>
+<a data-en="Download App" data-fr="Télécharger" href="index.html#download">Download App</a>
+</div>
+</footer>
+<script>
+// TAB SWITCHING
+function switchTab(role) {
+  document.querySelectorAll('.role-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(role).classList.add('active');
+  document.getElementById('tab-' + role).classList.add('active');
+  window.scrollTo({top: document.querySelector('.tab-nav').offsetTop - 72, behavior: 'smooth'});
+}
+
+// POLICY TOGGLE (collapse/expand)
+function togglePolicy(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.policy-toggle');
+  body.classList.toggle('collapsed');
+  toggle.classList.toggle('open');
+}
+
+// THEME
+const LOGO_DARK = "images/logo_dark.png";
+const LOGO_LIGHT = "images/logo_light.png";
+
+function updateLogos(theme) {
+  const logos = document.querySelectorAll('.nav-logo-img');
+  logos.forEach(img => {
+    img.src = theme === 'dark' ? LOGO_DARK_T : LOGO_LIGHT_T;
+  });
+}
+
+function toggleTheme() {
+  const h = document.documentElement;
+  const i = document.getElementById('themeIcon');
+  if(h.getAttribute('data-theme') === 'dark') {
+    h.setAttribute('data-theme', 'light');
+    i.className = 'fas fa-moon';
+    updateLogos('light');
+  } else {
+    h.setAttribute('data-theme', 'dark');
+    i.className = 'fas fa-sun';
+    updateLogos('dark');
+  }
+}
+
+// LANGUAGE
+let lang = 'en';
+function toggleLang() {
+  lang = lang === 'en' ? 'fr' : 'en';
+  document.getElementById('langLabel').textContent = lang === 'en' ? 'FR' : 'EN';
+  document.documentElement.setAttribute('data-lang', lang);
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const t = el.getAttribute('data-' + lang);
+    if(t) el.innerHTML = t;
+  });
+}
+
+// SCROLL ANIMATIONS
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.aos').forEach(el => obs.observe(el));
+
+// NAVBAR SCROLL
+window.addEventListener('scroll', () => {
+  const n = document.querySelector('.navbar');
+  n.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
+});
+
+// SMOOTH SCROLL for sidebar links
+document.querySelectorAll('.sidebar-links a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+  });
+});
+</script>
+</body>
+</html>

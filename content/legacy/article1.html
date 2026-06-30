@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html data-lang="en" data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/png" href="images/favicon.png"/>
+<link rel="apple-touch-icon" href="images/favicon.png"/>
+<title>TheRain Launches in Yaoundé — TheRain Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+:root { --primary:#0A84FF; --cyan:#00C6FF; --navy:#0A1A33; --green:#22C55E; --yellow:#FACC15; --red:#EF4444; }
+[data-theme="dark"] { --bg:#060E1F; --bg2:#0A1A33; --card:#0D2244; --text:#FFFFFF; --text2:rgba(255,255,255,0.7); --text3:rgba(255,255,255,0.4); --border:rgba(255,255,255,0.08); --nav-bg:rgba(6,14,31,0.95); --input-bg:rgba(255,255,255,0.05); }
+[data-theme="light"] { --bg:#F0F4F8; --bg2:#FFFFFF; --card:#FFFFFF; --text:#0A1A33; --text2:#4A5568; --text3:#94A3B8; --border:rgba(10,26,51,0.08); --nav-bg:rgba(255,255,255,0.95); --input-bg:rgba(10,26,51,0.04); }
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); transition:background 0.4s,color 0.4s; }
+::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:var(--bg)} ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-brand-the{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--text);}
+.nav-brand-rain{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--primary);}
+.nav-controls{display:flex;align-items:center;gap:10px;}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none;}
+.btn-theme{background:var(--input-bg);color:var(--text2);border:1px solid var(--border)!important;width:40px;height:40px;padding:0;justify-content:center;}
+.btn-back{background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;text-decoration:none;}
+.btn-back:hover{transform:translateY(-2px);}
+.article-hero{padding:120px 5% 60px;background:linear-gradient(135deg,#0A1A33,#0A2A4A);position:relative;overflow:hidden;}
+.article-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(10,132,255,0.12),transparent);border-radius:50%;}
+.article-hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center;}
+.article-cat{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.15);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:0.5px;text-transform:uppercase;}
+.article-title{font-size:clamp(28px,4vw,48px);font-weight:800;color:white;line-height:1.2;margin-bottom:20px;}
+.article-meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.article-meta-item{display:flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.5);}
+.article-meta-item i{color:#00C6FF;}
+.article-cover{width:100%;max-height:500px;object-fit:cover;display:block;}
+.article-body{max-width:800px;margin:0 auto;padding:60px 5%;}
+.article-intro{font-family:'Inter',sans-serif;font-size:18px;color:var(--text2);line-height:1.8;margin-bottom:32px;padding:20px 24px;background:rgba(10,132,255,0.06);border-left:4px solid var(--primary);border-radius:0 12px 12px 0;}
+.article-h2{font-size:24px;font-weight:700;color:var(--text);margin:36px 0 16px;}
+.article-p{font-family:'Inter',sans-serif;font-size:16px;color:var(--text2);line-height:1.8;margin-bottom:20px;}
+.article-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+.article-list li{display:flex;align-items:flex-start;gap:10px;font-family:'Inter',sans-serif;font-size:15px;color:var(--text2);line-height:1.6;}
+.article-list li i{color:var(--primary);margin-top:4px;flex-shrink:0;}
+.article-highlight{background:rgba(10,132,255,0.08);border:1px solid rgba(10,132,255,0.15);border-radius:14px;padding:20px 24px;margin:24px 0;}
+.article-highlight-title{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;}
+.article-highlight-text{font-family:'Inter',sans-serif;font-size:15px;color:var(--text2);line-height:1.7;}
+.article-divider{height:1px;background:var(--border);margin:36px 0;}
+.article-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.article-tag{background:var(--input-bg);border:1px solid var(--border);color:var(--text3);font-family:'Inter',sans-serif;font-size:12px;padding:4px 12px;border-radius:20px;}
+.related-section{background:var(--bg2);padding:60px 5%;}
+.related-title{font-size:24px;font-weight:700;color:var(--text);margin-bottom:32px;text-align:center;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;text-decoration:none;transition:all 0.3s;display:block;}
+.related-card:hover{transform:translateY(-4px);border-color:rgba(10,132,255,0.3);box-shadow:0 8px 24px rgba(10,132,255,0.1);}
+.related-cat{font-size:11px;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+.related-card-title{font-size:15px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:8px;}
+.related-date{font-family:'Inter',sans-serif;font-size:12px;color:var(--text3);}
+.footer-simple{background:#060E1F;padding:32px 5%;text-align:center;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-simple-text{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);}
+.footer-simple-text span{color:#00C6FF;}
+
+@media(max-width:768px){
+  #hamBtn{display:flex!important}
+  .btn-back span{display:none}
+  .article-body{padding:40px 5%}
+  .article-hero{padding:90px 5% 40px}
+  .article-hero-title{font-size:clamp(22px,5vw,36px)}
+  .related-grid{grid-template-columns:1fr}
+  .safety-steps{grid-template-columns:1fr}
+}
+
+.social-link{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;transition:all 0.2s}
+.social-link:hover{background:#0A84FF;border-color:#0A84FF;color:white;transform:translateY(-2px)}
+
+</style>
+</head>
+<body>
+<nav class="navbar">
+<a class="nav-logo" href="index.html">
+<span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span>
+</a>
+<div class="nav-controls">
+<button class="nav-btn btn-theme" onclick="toggleTheme()"><i class="fas fa-sun" id="themeIcon"></i></button>
+<a class="nav-btn btn-back" href="index.html#blog"><i class="fas fa-arrow-left"></i> <span data-en="Back to Blog" data-fr="Retour au Blog">Back to Blog</span></a>
+</div>
+</nav>
+<div class="article-hero">
+<div class="article-hero-content">
+<div class="article-cat"><i class="fas fa-newspaper"></i> Company News</div>
+<h1 class="article-title" data-en="TheRain Launches in Yaoundé — Cameroon's First Smart Ride Platform" data-fr="TheRain se lance à Yaoundé — La première plateforme de transport intelligent du Cameroun">TheRain Launches in Yaoundé — Cameroon's First Smart Ride Platform</h1>
+<div class="article-meta">
+<div class="article-meta-item"><i class="fas fa-calendar-alt"></i><span>June 1, 2026</span></div>
+<div class="article-meta-item"><i class="fas fa-map-marker-alt"></i><span>Yaoundé, Cameroon</span></div>
+<div class="article-meta-item"><i class="fas fa-clock"></i><span data-en="5 min read" data-fr="5 min de lecture">5 min read</span></div>
+</div>
+</div>
+</div>
+<div class="article-body">
+<div class="article-intro" data-en="We are thrilled to announce the official launch of TheRain in Yaoundé, Cameroon's capital city. This marks a historic milestone in our mission to transform transportation across Cameroon and Africa." data-fr="Nous sommes ravis d'annoncer le lancement officiel de TheRain à Yaoundé, la capitale du Cameroun. Cela marque une étape historique dans notre mission de transformer le transport à travers le Cameroun et l'Afrique.">
+    We are thrilled to announce the official launch of TheRain in Yaoundé, Cameroon's capital city. This marks a historic milestone in our mission to transform transportation across Cameroon and Africa.
+  </div>
+<h2 class="article-h2" data-en="A New Era of Smart Transportation" data-fr="Une Nouvelle Ère de Transport Intelligent">A New Era of Smart Transportation</h2>
+<p class="article-p" data-en="TheRain is not just another ride-hailing app. It is a complete intelligent transportation ecosystem designed specifically for Cameroon and scalable across Africa. From the bustling streets of Yaoundé to the commercial hub of Douala, TheRain is bringing world-class transportation technology to Cameroonian cities." data-fr="TheRain n'est pas seulement une autre application de covoiturage. C'est un écosystème de transport intelligent complet conçu spécifiquement pour le Cameroun et évolutif à travers l'Afrique.">TheRain is not just another ride-hailing app. It is a complete intelligent transportation ecosystem designed specifically for Cameroon and scalable across Africa. From the bustling streets of Yaoundé to the commercial hub of Douala, TheRain is bringing world-class transportation technology to Cameroonian cities.</p>
+<h2 class="article-h2" data-en="What TheRain Offers" data-fr="Ce que TheRain Offre">What TheRain Offers</h2>
+<ul class="article-list">
+<li><i class="fas fa-check-circle"></i><span data-en="Classique Ride — Affordable everyday rides across the city" data-fr="Trajet Classique — Des trajets quotidiens abordables à travers la ville">Classique Ride — Affordable everyday rides across the city</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="VIP Ride — Premium vehicles with top-rated drivers" data-fr="Trajet VIP — Véhicules premium avec les chauffeurs les mieux notés">VIP Ride — Premium vehicles with top-rated drivers</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Delivery — Fast and secure package delivery" data-fr="Livraison — Livraison rapide et sécurisée de colis">Delivery — Fast and secure package delivery</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="School Transport — Safe, monitored transport for children" data-fr="Transport Scolaire — Transport sûr et surveillé pour les enfants">School Transport — Safe, monitored transport for children</span></li>
+<li><i class="fas fa-check-circle"></i><span data-en="Fleet Management — Enterprise solutions for businesses" data-fr="Gestion de Flotte — Solutions d'entreprise pour les entreprises">Fleet Management — Enterprise solutions for businesses</span></li>
+</ul>
+<div class="article-highlight">
+<div class="article-highlight-title"><i class="fas fa-quote-left"></i> <span data-en="From Our CEO" data-fr="De Notre PDG">From Our CEO</span></div>
+<div class="article-highlight-text" data-en='"TheRain was born from a simple vision — to make transportation in Cameroon safe, smart, and accessible to everyone. Today, as we launch in Yaoundé, we are one step closer to that vision. This is just the beginning." — Ndzenkongang Majid Che, CEO &amp; Founder' data-fr="&quot;TheRain est né d'une vision simple — rendre le transport au Cameroun sûr, intelligent et accessible à tous. Aujourd'hui, alors que nous nous lançons à Yaoundé, nous sommes un pas de plus vers cette vision.&quot; — Ndzenkongang Majid Che, PDG &amp; Fondateur">"TheRain was born from a simple vision — to make transportation in Cameroon safe, smart, and accessible to everyone. Today, as we launch in Yaoundé, we are one step closer to that vision. This is just the beginning." — Ndzenkongang Majid Che, CEO &amp; Founder</div>
+</div>
+<h2 class="article-h2" data-en="Safety at the Core" data-fr="La Sécurité au Cœur">Safety at the Core</h2>
+<p class="article-p" data-en="Every TheRain vehicle is equipped with CCTV cameras, GPS tracking, and an emergency SOS system. All drivers undergo rigorous AI-powered identity verification, face matching, and background checks before being approved on the platform." data-fr="Chaque véhicule TheRain est équipé de caméras CCTV, de suivi GPS et d'un système SOS d'urgence. Tous les chauffeurs subissent une vérification d'identité rigoureuse par IA avant d'être approuvés sur la plateforme.">Every TheRain vehicle is equipped with CCTV cameras, GPS tracking, and an emergency SOS system. All drivers undergo rigorous AI-powered identity verification, face matching, and background checks before being approved on the platform.</p>
+<h2 class="article-h2" data-en="Payment Options for Every Cameroonian" data-fr="Options de Paiement pour Chaque Camerounais">Payment Options for Every Cameroonian</h2>
+<p class="article-p" data-en="TheRain supports all major payment methods used in Cameroon including MTN Mobile Money, Orange Money, Visa cards, bank transfers, and cash — making it accessible to everyone regardless of their preferred payment method." data-fr="TheRain prend en charge toutes les principales méthodes de paiement utilisées au Cameroun, notamment MTN Mobile Money, Orange Money, les cartes Visa, les virements bancaires et les espèces.">TheRain supports all major payment methods used in Cameroon including MTN Mobile Money, Orange Money, Visa cards, bank transfers, and cash — making it accessible to everyone regardless of their preferred payment method.</p>
+<h2 class="article-h2" data-en="What's Next?" data-fr="Quelle est la Suite?">What's Next?</h2>
+<p class="article-p" data-en="Following our successful launch in Yaoundé and Douala, TheRain plans to expand to Bamenda, Buea, Limbe, and eventually all 10 regions of Cameroon. Our vision is to become Africa's leading intelligent transportation ecosystem." data-fr="Suite à notre lancement réussi à Yaoundé et Douala, TheRain prévoit de s'étendre à Bamenda, Buea, Limbe et éventuellement aux 10 régions du Cameroun.">Following our successful launch in Yaoundé and Douala, TheRain plans to expand to Bamenda, Buea, Limbe, and eventually all 10 regions of Cameroon. Our vision is to become Africa's leading intelligent transportation ecosystem.</p>
+<div class="article-divider"></div>
+<div class="article-tags">
+<span class="article-tag">TheRain</span>
+<span class="article-tag">Yaoundé</span>
+<span class="article-tag">Cameroon</span>
+<span class="article-tag">Launch</span>
+<span class="article-tag">Ride-Hailing</span>
+<span class="article-tag">Africa</span>
+</div>
+</div>
+<div class="related-section">
+<div class="related-title" data-en="Related Articles" data-fr="Articles Connexes">Related Articles</div>
+<div class="related-grid">
+<a class="related-card" href="article2.html">
+<div class="related-cat">Safety</div>
+<div class="related-card-title" data-en="How TheRain School Transport Keeps Your Children Safe Every Day" data-fr="Comment le Transport Scolaire TheRain Garde Vos Enfants en Sécurité">How TheRain School Transport Keeps Your Children Safe Every Day</div>
+<div class="related-date">May 28, 2026</div>
+</a>
+<a class="related-card" href="article3.html">
+<div class="related-cat">Drivers</div>
+<div class="related-card-title" data-en="5 Tips to Maximize Your Earnings as a TheRain Driver in Cameroon" data-fr="5 Conseils pour Maximiser vos Revenus en tant que Chauffeur TheRain">5 Tips to Maximize Your Earnings as a TheRain Driver in Cameroon</div>
+<div class="related-date">May 20, 2026</div>
+</a>
+</div>
+</div>
+<footer class="footer-simple">
+<div style="display:flex;justify-content:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+  <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.2s" title="X"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px"><i class="fab fa-instagram"></i></a>
+  <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px"><i class="fab fa-whatsapp"></i></a>
+  <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px"><i class="fab fa-tiktok"></i></a>
+</div>
+<div class="footer-simple-text">© 2026 <span>TheRain</span>. All rights reserved. 🇨🇲</div>
+</footer>
+<script>
+const LOGO_DARK = "images/logo_dark.png";
+const LOGO_LIGHT = "images/logo_light.png";
+
+
+  else { h.setAttribute('data-theme','dark'); i.className='fas fa-sun'; }
+}
+let lang = 'en';
+);
+}
+
+
+// PERSIST THEME & LANGUAGE ACROSS PAGES
+(function(){
+  // Restore saved theme
+  var savedTheme = localStorage.getItem('therain_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  var icon = document.getElementById('themeIcon');
+  if(icon) icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  
+  // Restore saved language
+  var savedLang = localStorage.getItem('therain_lang') || 'en';
+  if(savedLang === 'fr') {
+    document.documentElement.setAttribute('data-lang', 'fr');
+    var label = document.getElementById('langLabel');
+    if(label) label.textContent = 'EN';
+    document.querySelectorAll('[data-fr]').forEach(function(el){
+      var t = el.getAttribute('data-fr');
+      if(!t) return;
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
+        el.placeholder = t;
+      } else if(!el.querySelector('span,a,button,i,img,div')){
+        el.innerHTML = t;
+      }
+    });
+  }
+})();
+
+// SAVE THEME on toggle
+var _origToggleTheme = typeof toggleTheme === 'function' ? toggleTheme : null;
+function toggleTheme(){
+  var h = document.documentElement;
+  var i = document.getElementById('themeIcon');
+  var logos = document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo');
+  if(h.getAttribute('data-theme') === 'dark'){
+    h.setAttribute('data-theme','light');
+    if(i) i.className='fas fa-moon';
+    logos.forEach(function(img){img.src='images/logo_light.png';});
+    localStorage.setItem('therain_theme','light');
+  } else {
+    h.setAttribute('data-theme','dark');
+    if(i) i.className='fas fa-sun';
+    logos.forEach(function(img){img.src='images/logo_dark.png';});
+    localStorage.setItem('therain_theme','dark');
+  }
+}
+
+// SAVE LANGUAGE on toggle
+var _origToggleLang = typeof toggleLang === 'function' ? toggleLang : null;
+function toggleLang(){
+  var current = localStorage.getItem('therain_lang') || 'en';
+  var next = current === 'en' ? 'fr' : 'en';
+  localStorage.setItem('therain_lang', next);
+  document.documentElement.setAttribute('data-lang', next);
+  var label = document.getElementById('langLabel');
+  if(label) label.textContent = next === 'en' ? 'FR' : 'EN';
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    var t = el.getAttribute('data-' + next);
+    if(!t) return;
+    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
+      el.placeholder = t;
+    } else if(!el.querySelector('span,a,button,i,img,div')){
+      el.innerHTML = t;
+    }
+  });
+}
+
+// Also restore logos after DOM loads
+document.addEventListener('DOMContentLoaded', function(){
+  var savedTheme = localStorage.getItem('therain_theme') || 'dark';
+  var logos = document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo');
+  logos.forEach(function(img){
+    img.src = savedTheme === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png';
+  });
+});
+
+</script>
+<script>
+// ============================================================
+// THERAIN - Theme & Language Persistence (Robust Version)
+// ============================================================
+
+// 1. Apply theme IMMEDIATELY (before page renders) to avoid flash
+var _savedTheme = localStorage.getItem('therain_theme') || 'dark';
+document.documentElement.setAttribute('data-theme', _savedTheme);
+
+// 2. Theme toggle function
+function toggleTheme() {
+  var h = document.documentElement;
+  var current = h.getAttribute('data-theme');
+  var next = current === 'dark' ? 'light' : 'dark';
+  h.setAttribute('data-theme', next);
+  localStorage.setItem('therain_theme', next);
+  var icon = document.getElementById('themeIcon');
+  if(icon) icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  var logos = document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo');
+  logos.forEach(function(img){ img.src = next === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png'; });
+}
+
+// 3. Language toggle function
+var _lang = localStorage.getItem('therain_lang') || 'en';
+function toggleLang() {
+  _lang = _lang === 'en' ? 'fr' : 'en';
+  localStorage.setItem('therain_lang', _lang);
+  applyLang(_lang);
+}
+function applyLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  var label = document.getElementById('langLabel');
+  if(label) label.textContent = lang === 'en' ? 'FR' : 'EN';
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if(!t) return;
+    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = t; }
+    else if(!el.querySelector('span.hl,a,button,i,img')) { el.innerHTML = t; }
+  });
+}
+
+// 4. Mobile nav
+function toggleMobileNav() {
+  var nav = document.getElementById('mobileNav');
+  if(!nav) return;
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+function closeMobileNav() {
+  var nav = document.getElementById('mobileNav');
+  if(nav) nav.style.display = 'none';
+}
+
+// 5. Apply ALL saved settings after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Apply saved theme icon + logos
+  var t = localStorage.getItem('therain_theme') || 'dark';
+  var icon = document.getElementById('themeIcon');
+  if(icon) icon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo').forEach(function(img) {
+    img.src = t === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png';
+  });
+
+  // Apply saved language
+  var l = localStorage.getItem('therain_lang') || 'en';
+  _lang = l;
+  applyLang(l);
+
+  // Scroll animations
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e, i) {
+      if(e.isIntersecting) setTimeout(function(){ e.target.classList.add('visible'); }, i * 100);
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.aos').forEach(function(el){ obs.observe(el); });
+
+  // Navbar scroll shadow
+  window.addEventListener('scroll', function() {
+    var n = document.getElementById('navbar');
+    if(n) n.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
+  });
+
+  // Smooth scroll for nav pills
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var t = document.querySelector(this.getAttribute('href'));
+      if(t) t.scrollIntoView({behavior: 'smooth', block: 'start'});
+      document.querySelectorAll('.page-nav-pill').forEach(function(p){ p.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+});
+</script>
+</body>
+</html>
