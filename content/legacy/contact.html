@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="images/favicon.png"/>
+<link rel="apple-touch-icon" href="images/favicon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact TheRain — Get in Touch | Bamenda, Cameroon</title>
+<meta name="description" content="Contact TheRain support team in Cameroon. Call, email, or visit us in Bamenda. Available 24/7 for riders, drivers, and business inquiries.">
+<link rel="canonical" href="https://therain.tech/contact">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TheRain">
+<meta property="og:title" content="Contact TheRain — Get in Touch">
+<meta property="og:description" content="Contact TheRain in Cameroon. Available 24/7 for riders, drivers, and business inquiries.">
+<meta property="og:url" content="https://therain.tech/contact">
+<meta property="og:image" content="https://therain.tech/images/bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact TheRain — Get in Touch">
+<meta name="twitter:description" content="Contact TheRain in Cameroon. Available 24/7 for all inquiries.">
+<meta name="twitter:image" content="https://therain.tech/images/bg.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+<style>
+:root{--primary:#0A84FF;--cyan:#00C6FF;--navy:#0A1A33;--green:#22C55E;--yellow:#FACC15;--red:#EF4444}
+[data-theme="dark"]{--bg:#060E1F;--bg2:#0A1A33;--bg3:#0D2244;--card:#0D2244;--card2:#112855;--text:#FFFFFF;--text2:rgba(255,255,255,0.7);--text3:rgba(255,255,255,0.4);--border:rgba(255,255,255,0.08);--nav-bg:rgba(6,14,31,0.95);--input-bg:rgba(255,255,255,0.05)}
+[data-theme="light"]{--bg:#F0F4F8;--bg2:#FFFFFF;--bg3:#E8F0FE;--card:#FFFFFF;--card2:#F8FAFC;--text:#0A1A33;--text2:#4A5568;--text3:#94A3B8;--border:rgba(10,26,51,0.08);--nav-bg:rgba(255,255,255,0.95);--input-bg:rgba(10,26,51,0.04)}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);transition:background 0.4s,color 0.4s;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:44px;width:auto;object-fit:contain}
+.nav-brand-text{display:flex;align-items:center;line-height:1}
+.nav-brand-the{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--text);transition:color 0.3s}
+.nav-brand-rain{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;color:var(--primary);transition:color 0.3s}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--text2);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s;border-radius:1px}
+.nav-links a:hover{color:var(--primary)}.nav-links a:hover::after{width:100%}
+.nav-links a.active{color:var(--primary)!important}.nav-links a.active::after{width:100%!important}
+.nav-controls{display:flex;align-items:center;gap:10px}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none}
+.btn-lang,.btn-theme{background:var(--input-bg);color:var(--text2);border:1px solid var(--border)!important}
+.btn-lang:hover,.btn-theme:hover{border-color:var(--primary)!important;color:var(--primary)}
+.btn-theme{width:40px;height:40px;padding:0;justify-content:center}
+.btn-download{background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;box-shadow:0 4px 16px rgba(10,132,255,0.35)}
+.btn-download:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,132,255,0.45)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--text);border-radius:1px;transition:all 0.3s}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:20px 5%;z-index:999;flex-direction:column;gap:4px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:'Inter',sans-serif;font-size:15px;font-weight:500;color:var(--text2);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--border);transition:color 0.2s}
+.mobile-nav a:hover{color:var(--primary)}
+
+/* HERO */
+.contact-hero{padding:120px 5% 60px;background:linear-gradient(135deg,#0A1A33,#0A2A4A);position:relative;overflow:hidden;text-align:center}
+.contact-hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(10,132,255,0.12),transparent);border-radius:50%}
+.contact-hero::after{content:'';position:absolute;bottom:-30%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(0,198,255,0.08),transparent);border-radius:50%}
+.contact-hero-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.15);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px;letter-spacing:0.5px}
+.contact-hero-title{font-size:clamp(32px,4vw,52px);font-weight:900;color:white;line-height:1.1;margin-bottom:16px}
+.contact-hero-title .hl{background:linear-gradient(135deg,#00C6FF,#0A84FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.contact-hero-sub{font-family:'Inter',sans-serif;font-size:17px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:540px;margin:0 auto}
+
+/* CONTACT METHODS */
+.contact-methods-sec{padding:80px 5%;background:var(--bg)}
+.contact-methods-sec .sec-label{text-align:center;margin-bottom:48px}
+.sec-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.1);border:1px solid rgba(10,132,255,0.2);color:var(--primary);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase}
+.sec-title{font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--text);line-height:1.2;margin-bottom:12px}
+.sec-title .hl{background:linear-gradient(135deg,#0A84FF,#00C6FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-sub{font-family:'Inter',sans-serif;font-size:16px;color:var(--text2);line-height:1.7;max-width:560px;margin:0 auto}
+.contact-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.contact-card-item{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 24px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+.contact-card-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0A84FF,#00C6FF);opacity:0;transition:opacity 0.3s}
+.contact-card-item:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(10,132,255,0.15);border-color:rgba(10,132,255,0.3)}
+.contact-card-item:hover::before{opacity:1}
+.contact-card-icon{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 20px}
+.contact-card-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px}
+.contact-card-detail{font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.7}
+
+/* MAP SECTION */
+.map-sec{padding:0 5% 80px;background:var(--bg)}
+.map-sec-inner{max-width:1200px;margin:0 auto}
+.map-sec-header{text-align:center;margin-bottom:40px}
+.map-container{border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+.map-container iframe{width:100%;height:420px;border:none;display:block}
+.map-fallback{background:linear-gradient(135deg,#0A1A33,#0A2A4A);height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;border-radius:20px}
+.map-fallback-icon{font-size:48px;color:#0A84FF}
+.map-fallback-title{font-size:20px;font-weight:700;color:white}
+.map-fallback-text{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.6);text-align:center;max-width:360px;line-height:1.7}
+.map-open-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;padding:12px 28px;border-radius:12px;text-decoration:none;transition:all 0.3s}
+.map-open-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,132,255,0.4)}
+
+/* FAQ SECTION */
+.faq-sec{padding:80px 5%;background:var(--bg2)}
+.faq-sec-inner{max-width:860px;margin:0 auto}
+.faq-sec-header{text-align:center;margin-bottom:48px}
+.faq-list{display:flex;flex-direction:column;gap:16px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s}
+.faq-item:hover{border-color:rgba(10,132,255,0.25)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-size:15px;font-weight:600;color:var(--text)}
+.faq-q-icon{width:32px;height:32px;border-radius:50%;background:rgba(10,132,255,0.1);border:1px solid rgba(10,132,255,0.2);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:13px;flex-shrink:0;transition:all 0.3s}
+.faq-item.open .faq-q-icon{background:var(--primary);color:white;transform:rotate(45deg)}
+.faq-a{display:none;padding:0 24px 20px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text2);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+/* FORM SECTION */
+.form-sec{padding:80px 5%;background:var(--bg)}
+.form-sec-inner{max-width:800px;margin:0 auto}
+.form-sec-header{text-align:center;margin-bottom:48px}
+.contact-form-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:48px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-grp{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.form-lbl{font-size:13px;font-weight:600;color:var(--text)}
+.form-inp,.form-ta,.form-sel{background:var(--input-bg);border:1.5px solid var(--border);border-radius:10px;padding:13px 16px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);outline:none;transition:all 0.2s;width:100%}
+.form-inp::placeholder,.form-ta::placeholder{color:var(--text3)}
+.form-inp:focus,.form-ta:focus,.form-sel:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(10,132,255,0.1)}
+.form-ta{resize:vertical;min-height:130px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 8px 24px rgba(10,132,255,0.4);transition:all 0.3s;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(10,132,255,0.5)}
+
+/* FOOTER */
+.footer{background:#060E1F;padding:60px 5% 28px;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-logo img{height:48px;margin-bottom:16px}
+.footer-desc{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:24px;max-width:280px}
+.social-links{display:flex;gap:10px;flex-wrap:wrap}
+.social-link{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);text-decoration:none;font-size:16px;transition:all 0.2s}
+.social-link:hover{background:var(--primary);border-color:var(--primary);color:white;transform:translateY(-3px)}
+.footer-col-title{font-size:15px;font-weight:700;color:white;margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--primary)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-copy{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.3)}
+.footer-copy span{color:#00C6FF}
+.footer-legal{display:flex;gap:24px}
+.footer-legal a{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s}
+.footer-legal a:hover{color:var(--primary)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.aos{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.aos.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.contact-cards-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.contact-cards-grid{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+@media(max-width:480px){.contact-cards-grid{grid-template-columns:1fr}.contact-form-card{padding:28px 20px}.nav-controls .btn-download{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo_light.png" alt="TheRain" id="navLogo" class="nav-logo-img" style="height:44px;width:auto;object-fit:contain"/>
+    <span class="nav-brand-text"><span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+    <li><a href="about.html" data-en="About" data-fr="A Propos">About</a></li>
+    <li><a href="index.html#services" data-en="Services" data-fr="Services">Services</a></li>
+    <li><a href="how-it-works.html" data-en="How It Works" data-fr="Comment ca marche">How It Works</a></li>
+    <li><a href="index.html#safety" data-en="Certify Safety Tools" data-fr="Outils de Sécurité">Certify Safety Tools</a></li>
+    <li><a href="index.html#driver" data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</a></li>
+    <li><a href="blog.html" data-en="Blog" data-fr="Blog">Blog</a></li>
+    <li><a href="contact.html" data-en="Contact" data-fr="Contact" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="nav-btn btn-lang" onclick="toggleLang()" id="langBtn"><i class="fas fa-globe"></i><span id="langLabel">FR</span></button>
+    <button class="nav-btn btn-theme" onclick="toggleTheme()" id="themeBtn"><i class="fas fa-sun" id="themeIcon"></i></button>
+    <a href="index.html#download" class="nav-btn btn-download"><i class="fas fa-download"></i><span data-en="Download App" data-fr="Telecharger">Download App</span></a>
+    <div class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="closeMobileNav()"><i class="fas fa-home"></i> <span data-en="Home" data-fr="Accueil">Home</span></a>
+  <a href="about.html" onclick="closeMobileNav()"><i class="fas fa-info-circle"></i> <span data-en="About" data-fr="À Propos">About</span></a>
+  <a href="index.html#services" onclick="closeMobileNav()"><i class="fas fa-car"></i> <span data-en="Services" data-fr="Services">Services</span></a>
+  <a href="how-it-works.html" onclick="closeMobileNav()"><i class="fas fa-cogs"></i> <span data-en="How It Works" data-fr="Comment ça marche">How It Works</span></a>
+  <a href="index.html#safety" onclick="closeMobileNav()"><i class="fas fa-shield-alt"></i> <span data-en="Certify Safety Tools" data-fr="Outils de Sécurité">Certify Safety Tools</span></a>
+  <a href="index.html#driver" onclick="closeMobileNav()"><i class="fas fa-car-side"></i> <span data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</span></a>
+  <a href="blog.html" onclick="closeMobileNav()"><i class="fas fa-newspaper"></i> <span data-en="Blog" data-fr="Blog">Blog</span></a>
+  <a href="contact.html" onclick="closeMobileNav()"><i class="fas fa-phone"></i> <span data-en="Contact" data-fr="Contact">Contact</span></a>
+</div>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="contact-hero-content">
+    <div class="hero-badge"><i class="fas fa-envelope"></i> <span data-en="Get In Touch" data-fr="Contactez-Nous">Get In Touch</span></div>
+    <h1 class="contact-hero-title">Contact <span class="hl">TheRain</span></h1>
+    <p class="contact-hero-sub" data-en="Have questions, need support, or want to partner with us? Our team is available 24/7 to help you across Cameroon." data-fr="Des questions, besoin de support ou souhaitez-vous nous rejoindre? Notre equipe est disponible 24h/7j pour vous aider.">Have questions, need support, or want to partner with us? Our team is available 24/7 to help you across Cameroon.</p>
+  </div>
+</div>
+
+<!-- CONTACT METHODS -->
+<section class="contact-methods-sec">
+  <div class="sec-label">
+    <div class="sec-badge" style="display:inline-flex"><i class="fas fa-map-signs"></i> <span data-en="How to Reach Us" data-fr="Comment Nous Rejoindre">How to Reach Us</span></div>
+    <h2 class="sec-title" data-en="We Are <span class='hl'>Always Here</span>" data-fr="Nous sommes <span class='hl'>toujours là</span>">We Are <span class="hl">Always Here</span></h2>
+    <p class="sec-sub" data-en="Choose the best way to get in touch. We respond within minutes." data-fr="Choisissez la meilleure facon de nous contacter. Nous repondons en quelques minutes.">Choose the best way to get in touch. We respond within minutes.</p>
+  </div>
+  <div class="contact-cards-grid">
+    <div class="contact-card-item aos">
+      <div class="contact-card-icon" style="background:rgba(10,132,255,0.12);border:1px solid rgba(10,132,255,0.2)"><i class="fas fa-map-marker-alt" style="color:#0A84FF"></i></div>
+      <div class="contact-card-title" data-en="Location" data-fr="Localisation">Location</div>
+      <div class="contact-card-detail">Bamenda, Cameroon<br/>Commercial Avenue<br/><span style="color:var(--primary);font-size:13px;font-weight:600" data-en="North West Region" data-fr="Région du Nord-Ouest">North West Region</span></div>
+    </div>
+    <div class="contact-card-item aos">
+      <div class="contact-card-icon" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2)"><i class="fas fa-phone" style="color:#22C55E"></i></div>
+      <div class="contact-card-title" data-en="Call Us" data-fr="Appelez-Nous">Call Us</div>
+      <div class="contact-card-detail">+237 676 011 861<br/>+237 674 321 486<br/><span style="color:#22C55E;font-size:13px;font-weight:600" data-en="Available 24/7" data-fr="Disponible 24h/7j">Available 24/7</span></div>
+    </div>
+    <div class="contact-card-item aos">
+      <div class="contact-card-icon" style="background:rgba(250,204,21,0.12);border:1px solid rgba(250,204,21,0.2)"><i class="fas fa-envelope" style="color:#FACC15"></i></div>
+      <div class="contact-card-title" data-en="Email Us" data-fr="Écrivez-nous">Email Us</div>
+      <div class="contact-card-detail">info@therain.tech<br/>support@therain.tech<br/><span style="color:#FACC15;font-size:13px;font-weight:600" data-en="Reply within 2 hours" data-fr="Réponse en 2 heures">Reply within 2 hours</span></div>
+    </div>
+    <div class="contact-card-item aos">
+      <div class="contact-card-icon" style="background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.2)"><i class="fas fa-clock" style="color:#A855F7"></i></div>
+      <div class="contact-card-title" data-en="Working Hours" data-fr="Horaires">Working Hours</div>
+      <div class="contact-card-detail" data-en="We never sleep!<br/>Riders: 24/7 Support<br/>Business: Mon–Fri 8am–6pm" data-fr="Nous ne dormons jamais!<br/>Passagers: Support 24h/7j<br/>Business: Lun–Ven 8h–18h">We never sleep!<br/>Riders: 24/7 Support<br/>Business: Mon–Fri 8am–6pm</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL LINKS ROW -->
+<section style="padding:48px 5%;background:var(--bg2)">
+  <div style="max-width:860px;margin:0 auto;text-align:center">
+    <div class="sec-badge" style="display:inline-flex;margin-bottom:16px"><i class="fas fa-share-alt"></i> <span data-en="Follow TheRain" data-fr="Suivez TheRain">Follow TheRain</span></div>
+    <h2 class="sec-title" style="margin-bottom:8px"><span data-en="Connect With Us" data-fr="Connectez-Vous Avec Nous">Connect With <span class="hl">Us</span></span></h2>
+    <p class="sec-sub" style="margin-bottom:32px" data-en="Stay updated on rides, news, and TheRain announcements across all platforms." data-fr="Restez informé des trajets, actualités et annonces TheRain sur toutes les plateformes.">Stay updated on rides, news, and TheRain announcements across all platforms.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="https://www.facebook.com/profile.php?id=61591416844183" target="_blank" rel="noopener noreferrer" title="Facebook" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#0A84FF';this.style.color='#0A84FF'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><i class="fab fa-facebook-f" style="color:#1877F2"></i> Facebook</a>
+      <a href="#" target="_blank" rel="noopener noreferrer" title="X (Twitter)" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#0A84FF';this.style.color='#0A84FF'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X (Twitter)</a>
+      <a href="https://www.instagram.com/therain6026?igsh=MTBuMHU1MHBkZ240eg==" target="_blank" rel="noopener noreferrer" title="Instagram" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#E1306C';this.style.color='#E1306C'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><i class="fab fa-instagram" style="color:#E1306C"></i> Instagram</a>
+      <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#0077B5';this.style.color='#0077B5'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><i class="fab fa-linkedin-in" style="color:#0077B5"></i> LinkedIn</a>
+      <a href="https://wa.me/237676011861" target="_blank" rel="noopener noreferrer" title="WhatsApp" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#25D366';this.style.color='#25D366'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+      <a href="#" target="_blank" rel="noopener noreferrer" title="TikTok" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#0A84FF';this.style.color='#0A84FF'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://youtube.com/@therain-tech" target="_blank" rel="noopener noreferrer" title="YouTube" style="display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--text2);text-decoration:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;transition:all 0.2s" onmouseover="this.style.borderColor='#FF0000';this.style.color='#FF0000'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="map-sec">
+  <div class="map-sec-inner">
+    <div class="map-sec-header">
+      <div class="sec-badge" style="display:inline-flex"><i class="fas fa-map"></i> <span data-en="Find Us Easily" data-fr="Trouvez-Nous Facilement">Find Us Easily</span></div>
+      <h2 class="sec-title" data-en="We Are in <span class='hl'>Bamenda</span>" data-fr="Nous sommes à <span class='hl'>Bamenda</span>">We Are in <span class="hl">Bamenda</span></h2>
+      <p class="sec-sub" data-en="Visit us at Commercial Avenue, Bamenda. Or reach us remotely — we operate across all of Cameroon." data-fr="Visitez-nous à Commercial Avenue, Bamenda. Ou contactez-nous à distance — nous opérons dans tout le Cameroun.">Visit us at Commercial Avenue, Bamenda. Or reach us remotely — we operate across all of Cameroon.</p>
+    </div>
+    <div class="map-container aos">
+      <iframe
+        src="https://maps.google.com/maps?q=Commercial+Avenue+Bamenda+Cameroon&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="420"
+        style="border:0;display:block"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="TheRain HQ — Commercial Avenue, Bamenda, Cameroon">
+      </iframe>
+    </div>
+    <div style="text-align:center;margin-top:20px">
+      <a href="https://maps.google.com/?q=Commercial+Avenue+Bamenda+Cameroon" target="_blank" rel="noopener noreferrer" class="map-open-btn"><i class="fas fa-directions"></i> <span data-en="Get Directions" data-fr="Obtenir l'Itinéraire">Get Directions</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-sec">
+  <div class="faq-sec-inner">
+    <div class="faq-sec-header">
+      <div class="sec-badge" style="display:inline-flex"><i class="fas fa-question-circle"></i> <span data-en="Quick Answers" data-fr="Réponses rapides">Quick Answers</span></div>
+      <h2 class="sec-title" data-en="Common <span class='hl'>Questions</span>" data-fr="Questions <span class='hl'>Fréquentes</span>">Common <span class="hl">Questions</span></h2>
+      <p class="sec-sub" data-en="Find quick answers before reaching out." data-fr="Trouvez des réponses rapides avant de nous contacter.">Find quick answers before reaching out.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-en="How quickly will you respond to my message?" data-fr="Dans quel délai répondrez-vous à mon message ?">How quickly will you respond to my message?</span>
+          <div class="faq-q-icon"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a" data-en="We aim to respond to all messages within 2 hours during business hours. For urgent matters, call us directly at +237 676 011 861 or +237 674 321 486 — we are available 24/7." data-fr="Nous nous efforçons de répondre à tous les messages dans les 2 heures pendant les heures ouvrables. Pour les urgences, appelez-nous directement au +237 676 011 861 — nous sommes disponibles 24h/7j.">We aim to respond to all messages within 2 hours during business hours. For urgent matters, call us directly at +237 676 011 861 or +237 674 321 486 — we are available 24/7.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-en="Can I contact TheRain on WhatsApp?" data-fr="Puis-je contacter TheRain sur WhatsApp ?">Can I contact TheRain on WhatsApp?</span>
+          <div class="faq-q-icon"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a" data-en="Yes. You can reach us on WhatsApp at +237 676 011 861. Send us a message any time and our support team will get back to you as soon as possible." data-fr="Oui. Vous pouvez nous rejoindre sur WhatsApp au +237 676 011 861. Envoyez-nous un message à tout moment et notre équipe vous répondra dans les plus brefs délais.">Yes. You can reach us on WhatsApp at +237 676 011 861. Send us a message any time and our support team will get back to you as soon as possible.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-en="Does TheRain offer services for schools and businesses?" data-fr="TheRain offre-t-il des services pour les écoles et les entreprises ?">Does TheRain offer services for schools and businesses?</span>
+          <div class="faq-q-icon"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a" data-en="Yes. TheRain offers a dedicated School Transport service with verified drivers, PIN-based pickup verification, and live parent tracking. For businesses, we have Fleet Management solutions tailored to corporate mobility needs. Contact us at info@therain.tech to discuss your requirements." data-fr="Oui. TheRain propose un service de Transport Scolaire dédié avec des chauffeurs vérifiés, une vérification PIN et un suivi parental en direct. Pour les entreprises, nous avons des solutions de Gestion de Flotte adaptées. Contactez-nous à info@therain.tech.">Yes. TheRain offers a dedicated School Transport service with verified drivers, PIN-based pickup verification, and live parent tracking. For businesses, we have Fleet Management solutions tailored to corporate mobility needs. Contact us at info@therain.tech to discuss your requirements.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-en="How do I apply to become a TheRain driver?" data-fr="Comment postuler pour devenir chauffeur TheRain ?">How do I apply to become a TheRain driver?</span>
+          <div class="faq-q-icon"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="faq-a" data-en="Download the TheRain app, tap 'Become a Driver', and complete the registration form. You will need a valid driver's license, vehicle registration documents, and a national identity card. Our team reviews applications within 2–3 business days." data-fr="Téléchargez l'application TheRain, appuyez sur 'Devenir Chauffeur' et remplissez le formulaire d'inscription. Vous aurez besoin d'un permis de conduire valide, de documents d'immatriculation du véhicule et d'une carte d'identité nationale. Notre équipe examine les candidatures sous 2 à 3 jours ouvrables.">Download the TheRain app, tap 'Become a Driver', and complete the registration form. You will need a valid driver's license, vehicle registration documents, and a national identity card. Our team reviews applications within 2–3 business days.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="form-sec">
+  <div class="form-sec-inner">
+    <div class="form-sec-header">
+      <div class="sec-badge" style="display:inline-flex"><i class="fas fa-paper-plane"></i> <span data-en="Send Us a Message" data-fr="Envoyez-Nous un Message">Send Us a Message</span></div>
+      <h2 class="sec-title" data-en="We'd Love to <span class='hl'>Hear From You</span>" data-fr="Nous serions ravis de <span class='hl'>vous entendre</span>">We'd Love to <span class="hl">Hear From You</span></h2>
+      <p class="sec-sub" data-en="Fill in the form below and our team will respond within 2 hours." data-fr="Remplissez le formulaire ci-dessous et notre équipe vous répondra en 2 heures.">Fill in the form below and our team will respond within 2 hours.</p>
+    </div>
+    <div class="contact-form-card aos">
+      <div class="form-row">
+        <div class="form-grp"><label class="form-lbl" data-en="First Name" data-fr="Prénom">First Name</label><input type="text" class="form-inp" placeholder="Your first name"/></div>
+        <div class="form-grp"><label class="form-lbl" data-en="Last Name" data-fr="Nom">Last Name</label><input type="text" class="form-inp" placeholder="Your last name"/></div>
+      </div>
+      <div class="form-grp"><label class="form-lbl" data-en="Email Address" data-fr="Adresse e-mail">Email Address</label><input type="email" class="form-inp" placeholder="your@email.com"/></div>
+      <div class="form-grp"><label class="form-lbl" data-en="Phone Number" data-fr="Numéro de téléphone">Phone Number</label><input type="tel" class="form-inp" placeholder="+237 6XX XXX XXX"/></div>
+      <div class="form-grp">
+        <label class="form-lbl" data-en="Subject" data-fr="Sujet">Subject</label>
+        <select class="form-sel form-inp">
+          <option data-en="General Inquiry" data-fr="Demande Generale">General Inquiry</option>
+          <option data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</option>
+          <option data-en="Business Partnership" data-fr="Partenariat Commercial">Business Partnership</option>
+          <option data-en="Technical Support" data-fr="Support Technique">Technical Support</option>
+          <option data-en="School Transport Inquiry" data-fr="Renseignement Transport Scolaire">School Transport Inquiry</option>
+          <option data-en="Safety Concern" data-fr="Preoccupation de Securite">Safety Concern</option>
+          <option data-en="Fleet Management" data-fr="Gestion de Flotte">Fleet Management</option>
+        </select>
+      </div>
+      <div class="form-grp"><label class="form-lbl" data-en="Message" data-fr="Message">Message</label><textarea class="form-ta" placeholder="Tell us how we can help you..."></textarea></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;height:54px;font-size:16px" onclick="submitContactForm(this)">
+        <i class="fas fa-paper-plane"></i>
+        <span data-en="Send Message" data-fr="Envoyer le Message">Send Message</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <img src="images/logo_light.png" alt="TheRain" class="footer-logo-img" style="height:48px;margin-bottom:16px"/>
+      <p class="footer-desc" data-en="TheRain — ride-hailing, delivery, and school transport built for Cameroon. Book safer rides and connect with trusted drivers." data-fr="TheRain — transport, livraison et transport scolaire conçus pour le Cameroun. Réservez des trajets plus sûrs avec des chauffeurs de confiance.">TheRain — ride-hailing, delivery, and school transport built for Cameroon. Book safer rides and connect with trusted drivers.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61591416844183" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link" title="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/therain6026?igsh=MTBuMHU1MHBkZ240eg==" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@therain-tech?si=xyXaabvEzabOnu5b" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title" data-en="Company" data-fr="Entreprise">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html" data-en="About TheRain" data-fr="A Propos de TheRain">About TheRain</a></li>
+        <li><a href="blog.html" data-en="Blog and News" data-fr="Blog et Actualites">Blog and News</a></li>
+        <li><a href="#" data-en="Careers" data-fr="Carrieres">Careers</a></li>
+        <li><a href="contact.html" data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title" data-en="Services" data-fr="Services">Services</div>
+      <ul class="footer-links">
+        <li><a href="index.html#services" data-en="Classique Ride" data-fr="Trajet Classique">Classique Ride</a></li>
+        <li><a href="index.html#services" data-en="VIP Ride" data-fr="Trajet VIP">VIP Ride</a></li>
+        <li><a href="index.html#services" data-en="Delivery" data-fr="Livraison">Delivery</a></li>
+        <li><a href="index.html#services" data-en="School Transport" data-fr="Transport Scolaire">School Transport</a></li>
+        <li><a href="index.html#services" data-en="Fleet Management" data-fr="Gestion de Flotte">Fleet Management</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title" data-en="Legal" data-fr="Legal">Legal</div>
+      <ul class="footer-links">
+        <li><a href="privacy-policy.html" data-en="Privacy Policy" data-fr="Politique de Confidentialite">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html" data-en="Terms of Service" data-fr="Conditions d'Utilisation">Terms of Service</a></li>
+        <li><a href="privacy-policy.html#cctv" data-en="CCTV Policy" data-fr="Politique CCTV">CCTV Policy</a></li>
+        <li><a href="terms-of-service.html" data-en="Safety Policies" data-fr="Politiques de Securite">Safety Policies</a></li>
+        <li><a href="data-deletion.html" data-en="Data Deletion" data-fr="Suppression Donnees">Data Deletion</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">2026 <span>TheRain</span>. <span data-en="All rights reserved. Made with love in Cameroon" data-fr="Tous droits reserves. Fait avec amour au Cameroun">All rights reserved. Made with love in Cameroon</span> &#127464;&#127474;</div>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=localStorage.getItem('therain_theme')||'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  var icon=document.getElementById('themeIcon');
+  if(icon)icon.className=t==='dark'?'fas fa-sun':'fas fa-moon';
+  document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo').forEach(function(img){
+    img.src=t==='dark'?'images/logo_light.png':'images/logo_dark.png';
+  });
+})();
+
+function toggleTheme(){
+  var h=document.documentElement;
+  var next=h.getAttribute('data-theme')==='dark'?'light':'dark';
+  h.setAttribute('data-theme',next);
+  localStorage.setItem('therain_theme',next);
+  var icon=document.getElementById('themeIcon');
+  if(icon)icon.className=next==='dark'?'fas fa-sun':'fas fa-moon';
+  document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo').forEach(function(img){
+    img.src=next==='dark'?'images/logo_light.png':'images/logo_dark.png';
+  });
+}
+
+var _lang=localStorage.getItem('therain_lang')||'en';
+function toggleLang(){
+  _lang=_lang==='en'?'fr':'en';
+  localStorage.setItem('therain_lang',_lang);
+  applyLang(_lang);
+}
+function applyLang(lang){
+  document.documentElement.setAttribute('data-lang',lang);
+  var label=document.getElementById('langLabel');
+  if(label)label.textContent=lang==='en'?'FR':'EN';
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    var t=el.getAttribute('data-'+lang);
+    if(!t)return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t;}
+    else if(!el.querySelector('span.hl,a,button,i,img')){el.innerHTML=t;}
+  });
+}
+
+function toggleMobileNav(){var nav=document.getElementById('mobileNav');if(!nav)return;nav.style.display=nav.style.display==='flex'?'none':'flex';}
+function closeMobileNav(){var nav=document.getElementById('mobileNav');if(nav)nav.style.display='none';}
+
+function toggleFaq(el){
+  var item=el.parentElement;
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+
+function submitContactForm(btn){
+  btn.innerHTML='<i class="fas fa-check"></i> Message Sent!';
+  btn.style.background='linear-gradient(135deg,#22C55E,#16A34A)';
+  setTimeout(function(){btn.innerHTML='<i class="fas fa-paper-plane"></i> <span>Send Message</span>';btn.style.background='';},3000);
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  var l=localStorage.getItem('therain_lang')||'en';
+  _lang=l;
+  if(l!=='en')applyLang(l);
+
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){if(e.isIntersecting)setTimeout(function(){e.target.classList.add('visible');},i*100);});
+  },{threshold:0.1});
+  document.querySelectorAll('.aos').forEach(function(el){obs.observe(el);});
+
+  window.addEventListener('scroll',function(){
+    var n=document.getElementById('navbar');
+    if(n)n.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(0,0,0,0.3)':'none';
+  });
+});
+</script>
+</body>
+</html>

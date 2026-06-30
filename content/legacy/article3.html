@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html data-lang="en" data-theme="dark" lang="en">
 <head>
@@ -6,9 +6,21 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link rel="icon" type="image/png" href="images/favicon.png"/>
 <link rel="apple-touch-icon" href="images/favicon.png"/>
-<title>5 Tips to Maximize Your Earnings as a TheRain Driver — TheRain Blog</title>
+<title>5 Tips to Maximize Your Earnings as a TheRain Driver in Cameroon | TheRain Blog</title>
+<meta name="description" content="Practical tips for TheRain drivers to improve ratings, choose better routes, use peak hours, and grow income on the platform in Cameroon.">
+<link rel="canonical" href="https://therain.tech/blog/driver-earnings-tips-cameroon">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TheRain">
+<meta property="og:title" content="5 Tips to Earn More as a TheRain Driver in Cameroon">
+<meta property="og:description" content="Practical tips for TheRain drivers to improve ratings, choose better routes, and grow income on the platform.">
+<meta property="og:url" content="https://therain.tech/blog/driver-earnings-tips-cameroon">
+<meta property="og:image" content="https://therain.tech/images/blog_driver.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="5 Tips to Earn More as a TheRain Driver in Cameroon">
+<meta name="twitter:description" content="Practical tips for TheRain drivers to improve ratings and grow income on the platform.">
+<meta name="twitter:image" content="https://therain.tech/images/blog_driver.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous"/>
 <style>
 :root { --primary:#0A84FF; --cyan:#00C6FF; --navy:#0A1A33; --green:#22C55E; --yellow:#FACC15; --red:#EF4444; }
 [data-theme="dark"] { --bg:#060E1F; --bg2:#0A1A33; --card:#0D2244; --text:#FFFFFF; --text2:rgba(255,255,255,0.7); --text3:rgba(255,255,255,0.4); --border:rgba(255,255,255,0.08); --nav-bg:rgba(6,14,31,0.95); --input-bg:rgba(255,255,255,0.05); }
@@ -93,7 +105,7 @@ body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text)
 </a>
 <div class="nav-controls">
 <button class="nav-btn btn-theme" onclick="toggleTheme()"><i class="fas fa-sun" id="themeIcon"></i></button>
-<a class="nav-btn btn-back" href="index.html#blog"><i class="fas fa-arrow-left"></i> <span data-en="Back to Blog" data-fr="Retour au Blog">Back to Blog</span></a>
+<a class="nav-btn btn-back" href="blog.html"><i class="fas fa-arrow-left"></i> <span data-en="Back to Blog" data-fr="Retour au Blog">Back to Blog</span></a>
 </div>
 </nav>
 <div class="article-hero">
@@ -107,9 +119,10 @@ body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text)
 </div>
 </div>
 </div>
+<img class="article-cover" src="images/blog_driver.jpg" alt="TheRain driver earning tips in Cameroon" loading="lazy">
 <div class="article-body">
-<div class="article-intro" data-en="As a TheRain driver, your earning potential is in your hands. The most successful drivers on our platform share common strategies that help them earn more, work smarter, and maintain high ratings. Here are the top 5 tips to maximize your income." data-fr="En tant que chauffeur TheRain, votre potentiel de revenus est entre vos mains. Les chauffeurs les plus performants sur notre plateforme partagent des stratégies communes qui les aident à gagner plus et à travailler plus intelligemment.">
-    As a TheRain driver, your earning potential is in your hands. The most successful drivers on our platform share common strategies that help them earn more, work smarter, and maintain high ratings. Here are the top 5 tips to maximize your income.
+<div class="article-intro" data-en="Drivers who earn the most on TheRain follow a few practical habits. Better routes, smarter hours, and a high trust score all add up. Here are five things top drivers do consistently." data-fr="Les chauffeurs qui gagnent le plus sur TheRain suivent quelques habitudes pratiques. De meilleures routes, des horaires plus intelligents et un score de confiance élevé font la différence. Voici cinq choses que les meilleurs chauffeurs font régulièrement.">
+    Drivers who earn the most on TheRain follow a few practical habits. Better routes, smarter hours, and a high trust score all add up. Here are five things top drivers do consistently.
   </div>
 <!-- TIP 1 -->
 <div class="tip-card">
@@ -240,12 +253,12 @@ function toggleTheme(){
   if(h.getAttribute('data-theme') === 'dark'){
     h.setAttribute('data-theme','light');
     if(i) i.className='fas fa-moon';
-    logos.forEach(function(img){img.src='images/logo_light.png';});
+    logos.forEach(function(img){img.src='images/logo_dark.png';});
     localStorage.setItem('therain_theme','light');
   } else {
     h.setAttribute('data-theme','dark');
     if(i) i.className='fas fa-sun';
-    logos.forEach(function(img){img.src='images/logo_dark.png';});
+    logos.forEach(function(img){img.src='images/logo_light.png';});
     localStorage.setItem('therain_theme','dark');
   }
 }
@@ -275,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var savedTheme = localStorage.getItem('therain_theme') || 'dark';
   var logos = document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo');
   logos.forEach(function(img){
-    img.src = savedTheme === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png';
+    img.src = savedTheme === 'dark' ? 'images/logo_light.png' : 'images/logo_dark.png';
   });
 });
 
@@ -299,7 +312,7 @@ function toggleTheme() {
   var icon = document.getElementById('themeIcon');
   if(icon) icon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
   var logos = document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo');
-  logos.forEach(function(img){ img.src = next === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png'; });
+  logos.forEach(function(img){ img.src = next === 'dark' ? 'images/logo_light.png' : 'images/logo_dark.png'; });
 }
 
 // 3. Language toggle function
@@ -339,7 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var icon = document.getElementById('themeIcon');
   if(icon) icon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
   document.querySelectorAll('.nav-logo-img,.footer-logo-img,#navLogo').forEach(function(img) {
-    img.src = t === 'dark' ? 'images/logo_dark.png' : 'images/logo_light.png';
+    img.src = t === 'dark' ? 'images/logo_light.png' : 'images/logo_dark.png';
   });
 
   // Apply saved language

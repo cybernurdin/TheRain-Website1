@@ -3,7 +3,7 @@ import nextTypeScript from "eslint-config-next/typescript";
 
 const config = [
   {
-    ignores: ["settings.js", "content/legacy/**", "public/**"]
+    ignores: ["public/**"]
   },
   ...nextVitals,
   ...nextTypeScript,

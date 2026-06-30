@@ -1,7 +1,5 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-}
+/* Legacy HTML pages manage their own complete styles */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+body { margin: 0; }
+img { max-width: 100%; }
