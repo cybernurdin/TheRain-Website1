@@ -20,7 +20,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
 .nav-logo img { height:40px; width:auto; object-fit:contain; }
 .nav-brand-the { font-family:'Poppins',sans-serif; font-size:18px; font-weight:800; color:var(--text); }
-.nav-brand-rain { font-family:'Poppins',sans-serif; font-size:18px; font-weight:800; color:var(--primary); }
+.nav-brand-rain { font-family:'Poppins',sans-serif; margin-left: -10px; font-size:18px; font-weight:800; color:var(--primary); }
 .nav-controls { display:flex; align-items:center; gap:10px; }
 .nav-btn { display:flex; align-items:center; gap:6px; padding:8px 16px; border-radius:10px; font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; border:none; }
 .btn-theme { background:var(--input-bg); color:var(--text2); border:1px solid var(--border)!important; width:40px; height:40px; padding:0; justify-content:center; }
@@ -107,7 +107,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <nav class="navbar">
 <a class="nav-logo" href="index.html">
 <img alt="TheRain" id="navLogo" src="images/logo_light.png"/>
-<span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span>
+<span class="nav-brand-the" className="notranslate" translate="no">The</span><span class="nav-brand-rain" className="notranslate" translate="no">Rain</span>
 </a>
 <div class="nav-controls">
 <button class="nav-btn btn-theme" onclick="toggleTheme()"><i class="fas fa-sun" id="themeIcon"></i></button>
@@ -178,7 +178,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <li class="check"><i class="fas fa-check-circle"></i> <strong>Fleet Management</strong> — Enterprise solutions for businesses</li>
 <li class="check"><i class="fas fa-check-circle"></i> <strong>Scheduled Rides</strong> — Advance booking up to 7 days ahead</li>
 </ul>
-<p><span data-en="TheRain acts as a technology platform connecting riders with independent driver partners." data-fr="TheRain agit comme une plateforme technologique connectant les passagers avec des partenaires chauffeurs independants.">TheRain acts as a technology platform connecting riders with independent driver partners.</span> TheRain does not provide transportation services directly but facilitates connections between users and drivers.</p>
+<p><span data-en="TheRain acts as a technology platform connecting riders with independent driver partners." data-fr="TheRain agit comme une plateforme technologique connectant les passagers avec des partenaires chauffeurs independants.">TheRain acts as a technology platform and a direct service provider.</span> We connect riders with independent driver partners, while also operating our own dedicated fleet of vehicles.</p>
 </section>
 <div class="policy-divider"></div>
 <section id="eligibility">

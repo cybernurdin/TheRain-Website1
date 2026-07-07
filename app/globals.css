@@ -3,3 +3,199 @@ html { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
 body { margin: 0; }
 img { max-width: 100%; }
+
+/* Prevent selection on normal website presentation content */
+.site-content,
+.site-content * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Keep form controls and editable/copyable content usable */
+.site-content input,
+.site-content textarea,
+.site-content select,
+.site-content option,
+.site-content [contenteditable="true"],
+.site-content pre,
+.site-content code {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+.theme-logo-light { display: none !important; }
+[data-theme="light"] .theme-logo-light { display: block !important; }
+[data-theme="light"] .theme-logo-dark { display: none !important; }
+[data-theme="dark"] .theme-logo-dark { display: block !important; }
+/* Hide the Google Translate top toolbar and injected interface */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe.skiptranslate,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+.goog-te-gadget,
+.goog-te-gadget-simple,
+.goog-logo-link,
+.goog-te-spinner-pos,
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Prevent Google Translate from pushing the page downward */
+html,
+body {
+  top: 0 !important;
+  margin-top: 0 !important;
+  position: static !important;
+}
+
+/* Google may add translated-ltr or translated-rtl classes */
+html.translated-ltr,
+html.translated-rtl,
+body.translated-ltr,
+body.translated-rtl {
+  margin-top: 0 !important;
+  top: 0 !important;
+}
+
+/* Hide the default widget container visually without breaking the custom toggle */
+#google_translate_element {
+  position: fixed !important;
+  left: -99999px !important;
+  top: -99999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Do not use display:none here because Google still needs the selector */
+#google_translate_element .goog-te-combo {
+  display: block !important;
+}
+
+/* Remove old Google Translate highlight styles */
+.goog-text-highlight {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Google Translate frequently injects font elements */
+.translated-ltr font,
+.translated-rtl font,
+body font {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep translated heading text visible */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  visibility: visible;
+}
+
+/* Preserve normal heading colors after Google Translate injects font tags */
+.translated-ltr h1 font,
+.translated-ltr h2 font,
+.translated-ltr h3 font,
+.translated-ltr h4 font,
+.translated-ltr h5 font,
+.translated-ltr h6 font,
+.translated-rtl h1 font,
+.translated-rtl h2 font,
+.translated-rtl h3 font,
+.translated-rtl h4 font,
+.translated-rtl h5 font,
+.translated-rtl h6 font {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Hide any visible selection color left by translated nodes */
+.site-content ::selection {
+  background: transparent;
+  color: inherit;
+}
+
+.site-content ::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .site-footer-content {
+    gap: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  .footer-column {
+    min-width: 0;
+  }
+
+  .legal-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-column h2 {
+    margin: 0 0 10px;
+  }
+
+  .footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-column li {
+    margin-bottom: 8px;
+  }
+
+  .footer-column ul > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .footer-column li:last-child {
+    margin-bottom: 0;
+  }
+}

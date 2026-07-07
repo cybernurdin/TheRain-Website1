@@ -22,7 +22,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
 .nav-logo img { height:40px; width:auto; object-fit:contain; }
 .nav-brand-the { font-family:'Poppins',sans-serif; font-size:18px; font-weight:800; color:var(--text); }
-.nav-brand-rain { font-family:'Poppins',sans-serif; font-size:18px; font-weight:800; color:var(--primary); }
+.nav-brand-rain { font-family:'Poppins',sans-serif; margin-left: -10px; font-size:18px; font-weight:800; color:var(--primary); }
 .nav-controls { display:flex; align-items:center; gap:10px; }
 .nav-btn { display:flex; align-items:center; gap:6px; padding:8px 16px; border-radius:10px; font-family:'Poppins',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; border:none; }
 .btn-theme { background:var(--input-bg); color:var(--text2); border:1px solid var(--border)!important; width:40px; height:40px; padding:0; justify-content:center; }
@@ -121,7 +121,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <nav class="navbar">
 <a class="nav-logo" href="index.html">
 <img alt="TheRain" id="navLogo" src="images/logo_light.png"/>
-<span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span>
+<span class="nav-brand-the" className="notranslate" translate="no">The</span><span class="nav-brand-rain" className="notranslate" translate="no">Rain</span>
 </a>
 <div class="nav-controls">
 <button class="nav-btn btn-theme" onclick="toggleTheme()"><i class="fas fa-sun" id="themeIcon"></i></button>
@@ -263,7 +263,7 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 <li>All footage is stored on TheRain's private secure servers — never on public cloud storage</li>
 <li>Footage is encrypted using AES-256 encryption</li>
 <li>Access is strictly controlled and limited to authorized personnel</li>
-<li>Law enforcement may access footage with proper legal authority, in case of severe criminal investigations or accidents only </li>
+<li>Law enforcement may access footage with proper legal authority, in case of criminal investigations or accidents only </li>
 </ul>
 <table class="policy-table">
 <tr><th><span data-en="Footage Type" data-fr="Type de Footage">Footage Type</span></th><th><span data-en="Retention Period" data-fr="Periode de Conservation">Retention Period</span></th></tr>

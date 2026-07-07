@@ -1,4 +1,5 @@
 ﻿import type { Metadata, Viewport } from "next";
+import { GoogleTranslate } from "@/components/google-translate";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,14 +12,9 @@ export const metadata: Metadata = {
   description:
     "TheRain is Cameroon’s leading transport platform for ride-hailing, delivery, school transport, fleet services, and safer mobility.",
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" }
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png"
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png"
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
@@ -55,7 +51,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <GoogleTranslate />
+      </body>
     </html>
   );
 }

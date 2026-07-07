@@ -80,7 +80,7 @@ body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text)
 .hero-content{position:relative;z-index:10;padding:0 5%;max-width:720px;margin-top:72px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.15);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:24px;animation:fadeUp 0.8s ease both;letter-spacing:0.5px}
 .hero-title{font-size:clamp(36px,5vw,66px);font-weight:900;line-height:1.1;color:white;margin-bottom:20px;animation:fadeUp 0.8s ease 0.2s both}
-.hero-title .hl{background:linear-gradient(135deg,#00C6FF,#0A84FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title .hl{color:#1294ff;-webkit-text-fill-color:currentColor;background:none}
 .hero-sub{font-family:'Inter',sans-serif;font-size:18px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:36px;animation:fadeUp 0.8s ease 0.4s both;max-width:560px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px;animation:fadeUp 0.8s ease 0.6s both}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0A84FF,#00C6FF);color:white;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 8px 24px rgba(10,132,255,0.4);transition:all 0.3s;border:none;cursor:pointer}
@@ -102,7 +102,7 @@ body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text)
 section{padding:100px 5%}
 .sec-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.1);border:1px solid rgba(10,132,255,0.2);color:var(--primary);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase}
 .sec-title{font-size:clamp(28px,3.5vw,44px);font-weight:800;color:var(--text);line-height:1.2;margin-bottom:16px}
-.sec-title .hl{background:linear-gradient(135deg,#0A84FF,#00C6FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-title .hl{color:#1294ff;-webkit-text-fill-color:currentColor;background:none}
 .sec-sub{font-family:'Inter',sans-serif;font-size:17px;color:var(--text2);line-height:1.7;max-width:600px}
 .tc{text-align:center} .tc .sec-sub{margin:0 auto}
 
@@ -646,10 +646,9 @@ section{padding:100px 5%}
   margin-bottom: 16px;
 }
 .page-hero-title .hl {
-  background: linear-gradient(135deg, #00C6FF, #0A84FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1294ff;
+  -webkit-text-fill-color: currentColor;
+  background: none;
 }
 .page-hero-sub {
   font-family: 'Inter', sans-serif;
@@ -693,7 +692,7 @@ section{padding:100px 5%}
 .about-hero-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
 .about-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.15);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px;letter-spacing:0.5px}
 .about-hero-title{font-size:clamp(32px,4vw,56px);font-weight:900;color:white;line-height:1.1;margin-bottom:16px;font-family:'Poppins',sans-serif}
-.about-hero-title .hl{background:linear-gradient(135deg,#00C6FF,#0A84FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.about-hero-title .hl{color:#1294ff;-webkit-text-fill-color:currentColor;background:none}
 .about-hero-sub{font-family:'Inter',sans-serif;font-size:17px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:560px;margin:0 auto}
 .about-sec{padding:80px 5%;background:var(--bg)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:56px}
@@ -771,14 +770,14 @@ section{padding:100px 5%}
 <nav class="navbar" id="navbar">
   <a href="index.html" class="nav-logo">
     <img src="images/logo_light.png" alt="TheRain" id="navLogo" class="nav-logo-img" style="height:44px;width:auto;object-fit:contain"/>
-    <span class="nav-brand-text"><span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span></span>
+    <span class="nav-brand-text"><span class="nav-brand-the" className="notranslate" translate="no">The</span><span class="nav-brand-rain" className="notranslate" translate="no">Rain</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
     <li><a href="about.html" data-en="About" data-fr="A Propos" class="active">About</a></li>
     <li><a href="index.html#services" data-en="Services" data-fr="Services">Services</a></li>
     <li><a href="how-it-works.html" data-en="How It Works" data-fr="Comment ca marche">How It Works</a></li>
-    <li><a href="index.html#safety" data-en="Certify Safety Tools" data-fr="Outils de Sécurité">Certify Safety Tools</a></li>
+    <li><a href="index.html#safety" data-en="Certified Safety Tools" data-fr="Outils de Sécurité">Certified Safety Tools</a></li>
     <li><a href="index.html#driver" data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</a></li>
     <li><a href="blog.html" data-en="Blog" data-fr="Blog">Blog</a></li>
     <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
@@ -806,7 +805,7 @@ section{padding:100px 5%}
   <a href="about.html" onclick="closeMobileNav()"><i class="fas fa-info-circle"></i> <span data-en="About" data-fr="À Propos">About</span></a>
   <a href="index.html#services" onclick="closeMobileNav()"><i class="fas fa-car"></i> <span data-en="Services" data-fr="Services">Services</span></a>
   <a href="how-it-works.html" onclick="closeMobileNav()"><i class="fas fa-cogs"></i> <span data-en="How It Works" data-fr="Comment ça marche">How It Works</span></a>
-  <a href="index.html#safety" onclick="closeMobileNav()"><i class="fas fa-shield-alt"></i> <span data-en="Certify Safety Tools" data-fr="Outils de Sécurité">Certify Safety Tools</span></a>
+  <a href="index.html#safety" onclick="closeMobileNav()"><i class="fas fa-shield-alt"></i> <span data-en="Certified Safety Tools" data-fr="Outils de Sécurité">Certified Safety Tools</span></a>
   <a href="index.html#driver" onclick="closeMobileNav()"><i class="fas fa-car-side"></i> <span data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</span></a>
   <a href="blog.html" onclick="closeMobileNav()"><i class="fas fa-newspaper"></i> <span data-en="Blog" data-fr="Blog">Blog</span></a>
   <a href="contact.html" onclick="closeMobileNav()"><i class="fas fa-phone"></i> <span data-en="Contact" data-fr="Contact">Contact</span></a>
@@ -820,8 +819,8 @@ section{padding:100px 5%}
       Building the Future of<br/>
       <span class="hl">Mobility in Africa</span>
     </h1>
-    <p class="about-hero-sub" data-en="Born in Cameroon, built for real people. TheRain covers ride-hailing, delivery, school transport, and fleet management — in one platform, built for how Cameroon moves." data-fr="Né au Cameroun, conçu pour les gens. TheRain couvre le transport, la livraison, le transport scolaire et la gestion de flotte — en une seule plateforme, pensée pour le Cameroun.">
-      Born in Cameroon, built for real people. TheRain covers ride-hailing, delivery, school transport, and fleet management — in one platform, built for how Cameroon moves.
+    <p class="about-hero-sub" data-en="TheRain is pioneering the future of African mobility. Formulated in Cameroon to address real-world transit challenges, our integrated platform unifies ride-hailing, logistics, school transportation and fleet management into a single seamless ecosystem engineered specifically for the regional landscape.." data-fr="Né au Cameroun, conçu pour les gens. TheRain couvre le transport, la livraison, le transport scolaire et la gestion de flotte — en une seule plateforme, pensée pour le Cameroun.">
+      TheRain is pioneering the future of African mobility. Formulated in Cameroon to address real-world transit challenges, our integrated platform unifies ride-hailing, logistics, school transportation and fleet management into a single seamless ecosystem engineered specifically for the regional landscape.
     </p>
   </div>
 </div>
@@ -841,7 +840,7 @@ section{padding:100px 5%}
     <div class="aos">
       <div class="about-mission">
         <div class="about-mission-label" data-en="Our Mission" data-fr="Notre Mission">Our Mission</div>
-        <div class="about-mission-text" data-en="To provide safe, smart, and affordable transportation solutions that connect people, businesses, and communities across Cameroon and Africa. We believe every person deserves reliable, technology-driven mobility — regardless of where they live. From Yaounde to Bamenda, our mission is to make every journey safer, faster, and more dignified." data-fr="Fournir des solutions de transport sûres, intelligentes et abordables qui connectent les personnes, les entreprises et les communautés à travers le Cameroun et l'Afrique. Chaque personne mérite une mobilité fiable. De Yaoundé à Bamenda, notre mission est de rendre chaque trajet plus sûr, plus rapide et plus digne.">To provide safe, smart, and affordable transportation solutions that connect people, businesses, and communities across Cameroon and Africa. We believe every person deserves reliable, technology-driven mobility — regardless of where they live. From Yaounde to Bamenda, our mission is to make every journey safer, faster, and more dignified.</div>
+        <div class="about-mission-text" data-en="To provide safe, smart, and affordable transportation solutions that connect people, businesses, and communities across Cameroon and Africa. We believe every person deserves reliable, technology-driven mobility — regardless of where they live. From Yaounde to Bamenda, our mission is to make every journey safer, faster, and more dignified." data-fr="Fournir des solutions de transport sûres, intelligentes et abordables qui connectent les personnes, les entreprises et les communautés à travers le Cameroun et l'Afrique. Chaque personne mérite une mobilité fiable. De Yaoundé à Bamenda, notre mission est de rendre chaque trajet plus sûr, plus rapide et plus digne.">To provide safe, smart, and affordable transportation solutions that connect people, businesses, and communities across Cameroon and Africa. We believe every person deserves reliable, technology-driven mobility — regardless of where they live. From Far North to the South, and from the East to the West, our mission is to make every journey safer, faster, and more dignified.</div>
       </div>
       <div class="about-mission">
         <div class="about-mission-label" data-en="Our Vision" data-fr="Notre Vision">Our Vision</div>

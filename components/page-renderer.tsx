@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BrandName, brandText } from "@/components/brand-name";
 import { JsonLd } from "@/components/json-ld";
 import { ContactForm, DataDeletionForm } from "@/components/forms";
 import { SiteShell } from "@/components/site-shell";
 import {
-  BRAND_NAME,
   blogKeys,
   canonicalPath,
   localizedPath,
@@ -49,8 +49,8 @@ function SectionHeader({
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       {eyebrow && <p className="text-sm font-black uppercase tracking-[0.22em] text-sky-300">{eyebrow}</p>}
-      <h2 className="mt-3 text-3xl font-black tracking-tight text-white md:text-5xl">{title}</h2>
-      {intro && <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">{intro}</p>}
+      <h2 className="mt-3 text-3xl font-black tracking-tight text-white md:text-5xl">{brandText(title)}</h2>
+      {intro && <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">{brandText(intro)}</p>}
     </div>
   );
 }
@@ -65,7 +65,7 @@ function CtaLink({ href, children, secondary = false }: { href: string; children
           : "focus-ring inline-flex rounded-full bg-sky-500 px-6 py-3 text-sm font-black text-white shadow-lg shadow-sky-950/30 hover:bg-sky-400"
       }
     >
-      {children}
+      {typeof children === "string" ? brandText(children) : children}
     </Link>
   );
 }
@@ -88,9 +88,9 @@ function Hero({ locale }: { locale: Locale }) {
         <div>
           <p className="text-sm font-black uppercase tracking-[0.24em] text-sky-300">{text(home.heroEyebrow, locale)}</p>
           <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-tight text-white md:text-7xl">
-            {text(home.title, locale)}
+            {brandText(text(home.title, locale))}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-9 text-slate-200 md:text-xl">{text(home.intro, locale)}</p>
+          <p className="mt-6 max-w-3xl text-lg leading-9 text-slate-200 md:text-xl">{brandText(text(home.intro, locale))}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <CtaLink href={localizedPath("services", locale)}>{text(ui.exploreServices, locale)}</CtaLink>
             <CtaLink href={localizedPath("driver", locale)} secondary>
@@ -108,7 +108,7 @@ function Hero({ locale }: { locale: Locale }) {
             className="aspect-[4/3] rounded-[1.5rem] object-cover"
           />
           <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-[#061024]/85 p-4 backdrop-blur-md">
-            <p className="text-sm font-bold text-sky-200">{text(common.official, locale)}</p>
+            <p className="text-sm font-bold text-sky-200">{brandText(text(common.official, locale))}</p>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ function Stats({ locale }: { locale: Locale }) {
       {home.stats.map((stat) => (
         <div key={stat.value} className="card rounded-3xl p-6">
           <p className="text-3xl font-black text-white">{stat.value}</p>
-          <p className="mt-2 text-sm font-semibold text-slate-300">{text(stat.label, locale)}</p>
+          <p className="mt-2 text-sm font-semibold text-slate-300">{brandText(text(stat.label, locale))}</p>
         </div>
       ))}
     </section>
@@ -144,9 +144,9 @@ function ServicesGrid({ locale, compact = false }: { locale: Locale; compact?: b
             className="aspect-[16/10] w-full object-cover"
           />
           <div className="p-6">
-            <h3 className="text-xl font-black text-white">{text(service.title, locale)}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-300">{text(service.summary, locale)}</p>
-            {!compact && <p className="mt-4 text-sm leading-7 text-slate-400">{text(service.details, locale)}</p>}
+            <h3 className="text-xl font-black text-white">{brandText(text(service.title, locale))}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-300">{brandText(text(service.summary, locale))}</p>
+            {!compact && <p className="mt-4 text-sm leading-7 text-slate-400">{brandText(text(service.details, locale))}</p>}
           </div>
         </article>
       ))}
@@ -188,9 +188,9 @@ function SplitFeature({
     <section className="section-pad">
       <div className={`container-page grid items-center gap-10 lg:grid-cols-2 ${reverse ? "lg:[&>div:first-child]:order-2" : ""}`}>
         <div>
-          <p className="text-sm font-black tracking-[0.08em] text-sky-300">{text(pageMeta[page].title, locale)}</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-white md:text-5xl">{title}</h2>
-          <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">{textValue}</p>
+          <p className="text-sm font-black tracking-[0.08em] text-sky-300">{brandText(text(pageMeta[page].title, locale))}</p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-white md:text-5xl">{brandText(title)}</h2>
+          <p className="mt-5 text-base leading-8 text-slate-300 md:text-lg">{brandText(textValue)}</p>
           <div className="mt-7">
             <CtaLink href={ctaHref}>{ctaLabel}</CtaLink>
           </div>
@@ -211,9 +211,9 @@ function BlogCards({ locale, limit }: { locale: Locale; limit?: number }) {
         <article key={post.key} className="card overflow-hidden rounded-3xl">
           <Image src={post.image} alt={text(post.alt, locale)} width={640} height={420} loading="lazy" className="aspect-[16/10] w-full object-cover" />
           <div className="p-6">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-sky-300">{text(post.category, locale)}</p>
-            <h3 className="mt-3 text-xl font-black text-white">{text(post.title, locale)}</h3>
-            <p className="mt-3 text-sm leading-7 text-slate-300">{text(post.excerpt, locale)}</p>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-sky-300">{brandText(text(post.category, locale))}</p>
+            <h3 className="mt-3 text-xl font-black text-white">{brandText(text(post.title, locale))}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-300">{brandText(text(post.excerpt, locale))}</p>
             <Link href={localizedPath(post.key, locale)} className="mt-5 inline-flex text-sm font-black text-sky-300 hover:text-sky-200">
               {text(ui.readMore, locale)}
             </Link>
@@ -232,8 +232,8 @@ function FaqSection({ locale }: { locale: Locale }) {
         <div className="mx-auto mt-10 max-w-4xl divide-y divide-white/10 rounded-3xl border border-white/10 bg-white/[0.03]">
           {faqs.map((faq) => (
             <details key={text(faq.question, "en")} className="group p-6">
-              <summary className="cursor-pointer list-none text-lg font-black text-white">{text(faq.question, locale)}</summary>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{text(faq.answer, locale)}</p>
+              <summary className="cursor-pointer list-none text-lg font-black text-white">{brandText(text(faq.question, locale))}</summary>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{brandText(text(faq.answer, locale))}</p>
             </details>
           ))}
         </div>
@@ -287,9 +287,9 @@ function StandardHero({ locale, pageKey, children }: { locale: Locale; pageKey: 
   const page = pageMeta[pageKey];
   return (
     <section className="container-page py-16 text-center md:py-24">
-      <p className="text-sm font-black tracking-[0.08em] text-sky-300">{BRAND_NAME}</p>
-      <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-black tracking-tight text-white md:text-6xl">{text(page.title, locale)}</h1>
-      <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">{text(page.description, locale)}</p>
+      <p className="text-sm font-black tracking-[0.08em] text-sky-300"><BrandName /></p>
+      <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-black tracking-tight text-white md:text-6xl">{brandText(text(page.title, locale))}</h1>
+      <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">{brandText(text(page.description, locale))}</p>
       {children}
     </section>
   );
@@ -306,8 +306,8 @@ function AboutPage({ locale }: { locale: Locale }) {
           </div>
           <div>
             <h2 className="text-3xl font-black text-white md:text-5xl">{locale === "fr" ? "Une innovation transport locale" : "Local transport innovation"}</h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">{text(about.intro, locale)}</p>
-            <p className="mt-5 text-base leading-8 text-slate-300">{text(about.mission, locale)}</p>
+            <p className="mt-5 text-base leading-8 text-slate-300">{brandText(text(about.intro, locale))}</p>
+            <p className="mt-5 text-base leading-8 text-slate-300">{brandText(text(about.mission, locale))}</p>
           </div>
         </div>
       </section>
@@ -315,8 +315,8 @@ function AboutPage({ locale }: { locale: Locale }) {
         <div className="container-page grid gap-5 md:grid-cols-3">
           {about.values.map((value) => (
             <article key={text(value.title, "en")} className="card rounded-3xl p-6">
-              <h2 className="text-xl font-black text-white">{text(value.title, locale)}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{text(value.text, locale)}</p>
+              <h2 className="text-xl font-black text-white">{brandText(text(value.title, locale))}</h2>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{brandText(text(value.text, locale))}</p>
             </article>
           ))}
         </div>
@@ -345,12 +345,12 @@ function DriverPage({ locale }: { locale: Locale }) {
       <section className="section-pad pt-0">
         <div className="container-page grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-black text-white md:text-5xl">{locale === "fr" ? "Conduire avec TheRain" : "Drive with TheRain"}</h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">{text(home.driverText, locale)}</p>
+            <h2 className="text-3xl font-black text-white md:text-5xl">{locale === "fr" ? <>Conduire avec <BrandName /></> : <>Drive with <BrandName /></>}</h2>
+            <p className="mt-5 text-base leading-8 text-slate-300">{brandText(text(home.driverText, locale))}</p>
             <ul className="mt-6 space-y-4">
               {driverBenefits.map((benefit) => (
                 <li key={benefit.en} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-7 text-slate-200">
-                  {text(benefit, locale)}
+                  {brandText(text(benefit, locale))}
                 </li>
               ))}
             </ul>
@@ -370,8 +370,8 @@ function SafetyPage({ locale }: { locale: Locale }) {
         <div className="container-page grid gap-5 md:grid-cols-3">
           {safetyFeatures.map((feature) => (
             <article key={text(feature.title, "en")} className="card rounded-3xl p-6">
-              <h2 className="text-xl font-black text-white">{text(feature.title, locale)}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{text(feature.text, locale)}</p>
+              <h2 className="text-xl font-black text-white">{brandText(text(feature.title, locale))}</h2>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{brandText(text(feature.text, locale))}</p>
             </article>
           ))}
         </div>
@@ -389,8 +389,8 @@ function HowItWorksPage({ locale }: { locale: Locale }) {
           {processSteps.map((step, index) => (
             <article key={text(step.title, "en")} className="card rounded-3xl p-6">
               <p className="text-sm font-black text-sky-300">0{index + 1}</p>
-              <h2 className="mt-4 text-xl font-black text-white">{text(step.title, locale)}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{text(step.text, locale)}</p>
+              <h2 className="mt-4 text-xl font-black text-white">{brandText(text(step.title, locale))}</h2>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{brandText(text(step.text, locale))}</p>
             </article>
           ))}
         </div>
@@ -423,7 +423,7 @@ function ContactPage({ locale }: { locale: Locale }) {
             <dl className="mt-6 space-y-5 text-sm text-slate-300">
               <div>
                 <dt className="font-black text-white">{locale === "fr" ? "Lieu" : "Location"}</dt>
-                <dd className="mt-1">{text(contactInfo.location, locale)}</dd>
+                <dd className="mt-1">{brandText(text(contactInfo.location, locale))}</dd>
               </div>
               <div>
                 <dt className="font-black text-white">Email</dt>
@@ -438,7 +438,7 @@ function ContactPage({ locale }: { locale: Locale }) {
               </div>
               <div>
                 <dt className="font-black text-white">{locale === "fr" ? "Assistance" : "Support"}</dt>
-                <dd className="mt-1">{text(contactInfo.hours, locale)}</dd>
+                <dd className="mt-1">{brandText(text(contactInfo.hours, locale))}</dd>
               </div>
             </dl>
           </div>
@@ -463,20 +463,20 @@ function LegalPage({ locale, pageKey }: { locale: Locale; pageKey: PageKey }) {
             <nav className="mt-4 grid gap-3" aria-label={locale === "fr" ? "Navigation légale" : "Legal navigation"}>
               {(["terms", "privacyPolicy", "termsOfService", "dataDeletion"] as PageKey[]).map((key) => (
                 <Link key={key} href={localizedPath(key, locale)} className="rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-slate-200 hover:border-sky-300">
-                  {text(pageMeta[key].title, locale)}
+                  {brandText(text(pageMeta[key].title, locale))}
                 </Link>
               ))}
             </nav>
           </aside>
           <article className="card rounded-3xl p-6 md:p-8">
-            <h2 className="text-3xl font-black text-white">{text(summary.title, locale)}</h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">{text(summary.intro, locale)}</p>
+            <h2 className="text-3xl font-black text-white">{brandText(text(summary.title, locale))}</h2>
+            <p className="mt-5 text-base leading-8 text-slate-300">{brandText(text(summary.intro, locale))}</p>
             {legalKey === "terms" && "sections" in summary && (
               <div className="mt-8 grid gap-5">
                 {summary.sections.map((section) => (
                   <section key={text(section.title, "en")} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                    <h3 className="text-xl font-black text-white">{text(section.title, locale)}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">{text(section.text, locale)}</p>
+                    <h3 className="text-xl font-black text-white">{brandText(text(section.title, locale))}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">{brandText(text(section.text, locale))}</p>
                   </section>
                 ))}
               </div>
@@ -498,8 +498,8 @@ function LegalPage({ locale, pageKey }: { locale: Locale; pageKey: PageKey }) {
                   }
                 ].map((item) => (
                   <section key={item.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                    <h3 className="text-xl font-black text-white">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">{item.text}</p>
+                    <h3 className="text-xl font-black text-white">{brandText(item.title)}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">{brandText(item.text)}</p>
                   </section>
                 ))}
               </div>
@@ -511,7 +511,7 @@ function LegalPage({ locale, pageKey }: { locale: Locale; pageKey: PageKey }) {
                   locale === "fr" ? "Les chauffeurs doivent conserver des documents valides, conduire prudemment et maintenir la qualité de service." : "Drivers must keep valid documents, drive safely, and maintain service quality.",
                   locale === "fr" ? "TheRain peut enquêter sur les incidents, suspendre des comptes et traiter les litiges selon les politiques de la plateforme." : "TheRain may investigate incidents, suspend accounts, and process disputes under platform policies."
                 ].map((item) => (
-                  <p key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-300">{item}</p>
+                  <p key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-300">{brandText(item)}</p>
                 ))}
               </div>
             )}
@@ -538,19 +538,19 @@ function BlogArticle({ locale, pageKey }: { locale: Locale; pageKey: PageKey }) 
           <Link href={localizedPath("blog", locale)} className="text-sm font-black text-sky-300 hover:text-sky-200">
             {locale === "fr" ? "Retour au blog" : "Back to blog"}
           </Link>
-          <p className="mt-6 text-sm font-black uppercase tracking-[0.22em] text-sky-300">{text(post.category, locale)}</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight text-white md:text-6xl">{text(post.title, locale)}</h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">{text(post.excerpt, locale)}</p>
+          <p className="mt-6 text-sm font-black uppercase tracking-[0.22em] text-sky-300">{brandText(text(post.category, locale))}</p>
+          <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight text-white md:text-6xl">{brandText(text(post.title, locale))}</h1>
+          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 md:text-lg">{brandText(text(post.excerpt, locale))}</p>
           <p className="mt-4 text-sm text-slate-400">{new Date(post.date).toLocaleDateString(locale === "fr" ? "fr-CM" : "en-CM", { year: "numeric", month: "long", day: "numeric" })}</p>
           <Image src={post.image} alt={text(post.alt, locale)} width={1200} height={720} priority className="mt-10 aspect-[16/9] rounded-[2rem] object-cover" />
         </section>
         <section className="container-page max-w-3xl pb-20">
           {post.body.map((section) => (
             <section key={text(section.heading, "en")} className="mt-10">
-              <h2 className="text-3xl font-black text-white">{text(section.heading, locale)}</h2>
+              <h2 className="text-3xl font-black text-white">{brandText(text(section.heading, locale))}</h2>
               {section.paragraphs.map((paragraph) => (
                 <p key={text(paragraph, "en")} className="mt-5 text-base leading-8 text-slate-300">
-                  {text(paragraph, locale)}
+                  {brandText(text(paragraph, locale))}
                 </p>
               ))}
             </section>
@@ -587,9 +587,15 @@ export function PageRenderer({ pageKey, locale, variant = "localized" }: PageRen
         <div className="card rounded-3xl p-6 text-center md:p-8">
           <h2 className="text-2xl font-black text-white">{locale === "fr" ? "Site officiel" : "Official website"}</h2>
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-300">
-            {locale === "fr"
-              ? `therain.tech est le site officiel de ${BRAND_NAME}. Cette page est disponible en français et en anglais avec des URLs canoniques propres.`
-              : `therain.tech is the official website of ${BRAND_NAME}. This page is available in English and French with clean canonical URLs.`}
+            {locale === "fr" ? (
+              <>
+                therain.tech est le site officiel de <BrandName />. Cette page est disponible en français et en anglais avec des URLs canoniques propres.
+              </>
+            ) : (
+              <>
+                therain.tech is the official website of <BrandName />. This page is available in English and French with clean canonical URLs.
+              </>
+            )}
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             <CtaLink href={canonicalPath("contact", locale, variant)}>{text(ui.contactSupport, locale)}</CtaLink>

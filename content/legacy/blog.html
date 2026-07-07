@@ -61,7 +61,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);tra
 .blog-hero-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.15);border:1px solid rgba(10,132,255,0.3);color:#00C6FF;font-size:13px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px;letter-spacing:0.5px}
 .blog-hero-title{font-size:clamp(32px,4vw,52px);font-weight:900;color:white;line-height:1.1;margin-bottom:16px}
-.blog-hero-title .hl{background:linear-gradient(135deg,#00C6FF,#0A84FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.blog-hero-title .hl{color:#1294ff;-webkit-text-fill-color:currentColor;background:none}
 .blog-hero-sub{font-family:'Inter',sans-serif;font-size:17px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:540px;margin:0 auto 24px}
 .blog-stats{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
 .blog-stat{text-align:center}
@@ -73,7 +73,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);tra
 .blog-sec-header{text-align:center;margin-bottom:56px}
 .sec-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(10,132,255,0.1);border:1px solid rgba(10,132,255,0.2);color:var(--primary);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase}
 .sec-title{font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--text);line-height:1.2;margin-bottom:12px}
-.sec-title .hl{background:linear-gradient(135deg,#0A84FF,#00C6FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-title .hl{color:#1294ff;-webkit-text-fill-color:currentColor;background:none}
 .sec-sub{font-family:'Inter',sans-serif;font-size:16px;color:var(--text2);line-height:1.7;max-width:560px;margin:0 auto}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
 .blog-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all 0.35s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
@@ -143,14 +143,14 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);tra
 <nav class="navbar" id="navbar">
   <a href="index.html" class="nav-logo">
     <img src="images/logo_light.png" alt="TheRain" id="navLogo" class="nav-logo-img" style="height:44px;width:auto;object-fit:contain"/>
-    <span class="nav-brand-text"><span class="nav-brand-the">The</span><span class="nav-brand-rain">Rain</span></span>
+    <span class="nav-brand-text"><span class="nav-brand-the" className="notranslate" translate="no">The</span><span class="nav-brand-rain" className="notranslate" translate="no">Rain</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
     <li><a href="about.html" data-en="About" data-fr="A Propos">About</a></li>
     <li><a href="index.html#services" data-en="Services" data-fr="Services">Services</a></li>
     <li><a href="how-it-works.html" data-en="How It Works" data-fr="Comment ca marche">How It Works</a></li>
-    <li><a href="index.html#safety" data-en="Certify Safety Tools" data-fr="Outils de Sécurité">Certify Safety Tools</a></li>
+    <li><a href="index.html#safety" data-en="Certified Safety Tools" data-fr="Outils de Sécurité">Certified Safety Tools</a></li>
     <li><a href="index.html#driver" data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</a></li>
     <li><a href="blog.html" data-en="Blog" data-fr="Blog" class="active">Blog</a></li>
     <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
@@ -169,7 +169,7 @@ body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);tra
   <a href="about.html" onclick="closeMobileNav()"><i class="fas fa-info-circle"></i> <span data-en="About" data-fr="À Propos">About</span></a>
   <a href="index.html#services" onclick="closeMobileNav()"><i class="fas fa-car"></i> <span data-en="Services" data-fr="Services">Services</span></a>
   <a href="how-it-works.html" onclick="closeMobileNav()"><i class="fas fa-cogs"></i> <span data-en="How It Works" data-fr="Comment ça marche">How It Works</span></a>
-  <a href="index.html#safety" onclick="closeMobileNav()"><i class="fas fa-shield-alt"></i> <span data-en="Certify Safety Tools" data-fr="Outils de Sécurité">Certify Safety Tools</span></a>
+  <a href="index.html#safety" onclick="closeMobileNav()"><i class="fas fa-shield-alt"></i> <span data-en="Certified Safety Tools" data-fr="Outils de Sécurité">CertifiedSafety Tools</span></a>
   <a href="index.html#driver" onclick="closeMobileNav()"><i class="fas fa-car-side"></i> <span data-en="Become a Driver" data-fr="Devenir Chauffeur">Become a Driver</span></a>
   <a href="blog.html" onclick="closeMobileNav()"><i class="fas fa-newspaper"></i> <span data-en="Blog" data-fr="Blog">Blog</span></a>
   <a href="contact.html" onclick="closeMobileNav()"><i class="fas fa-phone"></i> <span data-en="Contact" data-fr="Contact">Contact</span></a>
