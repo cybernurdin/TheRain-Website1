@@ -41,8 +41,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="" />
-        {/* Preload the hero LCP image – first hero slide on the homepage */}
-        <link rel="preload" href="/images/car1.webp" as="image" type="image/webp" />
         {/* Load Google Fonts + Font Awesome asynchronously – never blocks FCP */}
         <script
           dangerouslySetInnerHTML={{

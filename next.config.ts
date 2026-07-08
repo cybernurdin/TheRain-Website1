@@ -39,13 +39,6 @@ const nextConfig: NextConfig = {
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" }
         ]
-      },
-      {
-        // Cache favicons and icons for 1 year
-        source: "/:icon(favicon.ico|favicon.png|apple-touch-icon.png|icon-192.png|icon-512.png)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" }
-        ]
       }
     ];
   }

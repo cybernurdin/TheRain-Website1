@@ -4,6 +4,28 @@ html { box-sizing: border-box; }
 body { margin: 0; }
 img { max-width: 100%; }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+li {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+section,
+div,
+article,
+main {
+  min-width: 0;
+}
+
 /* Prevent selection on normal website presentation content */
 .site-content,
 .site-content * {
@@ -140,6 +162,42 @@ h6 * {
   -webkit-text-fill-color: currentColor !important;
 }
 
+.section-title,
+.sec-title,
+.download-title,
+.hero-title {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.05;
+  max-width: 100%;
+}
+
+.download-title {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.app-store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.download-stats,
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.download-stats > *,
+.stats-row > * {
+  min-width: 0;
+}
+
 /* Hide any visible selection color left by translated nodes */
 .site-content ::selection {
   background: transparent;
@@ -152,6 +210,27 @@ h6 * {
 }
 
 @media (max-width: 640px) {
+  h1,
+  h2,
+  h3,
+  p,
+  .section-title,
+  .sec-title,
+  .download-title {
+    white-space: normal !important;
+  }
+
+  .app-store-buttons {
+    flex-direction: column;
+  }
+
+  .app-store-buttons a,
+  .app-store-buttons button,
+  .store-button {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .site-footer-content {
     gap: 24px;
     padding-top: 24px;
