@@ -17,10 +17,7 @@ const nextConfig: NextConfig = {
       { source: "/terms.html", destination: "/terms", permanent: true },
       { source: "/article1.html", destination: "/blog/therain-launches-in-yaounde", permanent: true },
       { source: "/article2.html", destination: "/blog/school-transport-child-safety", permanent: true },
-      { source: "/article3.html", destination: "/blog/driver-earnings-tips-cameroon", permanent: true },
-      // Old domain redirects — any remaining therain.cm requests
-      { source: "/:path*", has: [{ type: "host", value: "therain.cm" }], destination: "https://therain.tech/:path*", permanent: true },
-      { source: "/:path*", has: [{ type: "host", value: "www.therain.cm" }], destination: "https://therain.tech/:path*", permanent: true }
+      { source: "/article3.html", destination: "/blog/driver-earnings-tips-cameroon", permanent: true }
     ];
   },
   async headers() {
