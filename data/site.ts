@@ -314,9 +314,10 @@ export function localizedPath(pageKey: PageKey, locale: Locale): string {
   return basePath === "/" ? "/fr" : `/fr${basePath}`;
 }
 
-export function canonicalPath(pageKey: PageKey, locale: Locale, variant: "default" | "localized" = "localized"): string {
-  if (variant === "default" && locale === "en") return pageMeta[pageKey].path;
-  return localizedPath(pageKey, locale);
+export function canonicalPath(pageKey: PageKey, locale: Locale, variant?: "default" | "localized"): string {
+  void locale;
+  void variant;
+  return pageMeta[pageKey].path;
 }
 
 export function resolvePageKeyFromSlug(slug: string[] = []): PageKey | null {

@@ -6,7 +6,6 @@ import {
   absoluteUrl,
   blogKeys,
   canonicalPath,
-  localizedPath,
   pageMeta,
   socialLinks,
   type Locale,
@@ -17,18 +16,13 @@ import { blogPosts, faqs, services, text } from "@/data/content";
 export function buildPageMetadata(
   pageKey: PageKey,
   locale: Locale,
-  variant: "default" | "localized" = "localized"
+  variant: "default" | "localized" = "default"
 ): Metadata {
   const page = pageMeta[pageKey];
   const canonical = absoluteUrl(canonicalPath(pageKey, locale, variant));
   const image = absoluteUrl(page.image || DEFAULT_OG_IMAGE);
-  const baseTitle = text(page.title, locale);
-  const baseDescription = text(page.description, locale);
-  const title = variant === "localized" && locale === "en" ? `${baseTitle} | English` : baseTitle;
-  const description =
-    variant === "localized" && locale === "en"
-      ? `${baseDescription} This is the English version of the official TheRain page.`
-      : baseDescription;
+  const title = text(page.title, locale);
+  const description = text(page.description, locale);
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -36,12 +30,7 @@ export function buildPageMetadata(
     description,
     keywords: page.keywords,
     alternates: {
-      canonical,
-      languages: {
-        en: absoluteUrl(localizedPath(pageKey, "en")),
-        fr: absoluteUrl(localizedPath(pageKey, "fr")),
-        "x-default": absoluteUrl(page.path)
-      }
+      canonical
     },
     openGraph: {
       title,
@@ -60,6 +49,10 @@ export function buildPageMetadata(
       title,
       description,
       images: [image]
+    },
+    robots: {
+      index: true,
+      follow: true
     },
     icons: {
       icon: "/images/favicon.png",
@@ -106,16 +99,11 @@ export function websiteSchema(locale: Locale) {
     alternateName: ["TheRain Cameroon", "therain.cm"],
     url: `${SITE_URL}/`,
     inLanguage: locale === "fr" ? "fr-CM" : "en-CM",
-    publisher: { "@id": `${SITE_URL}/#organization` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE_URL}/blog?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
+    publisher: { "@id": `${SITE_URL}/#organization` }
   };
 }
 
-export function breadcrumbSchema(pageKey: PageKey, locale: Locale, variant: "default" | "localized" = "localized") {
+export function breadcrumbSchema(pageKey: PageKey, locale: Locale, variant: "default" | "localized" = "default") {
   const current = pageMeta[pageKey];
   const items = [
     {
@@ -130,7 +118,7 @@ export function breadcrumbSchema(pageKey: PageKey, locale: Locale, variant: "def
     items.push({
       "@type": "ListItem",
       position: 2,
-      name: text(current.title, locale),
+      name: pageKey === "services" ? "Services" : text(current.title, locale),
       item: absoluteUrl(canonicalPath(pageKey, locale, variant))
     });
   }
@@ -147,14 +135,43 @@ export function servicesSchema(locale: Locale) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: locale === "fr" ? "Services TheRain" : "TheRain services",
-    itemListElement: services.slice(0, 5).map((service, index) => ({
-      "@type": "Service",
-      position: index + 1,
-      name: text(service.title, locale),
-      description: text(service.summary, locale),
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "Country", name: "Cameroon" },
-      serviceType: text(service.title, locale)
+    itemListElement: services.map((service, index) => {
+      const name = text(service.title, locale);
+      const serviceUrl = `${SITE_URL}/services#${text(service.title, "en")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")}`;
+
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": serviceUrl,
+          name,
+          description: text(service.summary, locale),
+          provider: { "@id": `${SITE_URL}/#organization` },
+          areaServed: { "@type": "Country", name: "Cameroon" },
+          serviceType: name,
+          url: serviceUrl,
+          image: absoluteUrl(service.image)
+        }
+      };
+    })
+  };
+}
+
+export function serviceFaqSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
     }))
   };
 }
@@ -193,12 +210,12 @@ export function blogPostingSchema(pageKey: PageKey, locale: Locale) {
       url: SITE_URL
     },
     publisher: { "@id": `${SITE_URL}/#organization` },
-    mainEntityOfPage: absoluteUrl(localizedPath(pageKey, locale)),
+    mainEntityOfPage: absoluteUrl(canonicalPath(pageKey, locale, "default")),
     inLanguage: locale === "fr" ? "fr-CM" : "en-CM"
   };
 }
 
-export function pageSchemas(pageKey: PageKey, locale: Locale, variant: "default" | "localized" = "localized") {
+export function pageSchemas(pageKey: PageKey, locale: Locale, variant: "default" | "localized" = "default") {
   const schemas: unknown[] = [breadcrumbSchema(pageKey, locale, variant)];
 
   if (pageKey === "home") schemas.push(servicesSchema(locale), faqSchema(locale));

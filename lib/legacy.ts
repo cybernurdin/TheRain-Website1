@@ -23,6 +23,7 @@ function sourcePath(fileName: string): string {
 
 function rewriteHref(href: string): string {
   const clean = href.replace(/&amp;/g, "&").trim();
+  if (clean === "index.html#services") return "/services";
   if (
     clean.startsWith("http") ||
     clean.startsWith("//") ||

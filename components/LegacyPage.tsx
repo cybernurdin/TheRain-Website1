@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import type { LegacyPageData } from "@/lib/legacy";
 import { HERO_SLOT_MARKER } from "@/lib/hero-slot";
 
@@ -66,7 +67,11 @@ function HeroSlideshow({ heroContentHtml }: { heroContentHtml: string }) {
   );
 }
 
-export function LegacyPage({ css, bodyHtml, inlineScripts, heroContentHtml }: LegacyPageData) {
+type LegacyPageProps = LegacyPageData & {
+  children?: ReactNode;
+};
+
+export function LegacyPage({ css, bodyHtml, inlineScripts, heroContentHtml, children }: LegacyPageProps) {
   const ran = useRef(false);
   const pageRef = useRef<HTMLDivElement | null>(null);
 
@@ -144,7 +149,7 @@ export function LegacyPage({ css, bodyHtml, inlineScripts, heroContentHtml }: Le
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <div ref={pageRef}>
         <div dangerouslySetInnerHTML={{ __html: beforeHero }} />
-        {hasHeroSlot && <HeroSlideshow heroContentHtml={heroContentHtml} />}
+        {hasHeroSlot && (children ?? <HeroSlideshow heroContentHtml={heroContentHtml} />)}
         {hasHeroSlot && <div dangerouslySetInnerHTML={{ __html: afterHero }} />}
       </div>
     </>
