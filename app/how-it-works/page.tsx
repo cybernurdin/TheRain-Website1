@@ -10,19 +10,19 @@ export const metadata: Metadata = {
   title: "How TheRain Works — Book Rides, Deliveries & School Transport in Cameroon",
   description:
     "See how TheRain lets you book rides, compare services, track deliveries, schedule school transport, and access support across Cameroon in just a few easy steps.",
-  alternates: { canonical: "https://therain.tech/how-it-works" },
+  alternates: { canonical: "https://therain.cm/how-it-works" },
   openGraph: {
     title: "How TheRain Works — Book Rides, Deliveries & School Transport",
     description:
       "See how TheRain lets you book rides, track deliveries, and schedule school transport in Cameroon.",
-    url: "https://therain.tech/how-it-works",
-    images: [{ url: "https://therain.tech/images/car1.jpg", width: 1200, height: 630, alt: "TheRain vehicle on the road" }]
+    url: "https://therain.cm/how-it-works",
+    images: [{ url: "https://therain.cm/images/car1.jpg", width: 1200, height: 630, alt: "TheRain vehicle on the road" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "How TheRain Works — Cameroon Transport Platform",
     description: "Book rides, deliveries, and school transport in Cameroon with TheRain.",
-    images: ["https://therain.tech/images/car1.jpg"]
+    images: ["https://therain.cm/images/car1.jpg"]
   }
 };
 

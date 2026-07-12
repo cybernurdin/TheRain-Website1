@@ -10,20 +10,20 @@ export const metadata: Metadata = {
   title: "TheRain Launches in Yaounde — Smart Transport Platform in Cameroon",
   description:
     "TheRain launches in Yaoundé with ride-hailing, delivery, school transport, and driver verification. A new chapter in transport for Cameroon's capital.",
-  alternates: { canonical: "https://therain.tech/blog/therain-launches-in-yaounde" },
+  alternates: { canonical: "https://therain.cm/blog/therain-launches-in-yaounde" },
   openGraph: {
     title: "TheRain Launches in Yaounde — Smart Transport Platform in Cameroon",
     description:
       "TheRain launches in Yaoundé with ride-hailing, delivery, school transport, and verified driver services.",
-    url: "https://therain.tech/blog/therain-launches-in-yaounde",
+    url: "https://therain.cm/blog/therain-launches-in-yaounde",
     type: "article",
-    images: [{ url: "https://therain.tech/images/blog_yaounde.jpg", width: 1200, height: 630, alt: "TheRain transport launch in Yaounde Cameroon" }]
+    images: [{ url: "https://therain.cm/images/blog_yaounde.jpg", width: 1200, height: 630, alt: "TheRain transport launch in Yaounde Cameroon" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "TheRain Launches in Yaounde — Smart Transport Platform",
     description: "TheRain launches in Yaoundé with ride-hailing, delivery, and school transport services.",
-    images: ["https://therain.tech/images/blog_yaounde.jpg"]
+    images: ["https://therain.cm/images/blog_yaounde.jpg"]
   }
 };
 

@@ -2,7 +2,7 @@
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://therain.tech"),
+  metadataBase: new URL("https://therain.cm"),
   applicationName: "TheRain",
   title: {
     default: "TheRain | Official Transport Platform in Cameroon",
@@ -23,9 +23,19 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   openGraph: {
     siteName: "TheRain",
-    url: "https://therain.tech",
+    url: "https://therain.cm",
+    locale: "en_CM",
     images: [{ url: "/images/bg.jpg", width: 1200, height: 630 }]
-  }
+  },
+  twitter: {
+    card: "summary_large_image"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 }
+  },
+  category: "transportation"
 };
 
 export const viewport: Viewport = {

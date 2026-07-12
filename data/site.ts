@@ -1,5 +1,5 @@
 export const BRAND_NAME = "TheRain";
-export const SITE_URL = "https://therain.tech";
+export const SITE_URL = "https://therain.cm";
 export const DEFAULT_OG_IMAGE = "/images/bg.jpg";
 
 export const locales = ["en", "fr"] as const;
@@ -51,7 +51,7 @@ export const pageMeta: Record<PageKey, PageMeta> = {
     },
     keywords: [
       "TheRain",
-      "therain.tech",
+      "therain.cm",
       "TheRain Cameroon",
       "TheRain ride hailing",
       "TheRain delivery",

@@ -10,8 +10,8 @@ export type Service = {
 
 export const common = {
   official: {
-    en: `therain.tech is the official website of ${BRAND_NAME}.`,
-    fr: `therain.tech est le site officiel de ${BRAND_NAME}.`
+    en: `therain.cm is the official website of ${BRAND_NAME}.`,
+    fr: `therain.cm est le site officiel de ${BRAND_NAME}.`
   },
   factual: {
     en: `${BRAND_NAME} is a Cameroon transport technology platform offering ride-hailing, delivery, school transport, and fleet services.`,
@@ -388,8 +388,8 @@ export const blogPosts: BlogPost[] = [
 export const contactInfo = {
   location: { en: "Bamenda, Cameroon - Commercial Avenue", fr: "Bamenda, Cameroun - Commercial Avenue" },
   phones: ["+237 676 011 861", "+237 674 321 486"],
-  email: "info@therain.tech",
-  support: "support@therain.tech",
+  email: "info@therain.cm",
+  support: "support@therain.cm",
   hours: { en: "Support available for riders, drivers, schools, and business partners.", fr: "Assistance disponible pour passagers, chauffeurs, écoles et partenaires professionnels." }
 };
 

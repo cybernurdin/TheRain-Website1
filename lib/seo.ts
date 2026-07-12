@@ -74,7 +74,7 @@ export function organizationSchema(locale: Locale) {
     "@type": ["Organization", "LocalBusiness", "TransportationService"],
     "@id": `${SITE_URL}/#organization`,
     name: BRAND_NAME,
-    alternateName: "therain.tech",
+    alternateName: "therain.cm",
     url: SITE_URL,
     logo: absoluteUrl("/images/logo_dark.png"),
     image: absoluteUrl("/images/bg.jpg"),
@@ -89,7 +89,7 @@ export function organizationSchema(locale: Locale) {
       addressLocality: "Bamenda",
       addressCountry: "CM"
     },
-    email: "info@therain.tech",
+    email: "info@therain.cm",
     telephone: ["+237676011861", "+237674321486"],
     sameAs: socialLinks.map((link) => link.href),
     serviceType: ["Ride-hailing", "Delivery", "School transport", "Fleet management"]
@@ -102,7 +102,7 @@ export function websiteSchema(locale: Locale) {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: BRAND_NAME,
-    alternateName: ["TheRain Cameroon", "therain.tech"],
+    alternateName: ["TheRain Cameroon", "therain.cm"],
     url: `${SITE_URL}/`,
     inLanguage: locale === "fr" ? "fr-CM" : "en-CM",
     publisher: { "@id": `${SITE_URL}/#organization` },

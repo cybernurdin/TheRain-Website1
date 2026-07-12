@@ -10,22 +10,22 @@ export const metadata: Metadata = {
   title: "TheRain | Ride-Hailing, Delivery & Comfort in Cameroon",
   description:
     "TheRain is Cameroon’s leading transport platform for ride-hailing, delivery, school transport, fleet management, and safer mobility across Cameroon.",
-  alternates: { canonical: "https://therain.tech/" },
+  alternates: { canonical: "https://therain.cm/" },
   openGraph: {
     title: "TheRain | Ride-Hailing, Delivery & Comfort in Cameroon",
     description:
       "TheRain is Cameroon’s leading transport platform for ride-hailing, delivery, school transport, and fleet management.",
-    url: "https://therain.tech/",
+    url: "https://therain.cm/",
     siteName: "TheRain",
     type: "website",
-    images: [{ url: "https://therain.tech/images/bg.jpg", width: 1200, height: 630, alt: "TheRain transport platform in Cameroon" }]
+    images: [{ url: "https://therain.cm/images/bg.jpg", width: 1200, height: 630, alt: "TheRain transport platform in Cameroon" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "TheRain | Ride-Hailing, Delivery & Comfort in Cameroon",
     description:
       "TheRain is Cameroon’s leading transport platform for ride-hailing, delivery, school transport, and fleet management.",
-    images: ["https://therain.tech/images/bg.jpg"]
+    images: ["https://therain.cm/images/bg.jpg"]
   }
 };
 

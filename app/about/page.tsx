@@ -10,19 +10,19 @@ export const metadata: Metadata = {
   title: "About TheRain — Cameroon Transport Technology Platform",
   description:
     "Learn who TheRain is, why it was built in Cameroon, and how it improves trust, safety, ride-hailing, delivery, and school transport across the country.",
-  alternates: { canonical: "https://therain.tech/about" },
+  alternates: { canonical: "https://therain.cm/about" },
   openGraph: {
     title: "About TheRain — Cameroon Transport Technology Platform",
     description:
       "Learn who TheRain is, why it was built in Cameroon, and how it improves trust, safety, ride-hailing, delivery, and school transport.",
-    url: "https://therain.tech/about",
-    images: [{ url: "https://therain.tech/images/about_car.jpg", width: 1200, height: 630, alt: "TheRain team and vehicle in Cameroon" }]
+    url: "https://therain.cm/about",
+    images: [{ url: "https://therain.cm/images/about_car.jpg", width: 1200, height: 630, alt: "TheRain team and vehicle in Cameroon" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "About TheRain — Cameroon Transport Technology Platform",
     description: "Learn who TheRain is and how it transforms transportation in Cameroon.",
-    images: ["https://therain.tech/images/about_car.jpg"]
+    images: ["https://therain.cm/images/about_car.jpg"]
   }
 };
 

@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   title: "Data Deletion Policy — TheRain",
   description:
     "Request deletion of your TheRain account data and learn what rider, driver, parent, guest, and fleet information can be deleted or retained.",
-  alternates: { canonical: "https://therain.tech/data-deletion" },
+  alternates: { canonical: "https://therain.cm/data-deletion" },
   openGraph: {
     title: "Data Deletion Policy — TheRain",
     description: "Request deletion of TheRain account data for riders, drivers, and fleet users in Cameroon.",
-    url: "https://therain.tech/data-deletion",
-    images: [{ url: "https://therain.tech/images/bg.jpg", width: 1200, height: 630, alt: "TheRain data deletion policy" }]
+    url: "https://therain.cm/data-deletion",
+    images: [{ url: "https://therain.cm/images/bg.jpg", width: 1200, height: 630, alt: "TheRain data deletion policy" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Data Deletion Policy — TheRain",
     description: "Request deletion of your TheRain data in Cameroon.",
-    images: ["https://therain.tech/images/bg.jpg"]
+    images: ["https://therain.cm/images/bg.jpg"]
   }
 };
 

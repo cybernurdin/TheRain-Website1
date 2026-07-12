@@ -10,20 +10,20 @@ export const metadata: Metadata = {
   title: "Contact TheRain — Get in Touch | Bamenda, Cameroon",
   description:
     "Contact TheRain support team in Cameroon. Call, email, or visit us in Bamenda. Available 24/7 for riders, drivers, and business inquiries.",
-  alternates: { canonical: "https://therain.tech/contact" },
+  alternates: { canonical: "https://therain.cm/contact" },
   openGraph: {
     type: "website",
     siteName: "TheRain",
     title: "Contact TheRain — Get in Touch",
     description: "Contact TheRain in Cameroon. Available 24/7 for riders, drivers, and business inquiries.",
-    url: "https://therain.tech/contact",
-    images: [{ url: "https://therain.tech/images/bg.jpg", width: 1200, height: 630, alt: "TheRain Contact" }],
+    url: "https://therain.cm/contact",
+    images: [{ url: "https://therain.cm/images/bg.jpg", width: 1200, height: 630, alt: "TheRain Contact" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact TheRain — Get in Touch",
     description: "Contact TheRain in Cameroon. Available 24/7 for all inquiries.",
-    images: ["https://therain.tech/images/bg.jpg"],
+    images: ["https://therain.cm/images/bg.jpg"],
   },
 };
 

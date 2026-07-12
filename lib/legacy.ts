@@ -50,6 +50,25 @@ function rewriteAssetPaths(html: string): string {
   return html.replace(/\b(src|href)="images\/([^"]*)"/gi, (_m, attr, rest) => `${attr}="/images/${rest}"`);
 }
 
+function rewriteBrandDomain(html: string): string {
+  return html.replace(/therain\.tech/gi, "therain.cm");
+}
+
+function rewriteEmojiIcons(html: string): string {
+  const icons: Record<string, string> = {
+    "📍": '<i class="fas fa-map-marker-alt" aria-hidden="true"></i>',
+    "📞": '<i class="fas fa-phone" aria-hidden="true"></i>',
+    "📧": '<i class="fas fa-envelope" aria-hidden="true"></i>',
+    "🕐": '<i class="fas fa-clock" aria-hidden="true"></i>',
+    "📋": '<i class="fas fa-clipboard-list" aria-hidden="true"></i>',
+    "&#x1F7E2;": '<i class="fas fa-circle" aria-hidden="true"></i>',
+    "&#x2713;": '<i class="fas fa-check" aria-hidden="true"></i>',
+    "&#x23F3;": '<i class="fas fa-hourglass-half" aria-hidden="true"></i>',
+    "🇨🇲": "Cameroon"
+  };
+  return Object.entries(icons).reduce((result, [emoji, icon]) => result.replaceAll(emoji, icon), html);
+}
+
 function rewriteScriptPaths(script: string): string {
   // Rewrite "images/..." string literals inside scripts
   return script.replace(/"images\//g, '"/images/');
@@ -115,7 +134,9 @@ export function getLegacyPage(sourceFile: string): LegacyPageData {
   const noScripts = rawBody.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
 
   // Rewrite asset paths, anchor hrefs, add WebP picture tags and lazy loading
-  const rewritten = rewriteImages(rewriteIframes(rewriteAnchors(rewriteAssetPaths(noScripts))));
+  const rewritten = rewriteEmojiIcons(
+    rewriteBrandDomain(rewriteImages(rewriteIframes(rewriteAnchors(rewriteAssetPaths(noScripts)))))
+  );
 
   // Fix: .aos elements start with opacity:0 in CSS, waiting for IntersectionObserver
   // which only runs after client-side JS hydration. This causes blank sections on load.

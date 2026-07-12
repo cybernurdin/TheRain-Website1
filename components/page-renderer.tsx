@@ -588,8 +588,8 @@ export function PageRenderer({ pageKey, locale, variant = "localized" }: PageRen
           <h2 className="text-2xl font-black text-white">{locale === "fr" ? "Site officiel" : "Official website"}</h2>
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-300">
             {locale === "fr"
-              ? `therain.tech est le site officiel de ${BRAND_NAME}. Cette page est disponible en français et en anglais avec des URLs canoniques propres.`
-              : `therain.tech is the official website of ${BRAND_NAME}. This page is available in English and French with clean canonical URLs.`}
+              ? `therain.cm est le site officiel de ${BRAND_NAME}. Cette page est disponible en français et en anglais avec des URLs canoniques propres.`
+              : `therain.cm is the official website of ${BRAND_NAME}. This page is available in English and French with clean canonical URLs.`}
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             <CtaLink href={canonicalPath("contact", locale, variant)}>{text(ui.contactSupport, locale)}</CtaLink>

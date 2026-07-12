@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   title: "Terms and Policies — TheRain",
   description:
     "Review therain platform policies covering riders, drivers, fleet users, privacy, CCTV safety, fraud prevention, and data usage in Cameroon.",
-  alternates: { canonical: "https://therain.tech/terms" },
+  alternates: { canonical: "https://therain.cm/terms" },
   openGraph: {
     title: "Terms and Policies — TheRain",
     description: "Review therain policies covering riders, drivers, privacy, and data usage in Cameroon.",
-    url: "https://therain.tech/terms",
-    images: [{ url: "https://therain.tech/images/bg.jpg", width: 1200, height: 630, alt: "TheRain terms and policies" }]
+    url: "https://therain.cm/terms",
+    images: [{ url: "https://therain.cm/images/bg.jpg", width: 1200, height: 630, alt: "TheRain terms and policies" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms and Policies — TheRain",
     description: "Review therain policies for transport users in Cameroon.",
-    images: ["https://therain.tech/images/bg.jpg"]
+    images: ["https://therain.cm/images/bg.jpg"]
   }
 };
 

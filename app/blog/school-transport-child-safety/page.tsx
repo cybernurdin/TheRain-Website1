@@ -10,20 +10,20 @@ export const metadata: Metadata = {
   title: "How TheRain School Transport Helps Keep Children Safe in Cameroon",
   description:
     "Learn how TheRain School Transport keeps children safe with verified drivers, pickup PIN checks, live parent tracking, and real-time notifications in Cameroon.",
-  alternates: { canonical: "https://therain.tech/blog/school-transport-child-safety" },
+  alternates: { canonical: "https://therain.cm/blog/school-transport-child-safety" },
   openGraph: {
     title: "How TheRain School Transport Helps Keep Children Safe",
     description:
       "TheRain School Transport supports parents with verified drivers, pickup checks, and real-time notifications for children in Cameroon.",
-    url: "https://therain.tech/blog/school-transport-child-safety",
+    url: "https://therain.cm/blog/school-transport-child-safety",
     type: "article",
-    images: [{ url: "https://therain.tech/images/blog_school.jpg", width: 1200, height: 630, alt: "School transport and child safety with TheRain" }]
+    images: [{ url: "https://therain.cm/images/blog_school.jpg", width: 1200, height: 630, alt: "School transport and child safety with TheRain" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "How TheRain School Transport Helps Keep Children Safe",
     description: "TheRain School Transport with verified drivers and real-time notifications for parents in Cameroon.",
-    images: ["https://therain.tech/images/blog_school.jpg"]
+    images: ["https://therain.cm/images/blog_school.jpg"]
   }
 };
 
